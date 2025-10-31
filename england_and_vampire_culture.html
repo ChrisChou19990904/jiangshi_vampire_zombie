@@ -39,23 +39,25 @@
         /* 流程圖 */
         .flowchart {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column; /* 改成垂直排列 */
+            align-items: center;    /* 子項目置中 */
+            justify-content: center;/* 整體置中 */
             margin-top: 20px;
-            flex-wrap: wrap;
         }
+
         .flow-item {
             background-color: #dfe6e9;
             padding: 20px;
             border-radius: 8px;
             text-align: center;
-            width: 30%;
+            width: 60%; /* 可依需要調整寬度 */
             margin: 10px 0;
             box-shadow: 0 1px 3px rgba(0,0,0,0.2);
         }
+
         .arrow {
             font-size: 2em;
-            margin: 0 10px;
+            margin: 10px 0; /* 調整上下距離 */
             color: #636e72;
         }
         header {
@@ -178,9 +180,9 @@
     <h2>3. 英國文學 → 吸血鬼文化 → 現代作品流程圖</h2>
     <div class="flowchart">
         <div class="flow-item">英國哥德文學<br>(如《德古拉》)</div>
-        <div class="arrow">→</div>
+        <div class="arrow">↓</div>
         <div class="flow-item">吸血鬼與教會對立的經典設定<br>(象徵善惡、宗教衝突)</div>
-        <div class="arrow">→</div>
+        <div class="arrow">↓</div>
         <div class="flow-item">現代小說 / 遊戲 / 動畫<br>(吸血鬼獵人、異端審判官、羅馬公教)</div>
     </div>
     <p class="note" style="text-align:center;">
