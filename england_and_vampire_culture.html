@@ -1,29 +1,62 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>殭屍與吸血鬼：語境差異與文化誤會探討</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>英國對吸血鬼文化的影響</title>
     <style>
         body {
-            font-family: "Microsoft JhengHei", sans-serif;
-            background-color: #fdfdfd;
-            color: #2c3e50;
-            line-height: 1.8;
-            padding: 2em;
+            font-family: "Noto Sans TC", sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            color: #333;
+            padding: 20px;
         }
         h1, h2 {
-            color: #5a2a83;
+            color: #4a2f2f;
         }
-        blockquote {
-            border-left: 4px solid #5a2a83;
-            margin: 1rem 0;
-            padding-left: 1rem;
-            color: #555;
-            font-style: italic;
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
         }
-        #google-translate-box {
-            font-size: 12px;
+        section {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        ul {
+            margin-left: 20px;
+        }
+        p {
+            margin-bottom: 10px;
+        }
+        .note {
+            font-size: 0.9em;
+            color: #666;
+        }
+        /* 流程圖 */
+        .flowchart {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .flow-item {
+            background-color: #dfe6e9;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            width: 30%;
+            margin: 10px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+        }
+        .arrow {
+            font-size: 2em;
+            margin: 0 10px;
+            color: #636e72;
         }
         header {
             background-color: pink;
@@ -39,22 +72,6 @@
         a:visited {
             color: #2980b9;
         }
-        img{
-            border-color: indigo;
-            border-width: 5px;
-            border-style: solid;
-        }
-        video{
-            border-color: indigo;
-            border-width: 5px;
-            border-style: solid;
-        }
-        footer {
-            font-size: 50px;
-            text-align: center;
-            background-color: purple;
-            color: yellow;
-        }
         .intro-box {
             background-color: #eee;
             padding: 1em;
@@ -62,32 +79,19 @@
             margin: 1.5em 0;
             font-style: italic;
         }
-
-        @media screen and (max-width: 767px) {
-            iframe{
-                max-width:100%
-            }
-            video{
-                max-width: 80%;
-                border: 5px solid black;
-            }
+        @media (max-width: 768px) {
             img{
-                max-width: 60%;
-                height: auto;
+                max-width: 100%;
             }
-            header {
-                background-color: pink;
-                padding: 10px 0;
+            .flowchart {
+                flex-direction: column;
+                align-items: center;
             }
-            a{
-                color: #2980b9;
-                text-decoration: none;
+            .flow-item {
+                width: 80%;
             }
-            a:hover {
-                text-decoration: underline;
-            }
-            a:visited {
-                color: #2980b9;
+            .arrow {
+                display: none;
             }
         }
     </style>
@@ -112,67 +116,80 @@
     <nav>
         <ul>
             <li><strong class="guide">本頁內容：</strong><br>
-                <a>「殭屍」與「吸血鬼」：語境差異與文化誤會探討</a></li>
+                <a>英國對吸血鬼文化的影響</a></li>
 
             <li><strong class="guide">其他文章連結：</strong>
                 <ol>
                     <li><a href="index.html" target="_blank">中西不死生物比較：殭屍 vs 吸血鬼 vs 喪屍</a></li>
                     <li><a href="zombie_change.html" target="_blank">喪屍題材的演變：從魔幻到科幻</a></li>
                     <li><a href="vampire_change.html" target="_blank">吸血鬼題材演變與東亞再詮釋</a></li>
+                    <li><a href="jiangshi_and_western_vampire.html" target="_blank">「殭屍」與「吸血鬼」：語境差異與文化誤會探討</a></li>
                     <li><a href="what_if_twilight__becomes_real.html" target="_blank">為什麼《暮光之城》的吸血鬼設定在現實中根本行不通</a></li>
                     <li><a href="if_edward_cullen_were_born_in_taiwan.html" target="_blank">如果愛德華·庫倫生在台灣：他會被升旗、段考、模擬考、補習、強制性的體能測驗、基本學科能力測驗逼瘋嗎？</a></li>
                     <li><a href="bloopers_in_vampire_dramas.html" target="_blank">吸血鬼在影視劇中的穿幫鏡頭觀察</a></li>
                     <li><a href="key_characters_who_disappear.html" target="_blank">留白的力量：從菩提祖師到德古拉的轉變者，看故事中那些「消失的上層力量」</a></li>
                     <li><a href="critique_of_church_corruption_in_vampire_stories.html" target="_blank">透過吸血鬼敘事揭示中世紀教會的腐敗與宗教權威的陰暗面</a></li>
                     <li><a href="aro_height.html" target="_blank">175公分以上的三千歲吸血鬼族長？考古學與暮光之城的身高落差</a></li>
-                    <li><a href="england_and_vampire_culture.html" target="_blank">英國對吸血鬼文化的影響</a></li>
                 </ol>
             </li>
         </ul>
     </nav>
 </header>
-<h1>「殭屍」與「吸血鬼」：語境差異與文化誤會探討</h1>
-
-<p>「殭屍」一詞在中文語境中，尤其是港產文化裡，與「吸血鬼」的形象有著複雜且微妙的關係。不同作品中，殭屍的定義和表現並不統一，常因文化傳承和翻譯差異，讓觀眾產生誤會。</p>
+<h1>英國對吸血鬼文化的影響</h1>
 <div class="intro-box"><em>本網頁的作者不僅是吸血鬼文化的熱衷愛好者，還是深度探討東西方吸血鬼與殭屍題材的專家。多年来，他接觸過大量的吸血鬼作品和殭屍電影，無論是西方經典如《德古拉》、《夜訪吸血鬼》、《刀鋒戰士》、《暮光之城》、《凡赫辛》、《吸血鬼獵人：林肯總統》、《Hotel Transylvania》，還是東方的代表作如《殭屍先生》、《殭屍叔叔》、《音樂殭屍》、《殭屍家族》、《殭屍道長》、《千年殭屍王》，他都在不斷比較與探索。這使他對吸血鬼這一文化象徵有了獨特的理解，並且能夠深入分析這些超自然生物在不同文化中的呈現方式和隱喻意涵。<br><br>
 
     作為一名前端開發者，作者運用自己的技術背景，將這些文化分析與比較呈現於網頁中。他並不滿足於單純的文字敘述，而是通過結合互動性強的網頁設計和創意排版，將這些吸血鬼與殭屍的知識以更直觀、趣味十足的方式呈現給讀者。他將這一前端作品部署到GitHub Pages，開設專案，將自己的文化研究和技術技能結合，讓更多人可以輕鬆地接觸到這些深入且富有思考的內容。</em></div>
-<h2>殭屍與吸血鬼的本質與差異</h2>
-<p>傳統中國殭屍是死而復生的屍體，通常會直立行走，動作僵硬，以血為食，害怕符咒、糯米、桃木劍、黑狗血、陽光等；西方吸血鬼是以吸血維生的不死生物，擁有尖銳犬齒，害怕十字架、聖經、聖水、銀製品、陽光與蒜頭。</p>
-<p>從本質上來說，「殭屍」和「吸血鬼」都屬於以血為食的「活死人」（undead），且兩者犬齒尖銳的形象也十分相似，加上兩者都怕陽光並總是晝伏夜出，這可能是為什麼在港產文化中，有時會用「殭屍」一詞來指代類似吸血鬼的存在。</p>
+<section>
+    <h2>1. 吸血鬼與教會對立的經典設定</h2>
+    <p>
+        吸血鬼作為哥德文學的經典元素，在英國文學中有重要發展，例如布蘭·斯托克的《德古拉》。
+        英國作家將吸血鬼與宗教象徵對立，常常讓吸血鬼代表異端、誘惑或邪惡，而教會象徵秩序與道德。
+    </p>
+    <p>
+        這種對立成為許多後世作品的經典設定，原因包括：
+    </p>
+    <ul>
+        <li>歷史上宗教對異端的打壓形成深刻文化印象。</li>
+        <li>哥德式建築、神秘符號（十字架、聖水）提供強烈的視覺與象徵衝擊。</li>
+        <li>故事張力源於善惡衝突與人性探索，容易被小說、動畫、遊戲採用。</li>
+    </ul>
+</section>
 
-<h2>語境中的誤會：港產電影中的殭屍</h2>
-<p>以電視劇《我和殭屍有個約會》為例，片中人物口中的「殭屍」其實就是「吸血鬼」：</p>
-<blockquote>
-    <ol>
-        <li>堂本真吾在教堂對況天佑說：「電影裡的殭屍真幸福，他們見到『十字架』就會化為烏有」</li>
-        <li>王珍珍問得知況天佑是「殭屍」後，問他是否怕「十字架」，而非「糯米」、「桃木劍」，或「符咒」</li>
-    </ol>
-</blockquote>
-<video controls><source src="況天佑與堂本真吾.mp4"></video>
-<video controls><source src="況天佑與王珍珍.mp4"></video>
-<p>這種設定容易讓熟悉傳統殭屍形象的觀眾誤解殭屍與吸血鬼的界限，因為這裡的「殭屍」就是西方吸血鬼的另一個代稱。</p>
-<p>另一個例子是電影《千機變》中，陳冠希對蔡卓妍說他是「殭屍」，但其實那也是吸血鬼，語境上的差異造成了混淆。</p>
-<video controls><source src="陳冠希與蔡卓妍.mp4"></video>
-<h2>港產殭屍與吸血鬼的翻譯與文化融合</h2>
-<p>由於殭屍和吸血鬼本質上都是不死的死屍，港產片在英文翻譯時多用「vampire」（吸血鬼）作為「殭屍」的對應詞。例如：</p>
-<ul>
-    <li>《殭屍先生》→ <em>Mr. Vampire</em></li>
-    <li>《救殭清道夫》→ <em>Vampire Cleanup Department</em></li>
-    <li>《殭屍大時代》→ <em>The Era of Vampires</em></li>
-</ul>
-<div style="display: block; text-align: center; border: 5px solid purple; background-color: yellow;">
-<img src="殭屍先生海報.png" alt=""><br>
-<img src="千年殭屍王海報.png" alt=""><br>
-<img src="救殭清道夫海報.png" alt="">
-</div>
-<p>這樣的翻譯方便國際觀眾理解，也反映了中西文化在恐怖元素上的互相借鑑和融合。</p>
+<section>
+    <h2>2. 為何故事中的教會多為羅馬公教而非英國國教</h2>
+    <p>
+        儘管英國的主要宗教是英國國教（Anglican Church），許多以英國為背景的作品中，與吸血鬼對立的教會與教士往往設定為羅馬公教（Roman Catholic Church）。
+    </p>
+    <p>
+        背後原因包括：
+    </p>
+    <ul>
+        <li><strong>歷史印象：</strong>羅馬公教擁有長期中世紀傳統、異端審判、聖職制度等象徵元素，給人更神秘、威嚴感。</li>
+        <li><strong>符號與道具：</strong>十字架、聖水、拉丁文咒語等與羅馬公教密切相關，故事張力更強。</li>
+        <li><strong>文化傳播：</strong>布蘭·斯托克的《德古拉》中，吸血鬼對抗的是羅馬公教祭司，後世作品沿用此設定。</li>
+        <li><strong>故事需求：</strong>英國國教較為「平和與政治化」，缺乏中世紀異端審判的極端象徵，戲劇張力較低。</li>
+    </ul>
+    <p class="note">
+        因此，即使故事背景在英國，羅馬公教成為吸血鬼對立的首選。
+    </p>
+</section>
 
-<h2>總結</h2>
-<p>殭屍和吸血鬼雖然有不同的文化背景與傳說，但在現代流行文化中，尤其是港產影視裡，兩者的界線往往被模糊，甚至互換使用。這種現象既是文化交流的結果，也帶來了語義上的誤會。理解這些差異，有助於我們更深入欣賞不同文化對「不死生物」形象的獨特詮釋。</p>
-<footer>
+<section>
+    <h2>3. 英國文學 → 吸血鬼文化 → 現代作品流程圖</h2>
+    <div class="flowchart">
+        <div class="flow-item">英國哥德文學<br>(如《德古拉》)</div>
+        <div class="arrow">→</div>
+        <div class="flow-item">吸血鬼與教會對立的經典設定<br>(象徵善惡、宗教衝突)</div>
+        <div class="arrow">→</div>
+        <div class="flow-item">現代小說 / 遊戲 / 動畫<br>(吸血鬼獵人、異端審判官、羅馬公教)</div>
+    </div>
+    <p class="note" style="text-align:center;">
+        這個流程展示了英國文學對吸血鬼文化的長期影響，以及為何羅馬公教成為經典對立勢力。
+    </p>
+</section>
+<footer style="text-align: center; background-color: purple; color:yellow; font-size: 50px">
     作者：<a class="the_author_of_the_web" href="https://www.facebook.com/profile.php?id=100056441813114&locale=zh_TW" target="_blank" style="color:white">周彥廷</a>
-    <br>創作日期：西元二零二五年六月四日<br>
+    <br>創作日期：西元二零二五年十月三十一日<br>
     <img src="480441080_1068843481673702_1005064756165328686_n.jpg" alt="自拍">
     <br>
 </footer>
