@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>歐化基督教與原始聖經觀的差異</title>
+    <style>
+        :root {
+            --bg-color: #f8f8f8;
+            --text-color: #222;
+            --accent: #bfa27a;
+            --border-color: #d8cdbb;
+            --highlight-bg: #fffdf5;
+        }
+
+        body.dark {
+            --bg-color: #1b1b1b;
+            --text-color: #ddd;
+            --accent: #d4b483;
+            --border-color: #3d3d3d;
+            --highlight-bg: #2a2a2a;
+        }
+
+        body {
+            font-family: "Noto Serif TC", "Times New Roman", serif;
+            line-height: 1.8;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            padding: 2em 10%;
+            transition: all 0.4s ease;
+        }
+        a{
+            color: #2980b9;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        a:visited {
+            color: #2980b9;
+        }
+        header {
+            background-color: pink;
+            padding: 10px 0;
+        }
+        h1, h2, h3 {
+            color: var(--accent);
+        }
+
+        h1 {
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.2em;
+        }
+
+        blockquote {
+            border-left: 4px solid var(--accent);
+            background: var(--highlight-bg);
+            padding: 1em;
+            margin: 1em 0;
+            font-style: italic;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1em 0;
+        }
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 0.6em;
+            text-align: left;
+        }
+        th {
+            background-color: var(--highlight-bg);
+        }
+
+        .highlight {
+            background: var(--highlight-bg);
+            border-left: 4px solid var(--accent);
+            padding: 1em;
+            margin: 1.5em 0;
+        }
+
+        /* === 時間線樣式 === */
+        .timeline {
+            position: relative;
+            margin: 3em 0;
+            padding-left: 2em;
+            border-left: 3px solid var(--accent);
+        }
+        .timeline-event {
+            position: relative;
+            margin-bottom: 2em;
+            cursor: pointer;
+        }
+        .timeline-event::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 6px;
+            width: 14px;
+            height: 14px;
+            background: var(--accent);
+            border-radius: 50%;
+            transition: background 0.3s;
+        }
+        .timeline-event:hover::before {
+            background: #70593e;
+        }
+        .timeline-content {
+            background: var(--highlight-bg);
+            border: 1px solid var(--border-color);
+            padding: 1em;
+            border-radius: 6px;
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+        .timeline-event.active .timeline-content {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        .timeline-year {
+            font-weight: bold;
+            color: var(--accent);
+        }
+
+        /* === 深色模式切換按鈕 === */
+        #toggle-theme {
+            position: fixed;
+            top: 1.2em;
+            right: 1.2em;
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 0.5em 1em;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        #toggle-theme:hover {
+            background: #70593e;
+        }
+
+    </style>
+</head>
+<body>
+<div id="google-translate-box">
+    <div id="google_translate_element"></div>
+    <!-- Google Translate 的自動翻譯功能 -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'zh-TW',  // 頁面原語言
+                includedLanguages: 'en,es,fr,de,it,zh-CN,ja,ko,th,vi,my,id,ms,ar,he,ru,tg,uk,hi,tr,pt,nl,is,fi,sv,no,ro,kk,bo,mn,la,fil,tl,el',  // 支援的翻譯語言（可擴展）
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <p>點擊上方的語言選單以切換語言</p>
+</div>
+<header>
+    <nav>
+        <ul>
+            <li><strong class="guide">本頁內容：</strong><br>
+                <a>透過吸血鬼敘事分析歐化基督教與原始聖經觀的差異</a></li>
+
+            <li><strong class="guide">其他文章連結：</strong>
+                <ol>
+                    <li><a href="index.html" target="_blank">中西不死生物比較：殭屍 vs 吸血鬼 vs 喪屍</a></li>
+                    <li><a href="zombie_change.html" target="_blank">喪屍題材的演變：從魔幻到科幻</a></li>
+                    <li><a href="vampire_change.html" target="_blank">吸血鬼題材演變與東亞再詮釋</a></li>
+                    <li><a href="jiangshi_and_western_vampire.html" target="_blank">「殭屍」與「吸血鬼」：語境差異與文化誤會探討</a></li>
+                    <li><a href="what_if_twilight__becomes_real.html" target="_blank">為什麼《暮光之城》的吸血鬼設定在現實中根本行不通</a></li>
+                    <li><a href="if_edward_cullen_were_born_in_taiwan.html" target="_blank">如果愛德華·庫倫生在台灣：他會被升旗、段考、模擬考、補習、強制性的體能測驗、基本學科能力測驗逼瘋嗎？</a></li>
+                    <li><a href="bloopers_in_vampire_dramas.html" target="_blank">吸血鬼在影視劇中的穿幫鏡頭觀察</a></li>
+                    <li><a href="key_characters_who_disappear.html" target="_blank">留白的力量：從菩提祖師到德古拉的轉變者，看故事中那些「消失的上層力量」</a></li>
+                    <li><a href="critique_of_church_corruption_in_vampire_stories.html" target="_blank">透過吸血鬼敘事揭示中世紀教會的腐敗與宗教權威的陰暗面</a></li>
+                    <li><a href="aro_height.html" target="_blank">175公分以上的三千歲吸血鬼族長？考古學與暮光之城的身高落差</a></li>
+                    <li><a href="england_and_vampire_culture.html" target="_blank">英國文學對吸血鬼文化的影響</a></li>
+                </ol>
+            </li>
+        </ul>
+    </nav>
+</header>
+<button id="toggle-theme">🌙 深色模式</button>
+
+<h1>透過吸血鬼敘事分析歐化基督教與原始聖經觀的差異</h1>
+
+<p>在聖經中，上帝與天使是直接介入人類歷史的主體；但在哥德式文學、遊戲與動畫中，與吸血鬼或惡魔對抗的往往是人類教會，而非上帝與天使。這反映出歐化基督教與原始聖經信仰之間的深刻落差。</p>
+
+<hr>
+
+<h2>互動式時間線：神學觀的演變</h2>
+
+<div class="timeline">
+    <div class="timeline-event">
+        <div class="timeline-year">📖 聖經時代（古代近東）</div>
+        <div class="timeline-content">
+            上帝與天使親自介入歷史，如紅海分開、天使報信、耶穌行神蹟。<br>
+            信仰焦點是「神主動的救贖」，人類是見證者。
+        </div>
+    </div>
+
+    <div class="timeline-event">
+        <div class="timeline-year">🏛️ 中世紀基督教（歐化階段）</div>
+        <div class="timeline-content">
+            希臘哲學影響使上帝「遠化」；教會取代天使成為神的執行者。<br>
+            神蹟透過聖職、聖物與儀式體現，信仰制度化。
+        </div>
+    </div>
+
+    <div class="timeline-event">
+        <div class="timeline-year">🕯️ 哥德式文學與浪漫主義（18–19世紀）</div>
+        <div class="timeline-content">
+            上帝沉默，信仰象徵化，人類面對黑暗與內在掙扎。<br>
+            《德古拉》、《凡赫辛》、《惡魔城》、《皇家國教騎士團》等作品展現「人替神行動」的信仰精神。
+        </div>
+    </div>
+
+    <div class="timeline-event">
+        <div class="timeline-year">🎮 現代文化與遊戲世界觀</div>
+        <div class="timeline-content">
+            信仰被轉化為心理與象徵語言。<br>
+            天使和上帝退場，信徒、教士、獵人、聖騎士等教會成員成為面對邪惡的人類代表。
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<h2>信仰結構演變對照表</h2>
+
+<table>
+    <tr>
+        <th>時期</th>
+        <th>神與人類的關係</th>
+        <th>代表敘事</th>
+        <th>特徵</th>
+    </tr>
+    <tr>
+        <td>聖經時代</td>
+        <td>上帝主動干預、天使顯現</td>
+        <td>摩西、以利亞、耶穌</td>
+        <td>超自然神蹟、直接啟示</td>
+    </tr>
+    <tr>
+        <td>中世紀基督教</td>
+        <td>教會代表上帝行事</td>
+        <td>聖徒傳奇、殉道故事</td>
+        <td>神權體系、教階制度</td>
+    </tr>
+    <tr>
+        <td>哥德式文學以後</td>
+        <td>上帝沉默、人類奮戰</td>
+        <td>《德古拉》、《凡赫辛》、《惡魔城》、《皇家國教騎士團》</td>
+        <td>信仰象徵化、人本化</td>
+    </tr>
+</table>
+
+<div class="highlight">
+    <strong>結論：</strong><br>
+    原始聖經的世界是「神在行動」；<br>
+    歐化的基督教世界是「人替神行動」。<br><br>
+    上帝與天使退場後，信仰成了人類意志的鏡像，<br>
+    世界也從啟示錄的戰場變成了哥德式的心理舞台。
+</div>
+<footer style="text-align: center; background-color: purple; color:yellow; font-size: 50px">
+    作者：<a class="the_author_of_the_web" href="https://www.facebook.com/profile.php?id=100056441813114&locale=zh_TW" target="_blank" style="color:white">周彥廷</a>
+    <br>創作日期：西元二零二五年十一月十日<br>
+    <img src="480441080_1068843481673702_1005064756165328686_n.jpg" alt="自拍">
+    <br>
+</footer>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v17.0" nonce="yourNonce">
+</script>
+
+<div class="fb-comments"
+     data-href="https://chrischou19990904.github.io/harp_app_introduction"
+     data-width="100%"
+     data-numposts="5">
+</div>
+<footer style="font-size: 0.9em; text-align: center; margin-top: 2em; background-color: purple; color: yellow;">
+    所有頁面均來自同一 GitHub Pages 專案
+</footer>
+<script>
+    // === 時間線互動 ===
+    const events = document.querySelectorAll('.timeline-event');
+    events.forEach(e => {
+        e.addEventListener('mouseenter', () => {
+            events.forEach(ev => ev.classList.remove('active'));
+            e.classList.add('active');
+        });
+        e.addEventListener('mouseleave', () => {
+            e.classList.remove('active');
+        });
+    });
+
+    // === 深色模式切換 ===
+    const btn = document.getElementById('toggle-theme');
+    btn.addEventListener('click', () => {
+        document.body.classList.toggle('dark');
+        btn.textContent = document.body.classList.contains('dark') ? '☀️ 淺色模式' : '🌙 深色模式';
+    });
+</script>
+
+</body>
+</html>
