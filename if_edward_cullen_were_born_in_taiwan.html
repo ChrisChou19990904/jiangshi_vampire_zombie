@@ -70,25 +70,6 @@
             margin: 1.5em 0;
             font-style: italic;
         }
-        .carousel {
-            position: relative;
-            width: 379px; /* 最寬的圖片寬度 */
-            height: 484px;
-            overflow: hidden;
-            border: solid 10px red;
-        }
-
-        .carousel-images {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
-
-        .carousel-item {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
         @media screen and (max-width: 767px) {
             img{
                 max-width: 100%;
@@ -253,41 +234,16 @@
         下方的插入影片的內容是作者讀大學時和朋友一起拍攝的立定跳遠影片以及其他專業人士的對比。從影片中的成績來看，作者上大學後比高中時期退步一點，但還是非常遠，否則也無法替他朋友帶來一萬一千六百個讚。<br>
         <video style="border:solid 10px blue;width:486px;height:648px" controls><source src="jump.mp4"></video>
         <br><br>
-        下方的輪播圖是作者中小學時期一連串的體育獎狀——高二的時候決賽當天腳痛所以才跑十三秒，但前一天的預賽確實是十二秒多。<br>
-        <div class="carousel">
-            <div class="carousel-images">
-                <img style="width:379px;height:484px" loading="lazy" src="獎狀.jpg" alt="獎狀1" class="carousel-item">
-                <img style="width:379px;height:484px" loading="lazy" src="獎狀2.jpg" alt="獎狀2" class="carousel-item">
-                <img style="width:379px;height:484px" loading="lazy" src="獎狀3.jpg" alt="獎狀3" class="carousel-item">
-                <img style="width:379px;height:484px" loading="lazy" src="獎狀4.jpg" alt="獎狀4" class="carousel-item">
-            </div>
-        </div>
+        下方的四張插入圖片是作者中小學時期一連串的體育獎狀——高二的時候決賽當天腳痛所以才跑十三秒，但前一天的預賽確實是十二秒多。<br>
+                <img style="border:solid 10px red;width:379px;height:484px" loading="lazy" src="獎狀.jpg" alt="獎狀1" class="carousel-item">
+                <img style="border:solid 10px red;width:379px;height:484px" loading="lazy" src="獎狀2.jpg" alt="獎狀2" class="carousel-item">
+                <img style="border:solid 10px red;width:379px;height:484px" loading="lazy" src="獎狀3.jpg" alt="獎狀3" class="carousel-item">
+                <img style="border:solid 10px red;width:379px;height:484px" loading="lazy" src="獎狀4.jpg" alt="獎狀4" class="carousel-item">
         <br><br>
         然而，無論是奔跑還是跳遠，作者都被愛德華全方位輾壓。
         <br><br>
         註：二部影片的背景音樂分別為<a href="https://youtu.be/6j12Y9uuAcw?si=ARoWy20Oo9OnAzq1" target="_blank">《戰鬥-通往勝利》</a>、<a href="https://youtu.be/ClWywQe_knc?si=YO_51buyPnUa7pvM" target="_blank">《光的戰役》</a>，皆為作者製作影片時經常使用的旋律。
     </div>
-    <script>
-        let currentIndex = 0;
-        const items = document.querySelectorAll('.carousel-item');
-        const totalItems = items.length;
-        const intervalTime = 3000; // 每隔3秒自動輪播一次
-
-        // 自動輪播
-        const autoSlide = setInterval(() => {
-            moveSlide(1);
-        }, intervalTime);
-
-        function moveSlide(direction) {
-            // 計算新索引
-            currentIndex += direction;
-            if (currentIndex < 0) currentIndex = totalItems - 1;
-            if (currentIndex >= totalItems) currentIndex = 0;
-
-            // 移動圖片
-            document.querySelector('.carousel-images').style.transform = `translateX(-${currentIndex * 100}%)`;
-        }
-    </script>
     <p>要知道，在台灣：</p>
     <ul>
         <li>體適能測驗是每學年都要測的常規項目</li>
