@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>基督教世界觀 × 吸血鬼文化：哥德式深度解析（含天使 vs 吸血鬼實力差 + 惡魔城角色）</title>
+
+    <style>
+        /*============================
+          🌙 夜間模式（預設）
+        ==============================*/
+        :root {
+            --bg: #0b0b0f;
+            --text: #e9e6e1;
+            --accent: #d9b98c;
+            --accent2: #cfa26a;
+            --accent3: #b79266;
+            --panel: rgba(255,255,255,0.04);
+            --panel-border: rgba(255,255,255,0.06);
+            --shadow: rgba(0,0,0,0.6);
+            --toc-bg: rgba(255,255,255,0.06);
+            --toc-border: rgba(255,255,255,0.15);
+            --table-border: #444;
+        }
+
+        /*============================
+          ☀ 白天模式（亮色）
+        ==============================*/
+        body.light {
+            --bg: #fdfbf7;
+            --text: #2b2a26;
+            --accent: #6b4a2b;
+            --accent2: #8b6748;
+            --accent3: #9f7a52;
+            --panel: rgba(0,0,0,0.05);
+            --panel-border: rgba(0,0,0,0.1);
+            --shadow: rgba(0,0,0,0.1);
+            --toc-bg: rgba(0,0,0,0.05);
+            --toc-border: rgba(0,0,0,0.15);
+            --table-border: #666;
+        }
+        a{
+            color: #2980b9;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        a:visited {
+            color: #2980b9;
+        }
+        header {
+            background-color: pink;
+            padding: 10px 0;
+        }
+
+        /*============================
+          共同樣式
+        ==============================*/
+        body {
+            font-family: "Noto Serif TC", "Noto Sans TC", serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.9;
+            max-width: 1000px;
+            margin: auto;
+            padding: 40px 20px;
+            transition: background 0.4s, color 0.4s;
+        }
+
+        h1, h2, h3 {
+            font-family: "Cinzel", serif;
+        }
+
+        h1 {
+            color: var(--accent);
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.6em;
+            text-shadow: 0 0 15px var(--shadow);
+        }
+
+        h2 {
+            color: var(--accent2);
+            border-bottom: 1px solid var(--accent3);
+            padding-bottom: 8px;
+            margin-top: 50px;
+            margin-bottom: 25px;
+        }
+
+        h3 {
+            color: var(--accent3);
+            margin-top: 25px;
+        }
+
+        .section {
+            background: var(--panel);
+            border: 1px solid var(--panel-border);
+            border-left: 6px solid var(--accent3);
+            padding: 20px 25px;
+            margin-bottom: 60px;
+            box-shadow: 0 0 20px var(--shadow);
+            transition: background 0.4s, border 0.4s;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+
+        /*============================
+          TOC
+        ==============================*/
+        #toc {
+            background: var(--toc-bg);
+            border: 1px solid var(--toc-border);
+            padding: 20px;
+            margin-bottom: 40px;
+            border-radius: 8px;
+            box-shadow: 0 0 12px var(--shadow);
+        }
+
+        #toc h2 {
+            margin-top: 0;
+            cursor: pointer;
+            font-size: 1.6em;
+            color: var(--accent2);
+            text-shadow: 0 0 6px var(--shadow);
+        }
+
+        #toc ul {
+            list-style: none;
+            margin-left: 0;
+            padding-left: 15px;
+            margin-top: 10px;
+        }
+
+        #toc a {
+            color: var(--accent2);
+            text-decoration: none;
+        }
+
+        #toc a:hover {
+            color: var(--accent);
+        }
+
+        .collapse { display: none; }
+
+        /*============================
+          主題切換按鈕
+        ==============================*/
+        #theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 12px 18px;
+            background: var(--panel);
+            color: var(--text);
+            border: 1px solid var(--panel-border);
+            cursor: pointer;
+            border-radius: 6px;
+            font-size: 0.9em;
+            transition: 0.3s;
+        }
+
+        #theme-toggle:hover {
+            background: var(--accent3);
+            color: #fff;
+        }
+
+        /*============================
+          哥德式 SVG 分隔線
+        ==============================*/
+        .divider {
+            width: 100%;
+            text-align: center;
+            margin: 40px 0;
+            opacity: 0.8;
+        }
+        @media screen and (max-width: 767px) {
+            img{
+                max-width: 100%;
+            }
+            iframe{
+                max-width: 100%;
+            }
+        }
+    </style>
+
+    <script>
+        function toggleTOC() {
+            const tocContent = document.getElementById("toc-content");
+            tocContent.style.display = tocContent.style.display === "block" ? "none" : "block";
+        }
+
+        function toggleTheme() {
+            document.body.classList.toggle("light");
+        }
+    </script>
+</head>
+
+<body>
+<div id="google-translate-box">
+    <div id="google_translate_element"></div>
+    <!-- Google Translate 的自動翻譯功能 -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'zh-TW',  // 頁面原語言
+                includedLanguages: 'en,es,fr,de,it,zh-CN,ja,ko,th,vi,my,id,ms,ar,he,ru,tg,uk,hi,tr,pt,nl,is,fi,sv,no,ro,kk,bo,mn,la,fil,tl,el',  // 支援的翻譯語言（可擴展）
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <p>點擊上方的語言選單以切換語言</p>
+</div>
+<header>
+    <nav>
+        <ul>
+            <li><strong class="guide">本頁內容：</strong><br>
+                <a>基督教世界觀 × 吸血鬼文化：哥德式深度解析（含天使 vs 吸血鬼實力差 + 惡魔城角色）</a></li>
+
+            <li><strong class="guide">其他文章連結：</strong>
+                <ol>
+                    <li><a href="index.html" target="_blank">中西不死生物比較：殭屍 vs 吸血鬼 vs 喪屍</a></li>
+                    <li><a href="zombie_change.html" target="_blank">喪屍題材的演變：從魔幻到科幻</a></li>
+                    <li><a href="vampire_change.html" target="_blank">吸血鬼題材演變與東亞再詮釋</a></li>
+                    <li><a href="jiangshi_and_western_vampire.html" target="_blank">「殭屍」與「吸血鬼」：語境差異與文化誤會探討</a></li>
+                    <li><a href="what_if_twilight__becomes_real.html" target="_blank">為什麼《暮光之城》的吸血鬼設定在現實中根本行不通</a></li>
+                    <li><a href="if_edward_cullen_were_born_in_taiwan.html" target="_blank">如果愛德華·庫倫生在台灣：他會被升旗、段考、模擬考、補習、強制性的體能測驗、基本學科能力測驗逼瘋嗎？</a></li>
+                    <li><a href="bloopers_in_vampire_dramas.html" target="_blank">吸血鬼在影視劇中的穿幫鏡頭觀察</a></li>
+                    <li><a href="key_characters_who_disappear.html" target="_blank">留白的力量：從菩提祖師到德古拉的轉變者，看故事中那些「消失的上層力量」</a></li>
+                    <li><a href="critique_of_church_corruption_in_vampire_stories.html" target="_blank">透過吸血鬼敘事揭示中世紀教會的腐敗與宗教權威的陰暗面</a></li>
+                    <li><a href="aro_height.html" target="_blank">175公分以上的三千歲吸血鬼族長？考古學與暮光之城的身高落差</a></li>
+                    <li><a href="england_and_vampire_culture.html" target="_blank">英國文學對吸血鬼文化的影響</a></li>
+                    <li><a href="europeanized_christianity.html" target="_blank">透過吸血鬼敘事分析歐化基督教與原始聖經觀的差異</a></li>
+                    <li><a href="detailed_analysis_of_europeanized_christianity.html" target="_blank">基督教奇幻與吸血鬼二次創作對比</a></li>
+                </ol>
+            </li>
+        </ul>
+    </nav>
+</header>
+<button id="theme-toggle" onclick="toggleTheme()">切換主題 ☀/🌙</button>
+
+<h1>基督教世界觀 × 吸血鬼文化：哥德式深度解析</h1>
+
+<!-- TOC -->
+<div id="toc">
+    <h2 onclick="toggleTOC()">☩ 目錄（點擊展開 / 收合）</h2>
+    <div id="toc-content" class="collapse">
+        <ul>
+            <li><a href="#part1">一、原始基督教 vs 歐化後基督教</a></li>
+            <li><a href="#part2">二、吸血鬼故事為何不出現天使？</a></li>
+            <li><a href="#part3">三、天使若出現，吸血鬼世界將如何崩壞？</a></li>
+            <li><a href="#part4">四、天使 vs 吸血鬼：實力差距（含聖經例證）</a></li>
+            <li><a href="#part5">五、惡魔城主要角色：職業與身份</a></li>
+        </ul>
+    </div>
+</div>
+
+<!-- SVG Divider -->
+<div class="divider">
+    <svg width="220" height="40" viewBox="0 0 220 40" fill="none">
+        <path d="M10 20 H210" stroke="#8b6748" stroke-width="2"/>
+        <path d="M110 5 L120 20 L110 35 L100 20 Z" fill="#8b6748"/>
+    </svg>
+</div>
+
+<!-- 第一章 -->
+<div class="section" id="part1">
+    <h2>一、原始基督教 vs 歐化後基督教：為何科學、魔法與吸血鬼能共存？</h2>
+
+    <p><strong>原始基督教</strong>的世界觀是完全超自然導向：</p>
+    <ul>
+        <li>上帝六天創世</li>
+        <li>天使與惡魔直接干預世界</li>
+        <li>奇蹟作為自然事件</li>
+    </ul>
+
+    <p>而<strong>歐化後基督教</strong>變成了「科學 × 超自然」共存的混合世界觀：</p>
+    <ul>
+        <li>科學家與醫師出現（文藝復興後）</li>
+        <li>魔法、煉金術與宗教並存</li>
+        <li>吸血鬼怕聖水、十字架是民俗信仰</li>
+    </ul>
+</div>
+
+<div class="divider">
+    <svg width="240" height="40" viewBox="0 0 240 40">
+        <path d="M20 20 H220" stroke="#8b6748" stroke-width="2"/>
+        <path d="M120 10 L130 20 L120 30 L110 20 Z" fill="#cfa26a"/>
+        <circle cx="120" cy="20" r="3" fill="#fff"/>
+    </svg>
+</div>
+
+<!-- 第二章 -->
+<div class="section" id="part2">
+    <h2>二、吸血鬼故事中為何很少出現天使？</h2>
+
+    <h3>1. 文化來源不同</h3>
+    <p>吸血鬼源自東歐民俗，而天使來自神學系統，兩者不是同一脈系。</p>
+
+    <h3>2. 層級差異太大</h3>
+    <p>吸血鬼屬於民俗怪物，天使則是宇宙級的天界存在。</p>
+
+    <h3>3. 破壞哥德式恐怖氛圍</h3>
+    <p>天使的神聖光會完全擊碎黑暗氛圍。</p>
+
+    <h3>4. 聖物是民俗象徵，而非真正神學力量</h3>
+    <p>吸血鬼怕十字架是中世紀民間混合信仰，不是神學。</p>
+
+    <h3>5. 天使若出現：故事直接結束</h3>
+    <p>天使力量遠超人類、吸血鬼與惡魔，劇情會失衡。</p>
+</div>
+
+<div class="divider">
+    <svg width="240" height="40" viewBox="0 0 240 40">
+        <path d="M20 20 H220" stroke="#a8865a" stroke-width="2"/>
+        <path d="M120 3 L125 10 L135 10 L127 17 L130 27 L120 22 L110 27 L113 17 L105 10 L115 10 Z"
+              fill="#a8865a"/>
+    </svg>
+</div>
+
+<!-- 第三章 -->
+<div class="section" id="part3">
+    <h2>三、如果天使出現，吸血鬼世界會如何崩壞？</h2>
+
+    <h3>1. 規模被迫升級為神戰</h3>
+    <h3>2. 主角群將失去意義</h3>
+    <h3>3. 哥德式恐怖氛圍被光明摧毀</h3>
+    <h3>4. 世界觀邏輯破裂</h3>
+</div>
+
+<div class="divider">
+    <svg width="260" height="40" viewBox="0 0 260 40">
+        <path d="M20 20 H240" stroke="#8b6748" stroke-width="2"/>
+        <path d="M130 10 A10 10 0 1 1 129.9 10" fill="#8b6748"/>
+    </svg>
+</div>
+
+<!-- 第四章 -->
+<div class="section" id="part4">
+    <h2>四、天使 vs 吸血鬼：實力差距（含聖經例證）</h2>
+
+    <p>
+        天使與吸血鬼的實力差距大到「維度不同」。
+        <br><br>
+        吸血鬼只屬於民間傳說的怪物，而天使是宇宙級存在。
+    </p>
+
+    <h3>📖 1. 一名天使毀滅兩座城市（創世記 19）</h3>
+    <p>所多瑪與蛾摩拉被毀滅，象徵天使可操縱災難級力量。</p>
+
+    <h3>📖 2. 一名天使一夜擊殺 18.5 萬人（列王紀下 19:35）</h3>
+    <p>這意味著天使能毀滅整支軍隊。</p>
+
+    <h3>📖 3. 天使能控制自然現象（啟示文學）</h3>
+    <ul>
+        <li>掌管四方之風</li>
+        <li>吹號角引發地震、火、瘟疫等災難</li>
+        <li>封印深淵中的怪物</li>
+    </ul>
+
+    <h3>📖 4. 天使地位高於惡魔，而吸血鬼比惡魔更低</h3>
+
+    <table style="width:100%; color: var(--accent); margin-top:20px; border-collapse: collapse;">
+        <tr style="background:rgba(255,255,255,0.1);">
+            <th style="padding:10px; border:1px solid #444;">層級</th>
+            <th style="padding:10px; border:1px solid #444;">角色</th>
+            <th style="padding:10px; border:1px solid #444;">能力</th>
+        </tr>
+        <tr>
+            <td style="padding:10px; border:1px solid #444;">神界（Cosmic）</td>
+            <td style="padding:10px; border:1px solid #444;">上帝</td>
+            <td style="padding:10px; border:1px solid #444;">創造宇宙</td>
+        </tr>
+        <tr>
+            <td style="padding:10px; border:1px solid #444;">天界（Celestial）</td>
+            <td style="padding:10px; border:1px solid #444;">天使</td>
+            <td style="padding:10px; border:1px solid #444;">毀滅城市、操控自然</td>
+        </tr>
+        <tr>
+            <td style="padding:10px; border:1px solid #444;">地獄界</td>
+            <td style="padding:10px; border:1px solid #444;">惡魔</td>
+            <td style="padding:10px; border:1px solid #444;">墮落天使，但仍極強</td>
+        </tr>
+        <tr>
+            <td style="padding:10px; border:1px solid #444;">民俗怪物</td>
+            <td style="padding:10px; border:1px solid #444;">吸血鬼</td>
+            <td style="padding:10px; border:1px solid #444;">地方性怪物</td>
+        </tr>
+    </table>
+
+    <h3>📌 結論：實力差距＝「村長 vs 核彈」</h3>
+    <p>
+        天使的戰力遠超自然、軍隊、城市級尺度，是宇宙級存在；
+        吸血鬼只是地方怪物。
+        <br><br>
+        這就是為什麼吸血鬼故事不可能讓天使出現。
+    </p>
+</div>
+
+<div class="divider">
+    <svg width="300" height="40" viewBox="0 0 300 40">
+        <path d="M30 20 H270" stroke="#af8b6a" stroke-width="2"/>
+        <path d="M150 5 C160 20 160 20 150 35 C140 20 140 20 150 5 Z" fill="#af8b6a"/>
+    </svg>
+</div>
+
+<!-- 第五章：惡魔城 -->
+<div class="section" id="part5">
+    <h2>五、惡魔城主要角色：職業與身份（Castlevania）</h2>
+
+    <h3>◆ 德古拉（Dracula / Vlad Tepes）</h3>
+    <ul>
+        <li>種族：吸血鬼之王 / 不死魔王</li>
+        <li>職業：黑魔法師、戰士、軍事天才</li>
+        <li>身份：吸血鬼領主、黑暗之王</li>
+    </ul>
+
+    <h3>◆ 麗莎（Lisa Tepes）</h3>
+    <ul>
+        <li>身份：人類女性、醫師</li>
+        <li>角色：德古拉妻子，Alucard 的母親</li>
+        <li>特質：科學家、醫療知識先進</li>
+    </ul>
+
+    <h3>◆ 阿魯卡多（Alucard / Adrian Tepes）</h3>
+    <ul>
+        <li>種族：半人類半吸血鬼（Dhampir）</li>
+        <li>職業：劍士、魔法使用者</li>
+        <li>身份：德古拉之子</li>
+    </ul>
+
+    <h3>◆ 崔佛・貝爾蒙特（Trevor Belmont）</h3>
+    <ul>
+        <li>職業：吸血鬼獵人</li>
+        <li>武器：鞭子「晨星」、十字架、短刀</li>
+        <li>身份：貝爾蒙特家族繼承人</li>
+    </ul>
+
+    <h3>◆ 賽法・貝爾納德斯（Sypha Belnades）</h3>
+    <ul>
+        <li>職業：魔法師（魔女）</li>
+        <li>能力：火、冰、雷元素施法</li>
+        <li>身份：隱修會成員</li>
+    </ul>
+
+    <h3>◆ 艾薩克（Isaac）</h3>
+    <ul>
+        <li>職業：鍊魔師（Forgemaster）</li>
+        <li>能力：以血或屍體創造惡魔</li>
+        <li>身份：德古拉忠臣</li>
+    </ul>
+
+    <h3>◆ 赫克特（Hector）</h3>
+    <ul>
+        <li>職業：鍊魔師</li>
+        <li>身份：曾是德古拉部下、後叛逃</li>
+    </ul>
+</div>
+<footer style="text-align: center; background-color: purple; color:yellow; font-size: 50px">
+    作者：<a class="the_author_of_the_web" href="https://www.facebook.com/profile.php?id=100056441813114&locale=zh_TW" target="_blank" style="color:white">周彥廷</a>
+    <br>創作日期：西元二零二五年十一月二十一日<br>
+    <img src="480441080_1068843481673702_1005064756165328686_n.jpg" alt="自拍">
+    <br>
+</footer>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous"
+        src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v17.0" nonce="yourNonce">
+</script>
+
+<div class="fb-comments"
+     data-href="https://chrischou19990904.github.io/harp_app_introduction"
+     data-width="100%"
+     data-numposts="5">
+</div>
+<footer style="font-size: 0.9em; text-align: center; margin-top: 2em; background-color: purple; color: yellow;">
+    所有頁面均來自同一 GitHub Pages 專案
+</footer>
+</body>
+</html>
