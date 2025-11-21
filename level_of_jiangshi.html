@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>殭屍世界觀百科互動版</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: "Times New Roman", serif;
+            background-color: #1e1e1e;
+            color: #f5f5f5;
+            padding: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        h1,h2,h3 { font-family: "Gothic A1", serif; }
+        a { color: #ffb347; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        #toc { background: #2b2b2b; padding: 15px; margin-bottom: 20px; border-radius: 8px; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        th, td { border: 1px solid #555; padding: 10px; text-align: left; }
+        th { background-color: #333; }
+        .divider { text-align: center; margin: 30px 0; }
+        svg { height: 40px; }
+        #themeToggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #ff4c4c;
+            border: none;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        body.light { background-color: #fdfdfd; color: #222; }
+        body.light table th { background-color: #ccc; }
+        body.light #toc { background: #e0e0e0; }
+    </style>
+</head>
+<body>
+
+<button id="themeToggle">切換主題</button>
+
+<h1>殭屍世界觀百科互動版</h1>
+
+<div id="toc">
+    <h2>目錄</h2>
+    <ul>
+        <li><a href="#origin">原始民間殭屍</a></li>
+        <li><a href="#advanced">魃 / 犼能力分析</a></li>
+        <li><a href="#movie">電影殭屍等級分析</a></li>
+        <li><a href="#why-low">為什麼電影殭屍等級普遍不高</a></li>
+        <li><a href="#why-no-hou">為什麼犼不出現在電影</a></li>
+        <li><a href="#visual">殭屍能力可視化</a></li>
+    </ul>
+</div>
+
+<div class="divider">
+    <svg viewBox="0 0 200 20">
+        <text x="0" y="15" fill="#ff4c4c" font-size="16">&#x1F987; &#x271D; &#x1F339;</text>
+    </svg>
+</div>
+
+<h2 id="origin">原始民間殭屍</h2>
+<p>根據乾隆刊本《子不語》，殭屍最早被記錄為復活的死人或附有鬼氣的存在，會跳、抓人，但能力有限，可被符咒或道術制服。原始記載重點是象徵危險性與民間警示。</p>
+
+<h2 id="advanced">魃 / 犼能力分析</h2>
+<p>殭屍進階型態：跳殭 → 魃 → 犼。後世小說與民間傳說中，魃與犼能力被誇張化：</p>
+
+<table>
+    <tr><th>等級</th><th>名稱</th><th>能力</th><th>來源 / 備註</th></tr>
+    <tr><td>基礎</td><td>跳殭</td><td>普通復活死人，跳躍抓人</td><td>古代志怪記載，可被符咒道術制服</td></tr>
+    <tr><td>進階</td><td>飛殭</td><td>由跳殭進化而成的殭屍，可浮空飛行</td><td>《千年殭屍王》裡的大魔王</td></tr>
+    <tr><td>高階</td><td>魃</td><td>可飛天遁地，製造瘟疫與乾旱</td><td>後世民間/小說誇張化版本</td></tr>
+    <tr><td>最高</td><td>犼</td><td>可飛天遁地、吐火、吞龍，觀音菩薩坐騎</td><td>後世民間/小說誇張化版本</td></tr>
+</table>
+
+<div class="divider">
+    <svg viewBox="0 0 200 20">
+        <text x="0" y="15" fill="#ff4c4c" font-size="16">&#x1F987; &#x271D; &#x1F339;</text>
+    </svg>
+</div>
+
+<h2 id="movie">電影殭屍等級分析</h2>
+<p>電影殭屍通常保持在普通人可對付的範圍內，速度與力量略高，但仍可被智慧、勇氣或專業知識（如茅山道術）戰勝。這保留了戲劇張力，使觀眾能感受到主角努力的價值。</p>
+
+<h2 id="why-low">為什麼電影殭屍等級普遍不高</h2>
+<ul>
+    <li>保持敘事張力：若殭屍太強，故事會變成神話史詩或超級英雄片。</li>
+    <li>凸顯主角能力：普通人可戰勝殭屍，故事才有代入感與趣味。</li>
+    <li>保留民俗特色：尊重古代志怪故事象徵性，而非追求絕對能力值。</li>
+</ul>
+
+<h2 id="why-no-hou">為什麼犼不出現在電影</h2>
+<p>犼是觀音菩薩的坐騎，能力極強（飛天遁地、吐火、吞龍）。如果電影出現犼，並且觀音菩薩親自降伏，會導致：</p>
+<ul>
+    <li>經典角色（道士、徒弟、保安隊長、千金小姐）的存在感被削弱。</li>
+    <li>故事張力完全消失，主角努力毫無意義。</li>
+    <li>情感線、角色互動失去焦點，觀眾注意力偏向神明與犼。</li>
+    <li>電影故事風格會偏向《西遊記》式神魔史詩，而非殭屍冒險片。</li>
+</ul>
+<p>因此，電影通常不會使用犼級殭屍。</p>
+
+<div class="divider">
+    <svg viewBox="0 0 200 20">
+        <text x="0" y="15" fill="#ff4c4c" font-size="16">&#x1F987; &#x271D; &#x1F339;</text>
+    </svg>
+</div>
+
+<h2 id="visual">殭屍能力可視化</h2>
+<p>下圖呈現跳殭、魃、犼與電影殭屍在力量、速度、飛行能力、元素攻擊、特殊技能的比較：</p>
+<canvas id="zombieChart" width="400" height="400"></canvas>
+
+<script>
+    const ctx = document.getElementById('zombieChart').getContext('2d');
+    const data = {
+        labels: ['力量', '速度', '飛行能力', '元素攻擊', '特殊技能'],
+        datasets: [
+            {
+                label: '跳殭',
+                data: [3,4,0,0,1],
+                borderColor: 'rgba(255,179,71,1)',
+                backgroundColor: 'rgba(255,179,71,0.2)',
+                fill: true
+            },
+            {
+                label: '魃',
+                data: [6,6,5,4,5],
+                borderColor: 'rgba(255,76,76,1)',
+                backgroundColor: 'rgba(255,76,76,0.2)',
+                fill: true
+            },
+            {
+                label: '犼',
+                data: [10,10,10,9,10],
+                borderColor: 'rgba(102,204,255,1)',
+                backgroundColor: 'rgba(102,204,255,0.2)',
+                fill: true
+            },
+            {
+                label: '電影殭屍',
+                data: [5,5,1,0,2],
+                borderColor: 'rgba(153,255,102,1)',
+                backgroundColor: 'rgba(153,255,102,0.2)',
+                fill: true
+            }
+        ]
+    };
+
+    const config = {
+        type: 'radar',
+        data: data,
+        options: {
+            scales: { r: { suggestedMin: 0, suggestedMax: 10 } },
+            plugins: { legend: { position: 'top' } }
+        }
+    };
+
+    new Chart(ctx, config);
+
+    // 主題切換
+    const btn = document.getElementById('themeToggle');
+    btn.addEventListener('click', () => { document.body.classList.toggle('light'); });
+</script>
+
+</body>
+</html>
