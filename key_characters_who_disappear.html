@@ -276,6 +276,27 @@
 <p>你也有過這種「想知道背後更大力量是什麼」的閱讀經驗嗎？或者你自己正在創作一個有留白角色的故事？</p>
 
 <p>歡迎一起來討論這些「永遠沒出場的強者們」——因為，有時候最強的角色，就是那個從未現身的人。</p>
+<ul id="messages"></ul>
+<div id="social-share" style="margin-top: 20px;">
+  <a id="fb-share" href="#" target="_blank" style="color: #4267B2; font-weight: bold;">分享到 Facebook</a>
+  <span> | </span>
+  <a id="line-share" href="#" target="_blank" style="color: #00C300; font-weight: bold;">分享到 Line</a>
+  <span> | </span>
+  <a id="twitter-share" href="#" target="_blank" style="color: #1DA1F2; font-weight: bold;">分享到 X</a>
+</div>
+<script>
+  // 自動抓取當前頁面的 URL
+  var currentUrl = window.location.href;
+  // Facebook 分享
+  document.getElementById("fb-share").href =
+          "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(currentUrl);
+  // Line 分享
+  document.getElementById("line-share").href =
+          "https://social-plugins.line.me/lineit/share?url=" + encodeURIComponent(currentUrl);
+  // X (Twitter) 分享
+  document.getElementById("twitter-share").href =
+          "https://twitter.com/intent/tweet?url=" + encodeURIComponent(currentUrl) + "&text=你的文章標題";
+</script>
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous"
         src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v17.0" nonce="yourNonce">

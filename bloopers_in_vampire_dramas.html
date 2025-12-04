@@ -255,11 +255,31 @@
     <h2>延伸閱讀</h2>
     <p>如果你對更多的科學批判與宗教不合理情節的分析感興趣，歡迎參閱我的另一個 GitHub Pages 專案，其中深入探討了宗教中的不合理邏輯，並運用科學方法進行批判。</p>
     <ul>
-        <li><a href="https://chrischou19990904.github.io/religion_is_fake/science_is_real.html" target="_blank">批判宗教的科學分析：揭露不合理情節</a></li>
+        <li><a href="https://chrischou19990904.github.io/religion_is_fake/science_is_real.html" target="_blank">批判宗教的科學分析：揭露不合理情節</a>（此連結為不同的GitHub Pages專案）</li>
         <!-- 這裡可以再加入更多的延伸閱讀連結 -->
     </ul>
 </div>
-
+<ul id="messages"></ul>
+<div id="social-share" style="margin-top: 20px;">
+    <a id="fb-share" href="#" target="_blank" style="color: #4267B2; font-weight: bold;">分享到 Facebook</a>
+    <span> | </span>
+    <a id="line-share" href="#" target="_blank" style="color: #00C300; font-weight: bold;">分享到 Line</a>
+    <span> | </span>
+    <a id="twitter-share" href="#" target="_blank" style="color: #1DA1F2; font-weight: bold;">分享到 X</a>
+</div>
+<script>
+    // 自動抓取當前頁面的 URL
+    var currentUrl = window.location.href;
+    // Facebook 分享
+    document.getElementById("fb-share").href =
+        "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(currentUrl);
+    // Line 分享
+    document.getElementById("line-share").href =
+        "https://social-plugins.line.me/lineit/share?url=" + encodeURIComponent(currentUrl);
+    // X (Twitter) 分享
+    document.getElementById("twitter-share").href =
+        "https://twitter.com/intent/tweet?url=" + encodeURIComponent(currentUrl) + "&text=你的文章標題";
+</script>
 <footer style="font-size: 0.9em; text-align: center; margin-top: 2em; background-color: purple; color: yellow;">
     所有頁面均來自同一 GitHub Pages 專案
 </footer>

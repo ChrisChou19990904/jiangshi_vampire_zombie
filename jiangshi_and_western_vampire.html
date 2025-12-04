@@ -237,6 +237,27 @@
 
 <h2>總結</h2>
 <p>殭屍和吸血鬼雖然有不同的文化背景與傳說，但在現代流行文化中，尤其是港產影視裡，兩者的界線往往被模糊，甚至互換使用。這種現象既是文化交流的結果，也帶來了語義上的誤會。理解這些差異，有助於我們更深入欣賞不同文化對「不死生物」形象的獨特詮釋。</p>
+<ul id="messages"></ul>
+<div id="social-share" style="margin-top: 20px;">
+    <a id="fb-share" href="#" target="_blank" style="color: #4267B2; font-weight: bold;">分享到 Facebook</a>
+    <span> | </span>
+    <a id="line-share" href="#" target="_blank" style="color: #00C300; font-weight: bold;">分享到 Line</a>
+    <span> | </span>
+    <a id="twitter-share" href="#" target="_blank" style="color: #1DA1F2; font-weight: bold;">分享到 X</a>
+</div>
+<script>
+    // 自動抓取當前頁面的 URL
+    var currentUrl = window.location.href;
+    // Facebook 分享
+    document.getElementById("fb-share").href =
+        "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(currentUrl);
+    // Line 分享
+    document.getElementById("line-share").href =
+        "https://social-plugins.line.me/lineit/share?url=" + encodeURIComponent(currentUrl);
+    // X (Twitter) 分享
+    document.getElementById("twitter-share").href =
+        "https://twitter.com/intent/tweet?url=" + encodeURIComponent(currentUrl) + "&text=你的文章標題";
+</script>
 <footer>
     作者：<a class="the_author_of_the_web" href="https://www.facebook.com/profile.php?id=100056441813114&locale=zh_TW" target="_blank" style="color:white">周彥廷</a>
     <br>創作日期：西元二零二五年六月四日<br>

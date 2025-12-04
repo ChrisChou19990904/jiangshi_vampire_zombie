@@ -378,6 +378,27 @@
 <h2>結語</h2>
 <p>總的來說，吸血鬼與殭屍、喪屍是截然不同的三種怪物：吸血鬼是有智慧與魅力的神秘存在；殭屍帶有濃厚的中國民間色彩，講究道法與屍變；喪屍則是現代災難片中的恐怖象徵。</p>
 <p>瞭解它們的文化背景，不只能更深入欣賞相關影視作品，也有助於理解東西方文化對「死亡」與「復活」的不同想像。</p>
+<ul id="messages"></ul>
+<div id="social-share" style="margin-top: 20px;">
+  <a id="fb-share" href="#" target="_blank" style="color: #4267B2; font-weight: bold;">分享到 Facebook</a>
+  <span> | </span>
+  <a id="line-share" href="#" target="_blank" style="color: #00C300; font-weight: bold;">分享到 Line</a>
+  <span> | </span>
+  <a id="twitter-share" href="#" target="_blank" style="color: #1DA1F2; font-weight: bold;">分享到 X</a>
+</div>
+<script>
+  // 自動抓取當前頁面的 URL
+  var currentUrl = window.location.href;
+  // Facebook 分享
+  document.getElementById("fb-share").href =
+          "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(currentUrl);
+  // Line 分享
+  document.getElementById("line-share").href =
+          "https://social-plugins.line.me/lineit/share?url=" + encodeURIComponent(currentUrl);
+  // X (Twitter) 分享
+  document.getElementById("twitter-share").href =
+          "https://twitter.com/intent/tweet?url=" + encodeURIComponent(currentUrl) + "&text=你的文章標題";
+</script>
 <footer style="text-align: center; background-color: purple; color:yellow; font-size: 50px">
   作者：<a class="the_author_of_the_web" href="https://www.facebook.com/profile.php?id=100056441813114&locale=zh_TW" target="_blank" style="color:white">周彥廷</a>
   <br>創作日期：西元二零二五年六月四日<br>

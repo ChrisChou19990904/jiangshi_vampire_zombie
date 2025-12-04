@@ -261,7 +261,27 @@
 <iframe width="560" height="315" src="https://www.youtube.com/embed/rMgefB1snRs?si=DpvYkkBP9z5olJu5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 <br>
 <p><strong>總結：</strong>無論是庫倫家族的「假學生、假年齡」策略，還是沃爾圖里的集體誘惑與隱匿手法，在現代資訊流通與跨國協作下都難以永久成立。科技、司法與媒體的力量會一步步縮小他們的活動空間——在現實世界，他們終究無法長久隱匿。</p>
-
+<ul id="messages"></ul>
+<div id="social-share" style="margin-top: 20px;">
+  <a id="fb-share" href="#" target="_blank" style="color: #4267B2; font-weight: bold;">分享到 Facebook</a>
+  <span> | </span>
+  <a id="line-share" href="#" target="_blank" style="color: #00C300; font-weight: bold;">分享到 Line</a>
+  <span> | </span>
+  <a id="twitter-share" href="#" target="_blank" style="color: #1DA1F2; font-weight: bold;">分享到 X</a>
+</div>
+<script>
+  // 自動抓取當前頁面的 URL
+  var currentUrl = window.location.href;
+  // Facebook 分享
+  document.getElementById("fb-share").href =
+          "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(currentUrl);
+  // Line 分享
+  document.getElementById("line-share").href =
+          "https://social-plugins.line.me/lineit/share?url=" + encodeURIComponent(currentUrl);
+  // X (Twitter) 分享
+  document.getElementById("twitter-share").href =
+          "https://twitter.com/intent/tweet?url=" + encodeURIComponent(currentUrl) + "&text=你的文章標題";
+</script>
 <footer style="text-align: center; background-color: purple; color:yellow; font-size: 50px">
   作者：<a class="the_author_of_the_web" href="https://www.facebook.com/profile.php?id=100056441813114&locale=zh_TW" target="_blank" style="color:white">周彥廷</a>
   <br>創作日期：西元二零二五年九月二十六日<br>
