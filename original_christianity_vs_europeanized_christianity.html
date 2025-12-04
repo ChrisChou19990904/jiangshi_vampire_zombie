@@ -183,6 +183,31 @@
             margin: 40px 0;
             opacity: 0.8;
         }
+        /* 隱藏折疊內容 */
+        .collapsed-menu {
+            display: none;
+            padding-left: 20px;
+            list-style-type: none;
+        }
+
+        /* 可選的按鈕樣式 */
+        .toggle-btn {
+            margin: 10px 0;
+            padding: 8px 15px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+
+        .toggle-btn:hover {
+            background-color: #e0e0e0;
+        }
+
+        /* 強調本頁內容的字體 */
+        .guide {
+            font-weight: bold;
+            color: #333;
+        }
         @media screen and (max-width: 767px) {
             img{
                 max-width: 100%;
@@ -228,7 +253,8 @@
                 <a>基督教世界觀 × 吸血鬼文化：哥德式深度解析（含天使 vs 吸血鬼實力差 + 惡魔城角色）</a></li>
 
             <li><strong class="guide">其他文章連結：</strong>
-                <ol>
+                <button class="toggle-btn" onclick="toggleMenu()">點擊展開／隱藏其他文章</button>
+                <ol class="collapsed-menu">
                     <li><a href="index.html" target="_blank">中西不死生物比較：殭屍 vs 吸血鬼 vs 喪屍</a></li>
                     <li><a href="zombie_change.html" target="_blank">喪屍題材的演變：從魔幻到科幻</a></li>
                     <li><a href="vampire_change.html" target="_blank">吸血鬼題材演變與東亞再詮釋</a></li>
@@ -248,6 +274,22 @@
         </ul>
     </nav>
 </header>
+<script>
+    // 切換顯示/隱藏文章列表
+    function toggleMenu() {
+        const menu = document.querySelector('.collapsed-menu');
+        const button = document.querySelector('.toggle-btn');
+
+        if (menu.style.display === "none" || menu.style.display === "") {
+            menu.style.display = "block";
+            button.textContent = "點擊隱藏其他文章";
+        } else {
+            menu.style.display = "none";
+            button.textContent = "點擊展開／隱藏其他文章";
+        }
+    }
+
+</script>
 <button id="theme-toggle" onclick="toggleTheme()">切換主題 ☀/🌙</button>
 
 <h1>基督教世界觀 × 吸血鬼文化：哥德式深度解析</h1>
