@@ -2,35 +2,73 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <title>喪屍題材演變史</title>
+  <title>吸血鬼身高單位轉換輔助工具（多角色 + 響應式）</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     body {
-      font-family: "Microsoft JhengHei", sans-serif;
-      background-color: #f9f9f9;
-      line-height: 1.8;
-      color: #333;
-      padding: 2em;
+      font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+      max-width: 1000px;
+      margin: 30px auto;
+      line-height: 1.7;
+      padding: 0 15px;
     }
-    h1, h2 {
-      color: #2c3e50;
+
+    h1 {
+      margin-bottom: 20px;
+      font-size: 1.8rem;
     }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1em 0;
-      background-color: #fff;
+
+    .layout {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+      flex-wrap: wrap; /* 允許換行 */
     }
-    th, td {
+
+    .converter {
+      flex: 1 1 380px;
+      min-width: 280px;
+      padding: 20px;
       border: 1px solid #ccc;
-      padding: 0.8em;
-      text-align: left;
+      border-radius: 8px;
+      background: #f8f8f8;
     }
-    th {
-      background-color: #eaeaea;
+
+    .converter h2 {
+      margin-top: 0;
+      font-size: 1.4rem;
     }
-    .highlight {
-      color: #e74c3c;
+
+    input, select {
+      font-size: 16px;
+      padding: 6px;
+      margin-top: 6px;
+    }
+
+    .row {
+      margin-bottom: 15px;
+    }
+
+    .result {
       font-weight: bold;
+      margin-top: 6px;
+    }
+
+    .image-area {
+      flex: 1 1 380px;
+      min-width: 280px;
+      text-align: center;
+    }
+
+    .image-area img {
+      max-width: 100%;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-top: 10px;
+    }
+
+    p {
+      margin-top: 30px;
     }
     #google_translate_element {
       top: 10px;  /* 距離頁面頂端 10px */
@@ -85,12 +123,6 @@
     .toggle-btn:hover {
       background-color: #e0e0e0;
     }
-
-    /* 強調本頁內容的字體 */
-    .guide {
-      font-weight: bold;
-      color: #333;
-    }
     #social-share a {
       text-decoration: none;
       font-weight: bold;
@@ -110,24 +142,17 @@
     #social-share a#twitter-share {
       color: #1DA1F2;
     }
-    @media screen and (max-width: 767px) {
-      img{
-        max-width: 100%;
+    /* --- 響應式 --- */
+    @media (max-width: 768px) {
+      .layout {
+        flex-direction: column;
       }
-      header {
-        background-color: pink;
-        padding: 10px 0;
+      .converter, .image-area {
+        flex: 1 1 100%;
       }
-      a{
-        color: #2980b9;
-        text-decoration: none;
-      }
-      a:hover {
-        text-decoration: underline;
-      }
-      a:visited {
-        color: #2980b9;
-      }
+      h1 { font-size: 1.5rem; }
+      .converter h2 { font-size: 1.2rem; }
+      input, select { width: 100%; box-sizing: border-box; }
     }
   </style>
 </head>
@@ -151,12 +176,13 @@
   <nav>
     <ul>
       <li><strong class="guide">本頁內容：</strong><br>
-        <a>喪屍題材的演變：從魔幻到科幻</a></li>
+        <a>吸血鬼角色身高的單位轉換輔助閱讀</a></li>
 
       <li><strong class="guide">其他文章連結：</strong>
         <button class="toggle-btn" onclick="toggleMenu()">點擊展開其他文章</button>
         <ol class="collapsed-menu">
           <li><a href="index.html" target="_blank">中西不死生物比較：殭屍 vs 吸血鬼 vs 喪屍</a></li>
+          <li><a href="zombie_change.html" target="_blank">喪屍題材的演變：從魔幻到科幻</a></li>
           <li><a href="vampire_change.html" target="_blank">吸血鬼題材演變與東亞再詮釋</a></li>
           <li><a href="jiangshi_and_western_vampire.html" target="_blank">「殭屍」與「吸血鬼」：語境差異與文化誤會探討</a></li>
           <li><a href="what_if_twilight__becomes_real.html" target="_blank">為什麼《暮光之城》的吸血鬼設定在現實中根本行不通</a></li>
@@ -170,7 +196,6 @@
           <li><a href="detailed_analysis_of_europeanized_christianity.html" target="_blank">基督教奇幻與吸血鬼二次創作對比</a></li>
           <li><a href="original_christianity_vs_europeanized_christianity.html" target="_blank">基督教世界觀 × 吸血鬼文化：哥德式深度解析（含天使 vs 吸血鬼實力差 + 惡魔城角色）</a></li>
           <li><a href="level_of_jiangshi.html" target="_blank">中國殭屍的等級這麼多且最高等級的實力勘比賽亞人，但為何大部分殭屍電影中的殭屍的等級都不高</a></li>
-          <li><a href="height-converter.html" target="_blank">吸血鬼角色身高的單位轉換輔助閱讀</a></li>
         </ol>
       </li>
     </ul>
@@ -192,66 +217,127 @@
   }
 
 </script>
-<h1>喪屍題材的演變：從魔幻到科幻</h1>
+<h1>吸血鬼角色身高的單位轉換輔助閱讀</h1>
 <div class="intro-box"><em>本網頁的作者不僅是吸血鬼文化的熱衷愛好者，還是深度探討東西方吸血鬼與殭屍題材的專家。多年来，他接觸過大量的吸血鬼作品和殭屍電影，無論是西方經典如《德古拉》、《夜訪吸血鬼》、《刀鋒戰士》、《暮光之城》、《凡赫辛》、《吸血鬼獵人：林肯總統》、《Hotel Transylvania》，還是東方的代表作如《殭屍先生》、《殭屍叔叔》、《音樂殭屍》、《殭屍家族》、《殭屍道長》、《千年殭屍王》，他都在不斷比較與探索。這使他對吸血鬼這一文化象徵有了獨特的理解，並且能夠深入分析這些超自然生物在不同文化中的呈現方式和隱喻意涵。<br><br>
 
   作為一名前端開發者，作者運用自己的技術背景，將這些文化分析與比較呈現於網頁中。他並不滿足於單純的文字敘述，而是通過結合互動性強的網頁設計和創意排版，將這些吸血鬼與殭屍的知識以更直觀、趣味十足的方式呈現給讀者。他將這一前端作品部署到GitHub Pages，開設專案，將自己的文化研究和技術技能結合，讓更多人可以輕鬆地接觸到這些深入且富有思考的內容。</em>
 </div>
-<h2>一、早期魔幻喪屍</h2>
-<p>喪屍最初起源於加勒比與海地的巫毒信仰，屬於<strong class="highlight">魔法或詛咒</strong>控制的復活屍體，並非現代科學可解釋的存在。</p>
-<ul>
-  <li>出現時間：約19世紀末至20世紀初</li>
-  <li>核心概念：宗教、巫術、死靈魔法</li>
-  <li>代表作：《White Zombie》（1932）</li>
-</ul>
+<p>
+  本頁左側的單位轉換器作為閱讀輔助工具，協助讀者將原作截圖中以英制單位呈現的身高，
+  轉換為更熟悉的公制尺度。這種方式可以在不破壞原始文本呈現的前提下，
+  自行建立對角色身體尺度的直觀理解。
+</p>
+<div class="layout">
 
-<h2>二、現代科幻喪屍的誕生</h2>
-<p>1968年，George A. Romero 的《活死人之夜》開啟了喪屍「病毒化」、「傳染化」的新潮流。這時的喪屍<strong class="highlight">不是被控制的死人，而是科學異變下的產物</strong>。</p>
-<ul>
-  <li>核心設定：病毒感染、生物實驗、瘟疫爆發</li>
-  <li>代表作：<a href="https://en.wikipedia.org/wiki/28_Days_Later" target="_blank">《28天毀滅倒數》</a>、《惡靈古堡》、《陰屍路》</li>
-  <li>特色：強調社會崩潰與生存倫理</li>
-</ul>
+  <!-- 左側：單位轉換器 -->
+  <div class="converter">
+    <h2>單位轉換器</h2>
 
-<h2>三、演化對照表</h2>
-<table>
-  <thead>
-  <tr>
-    <th>時期／類型</th>
-    <th>主要特徵</th>
-    <th>代表作品</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <td>魔幻喪屍（19C–1960s）</td>
-    <td>巫術、宗教詛咒、靈魂控制</td>
-    <td><a href="https://en.wikipedia.org/wiki/White_Zombie_(film)" target="_blank">《White Zombie》</a></td>
-  </tr>
-  <tr>
-    <td>轉型期（1960s–1980s）</td>
-    <td>不明原因復活、社會批判開始</td>
-    <td><a href="https://en.wikipedia.org/wiki/Night_of_the_Living_Dead" target="_blank">《活死人之夜》</a></td>
-  </tr>
-  <tr>
-    <td>科幻喪屍（1990s–至今）</td>
-    <td>病毒感染、基因突變、末日倖存</td>
-    <td><a href="https://zh.wikipedia.org/zh-tw/%E7%94%9F%E5%8C%96%E5%8D%B1%E6%A9%9F%E7%B3%BB%E5%88%97" target="_blank">《惡靈古堡》</a>、<a href="https://en.wikipedia.org/wiki/The_Walking_Dead_(TV_series)" target="_blank">《陰屍路》</a>、<a href="https://ja.wikipedia.org/wiki/%E7%94%B2%E9%89%84%E5%9F%8E%E3%81%AE%E3%82%AB%E3%83%90%E3%83%8D%E3%83%AA" target="_blank">《鐵甲城的卡巴內里》</a>、<a href="https://zh.wikipedia.org/zh-tw/%E5%B0%B8%E5%85%84" target="_blank">《屍兄》</a>、<a href="https://en.wikipedia.org/wiki/Train_to_Busan" target="_blank">《屍速列車》</a></td>
-  </tr>
-  </tbody>
-</table>
+    <!-- 公分 → 英尺 / 吋 -->
+    <div class="row">
+      <strong>公分 ➜ 英尺 / 吋</strong><br>
+      <input type="number" id="cmInput" placeholder="輸入公分" step="any">
+      <div class="result" id="cmToFtIn"></div>
+    </div>
 
-<h2>四、現代偏好分析</h2>
-<p>現代大眾更傾向於接受<strong class="highlight">科學化解釋</strong>的喪屍敘事，因其能結合疫情恐懼、倫理衝突、社會批判，並更容易延伸為多媒體娛樂作品。</p>
-<ul>
-  <li>現實共鳴強（疫情、社會崩潰）</li>
-  <li>劇情彈性高（生存遊戲、末日冒險）</li>
-  <li>結合科技與倫理議題</li>
-</ul>
+    <hr>
 
-<h2>五、混合型與未來趨勢</h2>
-<p>近年也有作品嘗試將喪屍與魔幻、賽博龐克、AI 等元素融合，呈現出更多元化的混種敘事。</p>
-<p>例如：<a href="https://en.wikipedia.org/wiki/The_Last_of_Us_(TV_series)" target="_blank">《最後生還者》</a>、<a href="https://youtu.be/0O_VLVUxFIY?si=gNTKkU1lSIvRkUao" target="_blank">《全境感染》</a>等。</p>
+    <!-- 英尺 / 吋 → 公分 -->
+    <div class="row">
+      <strong>英尺 / 吋 ➜ 公分</strong><br>
+      <select id="ftSelect"></select> 尺
+      <select id="inSelect"></select> 吋
+      <div class="result" id="ftInToCm"></div>
+    </div>
+
+  </div>
+
+  <!-- 右側：截圖 + 下拉選單 -->
+  <div class="image-area">
+    <label for="characterSelect"><strong>選擇角色／截圖：</strong></label>
+    <select id="characterSelect">
+      <option value="庫倫家族的全家人身高.jpg">庫倫家族的全家人身高</option>
+      <option value="詹姆士的圖片.jpg">詹姆士的圖片</option>
+      <option value="詹姆士的身高.jpg">詹姆士的身高</option>
+      <option value="維多利亞的圖片.jpg">維多利亞的圖片</option>
+      <option value="維多利亞的身高.jpg">維多利亞的身高</option>
+      <option value="羅倫特的圖片.jpg">羅倫特的圖片</option>
+      <option value="羅倫特的身高.jpg">羅倫特的身高</option>
+      <option value="沃爾圖里三巨頭身高.jpg">沃爾圖里家族的領導人身高</option>
+      <option value="簡的圖片.jpg">簡的圖片</option>
+      <option value="簡的身高.jpg">簡的身高</option>
+      <option value="亞力克的圖片.jpg">亞力克的圖片</option>
+      <option value="亞力克的身高.jpg">亞力克的身高</option>
+      <option value="弗拉迪米爾的圖片.jpg">弗拉迪米爾的圖片</option>
+      <option value="弗拉迪米爾的身高.jpg">弗拉迪米爾的身高</option>
+      <option value="斯特凡的圖片.jpg">斯特凡的圖片</option>
+      <option value="斯特凡的身高.jpg">斯特凡的身高</option>
+      <option value="惡魔城的角色身高.jpg">惡魔城的角色身高</option>
+    </select>
+
+    <img id="characterImg" src="庫倫家族的全家人身高.jpg"
+         alt="吸血鬼角色身高截圖">
+  </div>
+
+</div>
+
+<script>
+  // 公分 → 英尺 / 吋
+  const cmInput = document.getElementById("cmInput");
+  const cmToFtIn = document.getElementById("cmToFtIn");
+
+  cmInput.addEventListener("input", () => {
+    const cm = parseFloat(cmInput.value);
+    if (isNaN(cm)) {
+      cmToFtIn.textContent = "";
+      return;
+    }
+
+    const totalInches = cm / 2.54;
+    const ft = Math.floor(totalInches / 12);
+    const inch = Math.round(totalInches % 12);
+
+    cmToFtIn.textContent = `＝ ${ft} 尺 ${inch} 吋`;
+  });
+
+  // 英尺 / 吋 → 公分
+  const ftSelect = document.getElementById("ftSelect");
+  const inSelect = document.getElementById("inSelect");
+  const ftInToCm = document.getElementById("ftInToCm");
+
+  for (let i = 0; i <= 8; i++) {
+    const opt = document.createElement("option");
+    opt.value = i;
+    opt.textContent = i;
+    ftSelect.appendChild(opt);
+  }
+
+  for (let i = 0; i <= 11; i++) {
+    const opt = document.createElement("option");
+    opt.value = i;
+    opt.textContent = i;
+    inSelect.appendChild(opt);
+  }
+
+  function updateCm() {
+    const ft = parseInt(ftSelect.value);
+    const inch = parseInt(inSelect.value);
+    const cm = (ft * 12 + inch) * 2.54;
+    ftInToCm.textContent = `＝ ${cm.toFixed(2)} 公分`;
+  }
+
+  ftSelect.addEventListener("change", updateCm);
+  inSelect.addEventListener("change", updateCm);
+
+  // 多角色切換
+  const characterSelect = document.getElementById("characterSelect");
+  const characterImg = document.getElementById("characterImg");
+
+  characterSelect.addEventListener("change", () => {
+    const filename = characterSelect.value;
+    characterImg.src = `${filename}`;
+  });
+</script>
 <ul id="messages"></ul>
 <div id="social-share" style="margin-top: 20px;">
   <a id="fb-share" href="#" target="_blank" style="color: #4267B2; font-weight: bold;">分享到 Facebook</a>
@@ -275,7 +361,7 @@
 </script>
 <footer style="text-align: center; background-color: purple; color:yellow; font-size: 50px">
   作者：<a class="the_author_of_the_web" href="https://www.facebook.com/profile.php?id=100056441813114&locale=zh_TW" target="_blank" style="color:white">周彥廷</a>
-  <br>創作日期：西元二零二五年六月四日<br>
+  <br>創作日期：西元二零二六年一月八日<br>
   <img src="480441080_1068843481673702_1005064756165328686_n.jpg" alt="自拍">
   <br>
 </footer>
