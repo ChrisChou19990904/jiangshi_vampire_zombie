@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>吸血鬼起源與文化演變分析</title>
+    <style>
+        /* 整體頁面設定 */
+        body {
+            font-family: "PingFang TC", "Microsoft JhengHei", "Segoe UI", sans-serif;
+            line-height: 1.8;
+            color: #e0e0e0;
+            background-color: #121212; /* 深黑色背景 */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* 內容容器 */
+        .container {
+            max-width: 800px;
+            width: 90%;
+            background-color: #1a1a1a; /* 稍淺的深灰色區塊 */
+            padding: 40px;
+            margin: 50px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border-top: 4px solid #8b0000; /* 頂部血紅裝飾線 */
+        }
+
+        /* 標題樣式 */
+        header {
+            text-align: center;
+            border-bottom: 1px solid #333;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+        }
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+        a:visited {
+            color: white;
+        }
+        /* 建議修正的 CSS */
+        nav {
+            background-color: #333; /* 改掉粉紅色 */
+            padding: 15px;
+            border-bottom: 2px solid #8b0000;
+        }
+
+        .collapsed-menu {
+            display: none; /* 預設隱藏防止閃爍 */
+            padding-left: 20px;
+        }
+
+        h1 {
+            color: #ff3333;
+            font-size: 2.5em;
+            letter-spacing: 3px;
+            margin: 0;
+        }
+
+        /* 章節標題樣式 */
+        h2 {
+            color: #ff4d4d;
+            font-size: 1.6em;
+            border-left: 6px solid #8b0000;
+            padding-left: 15px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+
+        /* 段落文字樣式 */
+        p {
+            font-size: 1.1em;
+            text-align: justify;
+            margin-bottom: 20px;
+            color: #cccccc;
+        }
+
+        /* 強調文字 */
+        .highlight {
+            color: #ff9999;
+            font-weight: bold;
+        }
+
+        /* 頁尾 */
+        footer {
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            text-align: center;
+            font-size: 0.9em;
+            color: #666;
+        }
+        .intro-box {
+            background-color: #eee;
+            padding: 1em;
+            border-left: 5px solid #900;
+            margin: 1.5em 0;
+            font-style: italic;
+            color: #1e1e1e
+        }
+        #social-share a {
+            text-decoration: none;
+            font-weight: bold;
+        }
+        #social-share a:hover {
+            text-decoration: underline;
+        }
+        #social-share span {
+            margin: 0 5px;
+        }
+        #social-share a#fb-share {
+            color: #4267B2;
+        }
+        #social-share a#line-share {
+            color: #00C300;
+        }
+        #social-share a#twitter-share {
+            color: #1DA1F2;
+        }
+        /* 響應式調整 */
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+                margin: 20px 0;
+            }
+            h1 { font-size: 1.8em; }
+            h2 { font-size: 1.3em; }
+        }
+    </style>
+</head>
+<body>
+<div id="google-translate-box">
+    <div id="google_translate_element"></div>
+    <!-- Google Translate 的自動翻譯功能 -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'zh-TW',  // 頁面原語言
+                includedLanguages: 'en,es,fr,de,it,zh-CN,ja,ko,th,vi,my,id,ms,ar,he,ru,tg,uk,hi,tr,pt,nl,is,fi,sv,no,ro,kk,bo,mn,la,fil,tl,el',  // 支援的翻譯語言（可擴展）
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <p>點擊上方的語言選單以切換語言</p>
+</div>
+<div class="container">
+    <header>
+        <h1>吸血鬼起源與文化演變分析</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><strong class="guide">本頁內容：</strong><br>
+                <a>吸血鬼起源與文化演變分析</a></li>
+
+            <li><strong class="guide">其他文章連結：</strong>
+                <button class="toggle-btn" onclick="toggleMenu()">點擊展開其他文章</button>
+                <ol class="collapsed-menu">
+                    <li><a href="index.html" target="_blank">中西不死生物比較：殭屍 vs 吸血鬼 vs 喪屍</a></li>
+                    <li><a href="zombie_change.html" target="_blank">喪屍題材的演變：從魔幻到科幻</a></li>
+                    <li><a href="vampire_change.html" target="_blank">吸血鬼題材演變與東亞再詮釋</a></li>
+                    <li><a href="jiangshi_and_western_vampire.html" target="_blank">「殭屍」與「吸血鬼」：語境差異與文化誤會探討</a></li>
+                    <li><a href="what_if_twilight__becomes_real.html" target="_blank">為什麼《暮光之城》的吸血鬼設定在現實中根本行不通</a></li>
+                    <li><a href="if_edward_cullen_were_born_in_taiwan.html" target="_blank">如果愛德華·庫倫生在台灣：他會被升旗、段考、模擬考、補習、強制性的體能測驗、基本學科能力測驗逼瘋嗎？</a></li>
+                    <li><a href="bloopers_in_vampire_dramas.html" target="_blank">吸血鬼在影視劇中的穿幫鏡頭觀察</a></li>
+                    <li><a href="key_characters_who_disappear.html" target="_blank">留白的力量：從菩提祖師到德古拉的轉變者，看故事中那些「消失的上層力量」</a></li>
+                    <li><a href="critique_of_church_corruption_in_vampire_stories.html" target="_blank">透過吸血鬼敘事揭示中世紀教會的腐敗與宗教權威的陰暗面</a></li>
+                    <li><a href="aro_height.html" target="_blank">175公分以上的三千歲吸血鬼族長？考古學與暮光之城的身高落差</a></li>
+                    <li><a href="england_and_vampire_culture.html" target="_blank">英國文學對吸血鬼文化的影響</a></li>
+                    <li><a href="europeanized_christianity.html" target="_blank">透過吸血鬼敘事分析歐化基督教與原始聖經觀的差異</a></li>
+                    <li><a href="detailed_analysis_of_europeanized_christianity.html" target="_blank">基督教奇幻與吸血鬼二次創作對比</a></li>
+                    <li><a href="original_christianity_vs_europeanized_christianity.html" target="_blank">基督教世界觀 × 吸血鬼文化：哥德式深度解析（含天使 vs 吸血鬼實力差 + 惡魔城角色）</a></li>
+                    <li><a href="level_of_jiangshi.html" target="_blank">中國殭屍的等級這麼多且最高等級的實力勘比賽亞人，但為何大部分殭屍電影中的殭屍的等級都不高</a></li>
+                    <li><a href="height-converter.html" target="_blank">吸血鬼角色身高的單位轉換輔助閱讀</a></li>
+                    <li><a href="vampire_vs_angel.html" target="_blank">當吸血鬼遇上天使：一場跨神話體系的世界觀問題</a></li>
+                </ol>
+            </li>
+        </ul>
+    </nav>
+    <script>
+        // 切換顯示/隱藏文章列表
+        function toggleMenu() {
+            const menu = document.querySelector('.collapsed-menu');
+            const button = document.querySelector('.toggle-btn');
+
+            if (menu.style.display === "none" || menu.style.display === "") {
+                menu.style.display = "block";
+                button.textContent = "點擊隱藏其他文章";
+            } else {
+                menu.style.display = "none";
+                button.textContent = "點擊展開其他文章";
+            }
+        }
+
+    </script>
+    <div class="intro-box">
+        <em>本網頁的作者不僅是吸血鬼文化的熱衷愛好者，還是深度探討東西方吸血鬼與殭屍題材的專家。多年来，他接觸過大量的吸血鬼作品和殭屍電影，無論是西方經典如《德古拉》、《夜訪吸血鬼》、《刀鋒戰士》、《暮光之城》、《凡赫辛》、《吸血鬼獵人：林肯總統》、《Hotel Transylvania》，還是東方的代表作如《殭屍先生》、《殭屍叔叔》、《音樂殭屍》、《殭屍家族》、《殭屍道長》、《千年殭屍王》，他都在不斷比較與探索。這使他對吸血鬼這一文化象徵有了獨特的理解，並且能夠深入分析這些超自然生物在不同文化中的呈現方式和隱喻意涵。<br><br>
+
+            作為一名前端開發者，作者運用自己的技術背景，將這些文化分析與比較呈現於網頁中。他並不滿足於單純的文字敘述，而是通過結合互動性強的網頁設計和創意排版，將這些吸血鬼與殭屍的知識以更直觀、趣味十足的方式呈現給讀者。他將這一前端作品部署到GitHub Pages，開設專案，將自己的文化研究和技術技能結合，讓更多人可以輕鬆地接觸到這些深入且富有思考的內容。
+        </em>
+    </div>
+    <section>
+        <h2>一、 德古拉與該隱：文學藍圖與現代設定的權力交替</h2>
+        <p>
+            在現代流行文化的認知中，吸血鬼的形象往往在十五世紀的羅馬尼亞貴族「德古拉」與聖經首位謀殺者「該隱」之間擺盪。然而，這兩者在吸血鬼神話中的地位有著本質上的差異。
+        </p>
+        <p>
+            <span class="highlight">德古拉（Dracula）</span> 作為布蘭·史托克於 1897 年筆下的經典角色，實質上定義了現代吸血鬼的視覺語言——披風、優雅、變身以及貴族氣質。而該隱被視為始祖的設定，則是二十世紀末透過《吸血鬼之避世潛藏》等桌上角色扮演遊戲（TRPG）才廣為流傳的「二創設定」。這種認知的落差源於後世創作者為了增加故事的宗教深度，刻意將聖經中的流浪詛咒與吸血鬼的不死特性結合。
+        </p>
+    </section>
+
+    <section>
+        <h2>二、 宗教符號的滲透：從民間怪物到教會公敵</h2>
+        <p>
+            吸血鬼最初起源於歐洲東部與斯拉夫民族的民間傳說，其原始形象與基督教並無直接關聯。早期的吸血鬼被視為一種不潔的屍體變異，民間對付他們的方法通常是使用大蒜、刺穿心臟或是焚燒，而非宗教法器。
+        </p>
+        <p>
+            十字架、聖水與教堂等元素，是在 <span class="highlight">基督教文化傳入歐洲</span> 並與在地信仰融合後，才逐漸被納入傳說體系中的「文化適應」現象。聖經文本本身並未記載任何吸血鬼生物，現代人所熟知的宗教剋星設定，更多是維多利亞時代文學為了探討信仰與邪惡對抗所塑造的戲劇衝突。
+        </p>
+    </section>
+
+    <section>
+        <h2>三、 東亞語境下的重塑：跨文化的虛構自由</h2>
+        <p>
+            既然吸血鬼在本質上是一種虛構的文化載體，其地理起源與族裔血統便不存在絕對的「正統性」。將起源地設定在東亞，不僅在創作邏輯上完全合理，更能產生獨特的魅力。
+        </p>
+        <p>
+            從《我和殭屍有個約會》將盤古神話與吸血鬼結合，到《獵命師傳奇》中與歷史名將的連結、《夜行書生》的宮廷鬥爭或《彼岸島》的海島和神社文化，這些作品展示了吸血鬼如何脫離高加索人的形象，與東方的社會倫理、歷史敘事及超自然體系完美融合。這印證了在創作的世界裡，誰是始祖、生於何處，最終取決於作品背後的 <span class="highlight">文化詮釋權</span> 與創作者的想像力。
+        </p>
+    </section>
+    <ul id="messages"></ul>
+    <div id="social-share" style="margin-top: 20px;">
+        <a id="fb-share" href="#" target="_blank" style="color: #4267B2; font-weight: bold;">分享到 Facebook</a>
+        <span> | </span>
+        <a id="line-share" href="#" target="_blank" style="color: #00C300; font-weight: bold;">分享到 Line</a>
+        <span> | </span>
+        <a id="twitter-share" href="#" target="_blank" style="color: #1DA1F2; font-weight: bold;">分享到 X</a>
+    </div>
+    <script>
+        // 自動抓取當前頁面的 URL
+        var currentUrl = window.location.href;
+        // Facebook 分享
+        document.getElementById("fb-share").href =
+            "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(currentUrl);
+        // Line 分享
+        document.getElementById("line-share").href =
+            "https://social-plugins.line.me/lineit/share?url=" + encodeURIComponent(currentUrl);
+        // X (Twitter) 分享
+        document.getElementById("twitter-share").href =
+            "https://twitter.com/intent/tweet?url=" + encodeURIComponent(currentUrl) + "&text=你的文章標題";
+    </script>
+    <footer>
+        作者：<a class="the_author_of_the_web" href="https://www.facebook.com/profile.php?id=100056441813114&locale=zh_TW" target="_blank" style="color:white">周彥廷</a>
+        <br>創作日期：西元二零二五年十月三日<br>
+        <img src="480441080_1068843481673702_1005064756165328686_n.jpg" alt="自拍">
+        <p>所有頁面均來自同一 GitHub Pages 專案</p>
+        <p>© 2026 文化研究與虛構創作分析文件</p>
+    </footer>
+</div>
+
+</body>
+</html>
