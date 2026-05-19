@@ -2,16 +2,31 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>中西不死生物比較：殭屍 vs 吸血鬼 vs 喪屍</title>
   <style>
+    /* 全域樣式優化 */
+    html {
+      scroll-behavior: smooth; /* 啟用平滑滾動 */
+    }
     body {
       font-family: "Noto Sans TC", sans-serif;
       line-height: 1.8;
       background-color: #fefefe;
       color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #ffe4e1;
+      padding: 15px 20px;
+      border-bottom: 2px solid #4b0082;
     }
     h1, h2 {
       color: #4b0082;
+      margin-top: 1.5em;
+      padding-bottom: 0.3em;
+      border-bottom: 1px solid #ddd;
     }
     em {
       color: #6a5acd;
@@ -19,174 +34,409 @@
     strong {
       color: #b22222;
     }
-    #google_translate_element {
-      top: 10px;  /* 距離頁面頂端 10px */
-      left: 10px; /* 距離頁面左側 10px */
-      z-index: 9999; /* 保證它不會被其他元素遮蓋 */
-    }
-    img{
-      border-color: indigo;
-      border-width: 5px;
-      border-style: solid;
-    }
-    video {
-      border-color: indigo;
-      border-width: 5px;
-      border-style: solid;
-      margin: 10px 0;
-    }
-    header {
-      background-color: pink;
-      padding: 10px 0;
-    }
-    a{
+    a {
       color: #2980b9;
       text-decoration: none;
     }
     a:hover {
       text-decoration: underline;
     }
-    a:visited {
-      color: #2980b9;
+
+    /* Google 翻譯懸浮優化 */
+    #google_translate_element {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      z-index: 9999;
+      background: white;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    /* 導覽與目錄樣式 */
+    .nav-container {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .toc-box {
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      padding: 15px;
+      border-radius: 5px;
+    }
+    .toc-box ul {
+      margin: 5px 0 0 0;
+      padding-left: 20px;
+    }
+    .collapsed-menu {
+      display: none;
+      padding-left: 20px;
+      list-style-type: decimal;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .toggle-btn {
+      margin: 5px 0;
+      padding: 6px 12px;
+      background-color: #fff;
+      border: 1px solid #4b0082;
+      color: #4b0082;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .toggle-btn:hover {
+      background-color: #4b0082;
+      color: white;
+    }
+
+    /* 內文區塊 */
+    .main-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
     }
     .intro-box {
       background-color: #eee;
-      padding: 1em;
+      padding: 1.2em;
       border-left: 5px solid #900;
       margin: 1.5em 0;
       font-style: italic;
     }
-    .intro-box em{
-        color: black;
-    }
-    .guide{
-        color: black;
-    }
-    /* 隱藏折疊內容 */
-    .collapsed-menu {
-      display: none;
-      padding-left: 20px;
-      list-style-type: decimal; /* 使用數字編號 */
-      font-size: 14px; /* 設定字體大小 */
-      line-height: 1.6; /* 調整行高 */
-    }
-
-    /* 可選的按鈕樣式 */
-    .toggle-btn {
-      margin: 10px 0;
-      padding: 8px 15px;
-      background-color: #f0f0f0;
-      border: 1px solid #ccc;
-      cursor: pointer;
-    }
-
-    .toggle-btn:hover {
-      background-color: #e0e0e0;
-    }
-
-    /* 強調本頁內容的字體 */
-    .guide {
-      font-weight: bold;
+    .intro-box em {
       color: #333;
     }
-    #social-share a {
-      text-decoration: none;
-      font-weight: bold;
+
+    /* 精簡後的多媒體容器 */
+    .media-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      background-color: #ffffe0;
+      border: 3px solid #4b0082;
+      padding: 15px;
+      margin: 20px 0;
+      border-radius: 5px;
     }
-    #social-share a:hover {
+    video {
+      border: 3px solid #4b0082;
+    }
+
+    /* 表格 RWD 優化 */
+    .table-responsive {
+      overflow-x: auto;
+      margin: 20px 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 500px;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: left;
+    }
+    th {
+      background-color: #4b0082;
+      color: white;
+    }
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    /* 社群分享與頁尾 */
+    #social-share {
+      margin: 30px 0;
+      padding: 15px;
+      background: #f5f5f5;
+      text-align: center;
+      border-radius: 5px;
+    }
+    #social-share a {
+      font-weight: bold;
+      margin: 0 10px;
+    }
+    #fb-share { color: #4267B2; }
+    #line-share { color: #00C300; }
+    #twitter-share { color: #1DA1F2; }
+
+    footer {
+      text-align: center;
+      background-color: #4b0082;
+      color: #ffffe0;
+      padding: 30px 20px;
+      margin-top: 40px;
+    }
+    footer a {
+      color: #fff;
       text-decoration: underline;
     }
-    #social-share span {
-      margin: 0 5px;
+    .footer-avatar {
+      max-width: 150px;
+      border-radius: 50%;
+      margin-top: 15px;
+      border: 3px solid #ffffe0;
     }
-    #social-share a#fb-share {
-      color: #4267B2;
-    }
-    #social-share a#line-share {
-      color: #00C300;
-    }
-    #social-share a#twitter-share {
-      color: #1DA1F2;
-    }
+
+    /* 行動裝置優化 */
     @media screen and (max-width: 767px) {
-      iframe{
-        max-width:100%
+      #google_translate_element {
+        position: static;
+        margin: 10px auto;
+        text-align: center;
       }
       video{
-        max-width: 80%;
-        max-height: 80%;
-        border: 5px solid black;
+        width: 100%;
       }
       img{
-        max-width: 70%;
-        height: auto;
+        width: 100%;
       }
-      a{
-        color: #2980b9;
-        text-decoration: none;
-      }
-      a:hover {
-        text-decoration: underline;
-      }
-      a:visited {
-        color: #2980b9;
+      iframe{
+        width: 100%;
       }
     }
   </style>
 </head>
 <body>
-<div id="google-translate-box">
-  <div id="google_translate_element"></div>
-  <!-- Google Translate 的自動翻譯功能 -->
-  <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-        pageLanguage: 'zh-TW',  // 頁面原語言
-        includedLanguages: 'en,es,fr,de,it,zh-CN,ja,ko,th,vi,my,id,ms,ar,he,ru,tg,uk,hi,tr,pt,nl,is,fi,sv,no,ro,kk,bo,mn,la,fil,tl,el',  // 支援的翻譯語言（可擴展）
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-      }, 'google_translate_element');
-    }
-  </script>
-  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-  <p>點擊上方的語言選單以切換語言</p>
-</div>
-<header>
-  <nav>
-    <ul>
-      <li><strong class="guide">本頁內容：</strong><br>
-        <a>中西不死生物比較：殭屍 vs 吸血鬼 vs 喪屍</a></li>
 
-      <li><strong class="guide">其他文章連結：</strong>
-        <button class="toggle-btn" onclick="toggleMenu()">點擊展開其他文章</button>
-        <ol class="collapsed-menu">
-          <li><a href="zombie_change.html" target="_blank">喪屍題材的演變：從魔幻到科幻</a></li>
-          <li><a href="vampire_change.html" target="_blank">吸血鬼題材演變與東亞再詮釋</a></li>
-          <li><a href="jiangshi_and_western_vampire.html" target="_blank">「殭屍」與「吸血鬼」：語境差異與文化誤會探討</a></li>
-          <li><a href="what_if_twilight__becomes_real.html" target="_blank">為什麼《暮光之城》的吸血鬼設定在現實中根本行不通</a></li>
-          <li><a href="if_edward_cullen_were_born_in_taiwan.html" target="_blank">如果愛德華·庫倫生在台灣：他會被升旗、段考、模擬考、補習、強制性的體能測驗、基本學科能力測驗逼瘋嗎？</a></li>
-          <li><a href="bloopers_in_vampire_dramas.html" target="_blank">吸血鬼在影視劇中的穿幫鏡頭觀察</a></li>
-          <li><a href="key_characters_who_disappear.html" target="_blank">留白的力量：從菩提祖師到德古拉的轉變者，看故事中那些「消失的上層力量」</a></li>
-          <li><a href="critique_of_church_corruption_in_vampire_stories.html" target="_blank">透過吸血鬼敘事揭示中世紀教會的腐敗與宗教權威的陰暗面</a></li>
-          <li><a href="aro_height.html" target="_blank">175公分以上的三千歲吸血鬼族長？考古學與暮光之城的身高落差</a></li>
-          <li><a href="england_and_vampire_culture.html" target="_blank">英國文學對吸血鬼文化的影響</a></li>
-          <li><a href="europeanized_christianity.html" target="_blank">透過吸血鬼敘事分析歐化基督教與原始聖經觀的差異</a></li>
-          <li><a href="detailed_analysis_of_europeanized_christianity.html" target="_blank">基督教奇幻與吸血鬼二次創作對比</a></li>
-          <li><a href="original_christianity_vs_europeanized_christianity.html" target="_blank">基督教世界觀 × 吸血鬼文化：哥德式深度解析（含天使 vs 吸血鬼實力差 + 惡魔城角色）</a></li>
-          <li><a href="level_of_jiangshi.html" target="_blank">中國殭屍的等級這麼多且最高等級的實力勘比賽亞人，但為何大部分殭屍電影中的殭屍的等級都不高</a></li>
-          <li><a href="height-converter.html" target="_blank">吸血鬼角色身高的單位轉換輔助閱讀</a></li>
-          <li><a href="vampire_vs_angel.html" target="_blank">當吸血鬼遇上天使：一場跨神話體系的世界觀問題</a></li>
-          <li><a href="analysis_of_vampire_change.html" target="_blank">吸血鬼起源與文化演變分析</a></li>
-        </ol>
-      </li>
-    </ul>
+<!-- Google Translate 功能 -->
+<div id="google_translate_element"></div>
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'zh-TW',
+      includedLanguages: 'en,es,fr,de,it,zh-CN,ja,ko,th,vi,my,id,ms,ar,he,ru,tg,uk,hi,tr,pt,nl,is,fi,sv,no,ro,kk,bo,mn,la,fil,tl,el',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  }
+</script>
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<header>
+  <nav class="nav-container">
+    <!-- 本頁錨點導航目錄 -->
+    <div class="toc-box">
+      <strong>📍 本頁內容導航：</strong>
+      <ul>
+        <li><a href="#section-intro">作者簡介與核心觀點</a></li>
+        <li><a href="#section-jiangshi">一、殭屍是什麼？（Jiangshi）</a></li>
+        <li><a href="#section-vampire">二、吸血鬼的傳說與特色</a></li>
+        <li><a href="#section-zombie">三、喪屍的真相（Zombie）</a></li>
+        <li><a href="#section-summary">四、總結：三者差異對照表</a></li>
+      </ul>
+    </div>
+
+    <!-- 其他文章摺疊選單 -->
+    <div>
+      <strong class="guide">📚 其他系列文章連結：</strong>
+      <button class="toggle-btn" onclick="toggleMenu()">點擊展開文章列表</button>
+      <ol class="collapsed-menu">
+        <li><a href="zombie_change.html" target="_blank">喪屍題材的演變：從魔幻到科幻</a></li>
+        <li><a href="vampire_change.html" target="_blank">吸血鬼題材演變與東亞再詮釋</a></li>
+        <li><a href="jiangshi_and_western_vampire.html" target="_blank">「殭屍」與「吸血鬼」：語境差異與文化誤會探討</a></li>
+        <li><a href="what_if_twilight__becomes_real.html" target="_blank">為什麼《暮光之城》的吸血鬼設定在現實中根本行不通</a></li>
+        <li><a href="if_edward_cullen_were_born_in_taiwan.html" target="_blank">如果愛德華·庫倫生在台灣：他會被考制逼瘋嗎？</a></li>
+        <li><a href="bloopers_in_vampire_dramas.html" target="_blank">吸血鬼在影視劇中的穿幫鏡頭觀察</a></li>
+        <li><a href="key_characters_who_disappear.html" target="_blank">留白的力量：看故事中那些「消失的上層力量」</a></li>
+        <li><a href="critique_of_church_corruption_in_vampire_stories.html" target="_blank">透過吸血鬼敘事揭示中世紀教會的腐敗與宗教權威</a></li>
+        <li><a href="aro_height.html" target="_blank">175公分以上的三千歲吸血鬼族長？考古學與暮光之城的身高落差</a></li>
+        <li><a href="england_and_vampire_culture.html" target="_blank">英國文學對吸血鬼文化的影響</a></li>
+        <li><a href="europeanized_christianity.html" target="_blank">透過吸血鬼敘事分析歐化基督教與原始聖經觀的差異</a></li>
+        <li><a href="detailed_analysis_of_europeanized_christianity.html" target="_blank">基督教奇幻與吸血鬼二次創作對比</a></li>
+        <li><a href="original_christianity_vs_europeanized_christianity.html" target="_blank">基督教世界觀 × 吸血鬼文化：哥德式深度解析</a></li>
+        <li><a href="level_of_jiangshi.html" target="_blank">中國殭屍的等級這麼多，為何電影中展現的都不高？</a></li>
+        <li><a href="height-converter.html" target="_blank">吸血鬼角色身高的單位轉換輔助閱讀</a></li>
+        <li><a href="vampire_vs_angel.html" target="_blank">當吸血鬼遇上天使：一場跨神話體系的世界觀問題</a></li>
+        <li><a href="analysis_of_vampire_change.html" target="_blank">吸血鬼起源與文化演變分析</a></li>
+      </ol>
+    </div>
   </nav>
 </header>
+
+<main class="main-content">
+  <h1>中西不死生物比較：殭屍 vs 吸血鬼 vs 喪屍</h1>
+
+  <section id="section-intro" class="intro-box">
+    <em>本網頁的作者不僅是吸血鬼文化的熱衷愛好者，還是深度探討東西方吸血鬼與殭屍題材的專家。多年来，他接觸過大量的吸血鬼作品和殭屍電影，無論是西方經典如《德古拉》、《夜訪吸血鬼》、《刀鋒戰士》、《暮光之城》、《凡赫辛》、《吸血鬼獵人：林肯總統》、《Hotel Transylvania》，還是東方的代表作如《殭屍先生》、《殭屍叔叔》、《音樂殭屍》、《殭屍家族》、《殭屍道長》、《千年殭屍王》，他都在不斷比較與探索。這使他對吸血鬼這一文化象徵有了獨特的理解，並且能夠深入分析這些超自然生物在不同文化中的呈現方式和隱喻意涵。
+      <br><br>
+      作為一名前端開發者，作者運用自己的技術背景，將這些文化分析與比較呈現於網頁中。他並不滿足於單純的文字敘述，而是通過結合互動性強的網頁設計和創意排版，將這些吸血鬼與殭屍的知識以更直觀、趣味十足的方式呈現給讀者。他將這一前端作品部署到GitHub Pages，開設專案，將自己的文化研究和技術技能結合，讓更多人可以輕鬆地接觸到這些深入且富有思考的內容。
+    </em>
+  </section>
+
+  <p>受到西洋電影的影響，很多人會本能地把「殭屍」直接翻成英文 <strong>zombie</strong>，但這其實並不準確。根據文化脈絡，<strong>殭屍</strong>的英文應該是 <em>Jiangshi</em>（音譯）或 <em>Chinese Vampire</em>（意譯；許多自動翻譯會將其翻成"中國的吸血鬼"）。這也是為什麼《殭屍先生》、《千年殭屍王》、《救殭清道夫》等港片的官方英譯是 <em>Mr. Vampire</em>、<em>The Era of Vampires</em>、<em>Vampire Cleanup Department</em> 而非 <em>Mr. Zombie</em>、<em>The Era of Vampires</em>、<em>Zombie Cleanup Department</em>，如下截圖所示。</p>
+  <img loading="lazy" src="殭屍先生海報.png" alt="" style="border:purple 5px solid" width="288" height="756"><br>
+  <img loading="lazy" src="千年殭屍王海報.png" alt="" style="border:purple 5px solid" width="267" height="567"><br>
+  <img loading="lazy" src="救殭清道夫海報.png" alt="" style="border:purple 5px solid" width="603" height="453"><br>
+  <img loading="lazy" src="聊天紀錄.webp" alt="" style="border:purple 5px solid" width="360" height="575"><br>
+  <img loading="lazy" src="聊天紀錄2.webp" alt="" style="border:purple 5px solid" width="360" height="498"><br>
+  <img loading="lazy" src="聊天紀錄3.webp" alt="" style="border:purple 5px solid" width="360" height="577"><br>
+  <img loading="lazy" src="聊天紀錄4.webp" alt="" style="border:purple 5px solid" width="360" height="499"><br>
+  <img loading="lazy" src="聊天紀錄5.webp" alt="" style="border:purple 5px solid" width="360" height="348"><br>
+  <!-- 一、殭屍 -->
+  <section id="section-jiangshi">
+    <h2>一、殭屍是什麼？（Jiangshi）</h2>
+    <p>殭屍起源自中國傳統文化，是死後屍體因怨氣、屍氣或法力復活的產物。傳統的殭屍通常是由巫術或不正當的死亡所產生，復活後會無意識地進行食血或吸取生命精華的行為。</p>
+    <p>它們的行為特徵包括：</p>
+    <ul>
+      <li><strong>吸血與吸取生命精氣：</strong>與吸血鬼相似，殭屍會吸取生者的血液或生命精氣來維持存在。</li>
+      <li><strong>害怕陽光：</strong>殭屍在陽光下無法活動，因此通常只會在夜間出沒。</li>
+      <li><strong>道法鎮壓：</strong>一旦受到了正確的符咒或道具（如桃木劍、符咒等）鎮壓，殭屍將會停止活動。</li>
+    </ul>
+    <p>民間信仰中，殭屍會隨著時間修煉，從最低級的跳躍型殭屍進化為能飛行的屍王，甚至進化為更高級的 <strong>魃</strong>（能引發乾旱與瘟獄）與 <strong>犼</strong>（能吐火、吞雲、吃龍）。袁枚的《子不語》中甚至提到犼是殭屍的最終型態。</p>
+
+    <div class="media-container">
+      <p><strong>🎬 殭屍文化與等級演變參考影片（點擊播放）：</strong></p>
+      <!-- 保留最具代表性的原生預告/精華，設定 preload="none" 節省流量 -->
+      <video controls width="400" height="600"><source src="殭屍進化.mp4" type="video/mp4"></video>
+      <br>
+      <video controls width="400" height="500"><source src="犼.mp4"></video>
+      <br>
+      <video controls width="400" height="500"><source src="犼2.mp4"></video>
+      <br>
+      <video controls width="300" height="600"><source src="殭屍vs吸血鬼.mp4" type="video/mp4"></video>
+      <br>
+      <video controls width="600" height="600"><source src="殭屍vs吸血鬼2.mp4"></video>
+    </div>
+  </section>
+
+  <!-- 二、吸血鬼 -->
+  <section id="section-vampire">
+    <h2>二、吸血鬼的傳說與特色</h2>
+    <p>吸血鬼源於西方與基督教文化背景，關於他們的起源在創作中有許多經典版本（如受上帝懲罰的該隱、與魔鬼簽約的德古拉、或出賣耶穌的猶大）。</p>
+    <p>吸血鬼在實質上也是一種復活的屍體，因此早期港片中道士常稱其為「<strong>西洋殭屍</strong>」。但吸血鬼與東方殭屍、現代喪屍不同的是：</p>
+    <ul>
+      <li>具有高度智慧、語言能力與強烈的外貌魅力。</li>
+      <li>擁有特殊的超自然力量（如變身為蝙蝠、催眠、讀心、隱形或操控天氣）。</li>
+      <li>速度、力氣、復原力、抗打能力都遠超人類。</li>
+      <li>擁有嚴格的階級與氏族制度，輩分（世代）越高實力越強。</li>
+      <li>克星明確：害怕<strong>大蒜、聖水、十字架、銀器、聖經、陽光</strong>。</li>
+    </ul>
+    <p>被吸血鬼進行「<strong>初擁</strong>」的人，身體會永遠停留在當時的年齡，但知識與經驗會持續累積。在現代西方流行文化中（如《暮光之城》系列），吸血鬼往往被賦予了既浪漫又神秘的形象。</p>
+
+    <div class="media-container">
+      <p><strong>🎬 西洋吸血鬼能力與經典敘事的參考截圖、本地影片、第三方插入影片：</strong></p>
+      <img loading="lazy" src="德古拉的能力1.jpg" alt="" width="435" height="941"><br>
+      <img loading="lazy" src="德古拉的能力2.jpg" alt="" width="435" height="941"><br>
+      <img loading="lazy" src="德古拉的能力3.jpg" alt="" width="435" height="941"><br>
+      <img loading="lazy" src="德古拉的能力4.jpg" alt="" width="435" height="941"><br>
+      <img loading="lazy" src="德古拉的能力5.jpg" alt="" width="435" height="941"><br>
+      <img loading="lazy" src="德古拉的能力6.jpg" alt="" width="435" height="941"><br>
+      <video controls style="border:solid 2px grey" width="600" height="300"><source src="felix_vs_edward.mp4"></video>
+      <br>
+      <video style="border:solid 2px grey" controls width="600" height="300"><source src="暮光之城.mp4"></video>
+      <br>
+      <br>
+      <iframe loading="lazy" width="600" height="400" src="https://www.youtube.com/embed/P1aOy1RAdCw?si=kRv4w_yDmz1Ln50C" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <br>
+      <iframe loading="lazy" width="600" height="400" src="https://www.youtube.com/embed/dPiEH97IfjY?si=4a4mxuwOxeRThyfF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <br>
+      <iframe loading="lazy" width="600" height="400" src="https://www.youtube.com/embed/3kNC0tSMDZU?si=lf5bqMyk5SwonRSU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <br>
+      <iframe loading="lazy" src="//player.bilibili.com/player.html?isOutside=true&aid=113487145800721&bvid=BV1NCmfYiEZm&cid=25696673660&p=1" height="400" width="600" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+      <br>
+      <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/1oFxksBliks?si=-Q2MZeG1U-EjQl-y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <br>
+      <iframe loading="lazy" width="600" height="400" src="https://www.youtube.com/embed/CDdpyI71npI?si=I9oIZwC43ymACXU_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <br>
+      <iframe loading="lazy" width="600" height="400" src="https://www.youtube.com/embed/oXRRf_7sQDU?si=rMldBnyQ-gL8ntwH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <!-- 三、喪屍 -->
+  <section id="section-zombie">
+    <h2>三、喪屍的真相（Zombie）</h2>
+    <p>現代科幻災難片中的喪屍（Zombie）與傳統的殭屍、吸血鬼截然不同：</p>
+    <ul>
+      <li><strong>科學起源：</strong>喪屍多半是生前受到生化病毒、寄生蟲或輻射感染，導致大腦壞死後再度復活的肉體。</li>
+      <li><strong>進食本能：</strong>以生肉和活人為食，<strong>不是吸血</strong>，且完全沒有人類理智與智慧。</li>
+      <li><strong>擴散方式：</strong>主要靠撕咬、體液交換進行大規模傳染。</li>
+      <li><strong>唯一弱點：</strong>破壞其中樞神經（爆頭）即可將其完全消滅，不怕陽光、十字架或符咒。</li>
+    </ul>
+    <p>現代經典喪屍作品（如《活人生吃》、《屍速列車》、《陰屍路》）往往不只流於恐怖，更多的是帶有社會隱喻，深刻探討文明崩潰下的人性極限。</p>
+    <iframe loading="lazy" width="600" height="400" src="https://www.youtube.com/embed/m_0fF-S2p0k?si=thCtS1cFwUQPnH_H" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <br>
+    <iframe loading="lazy" width="600" height="400" src="https://www.youtube.com/embed/dzIfK-S1Vtg?si=qswEtUhjwTwJLI0Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <br>
+    <iframe loading="lazy" width="600" height="400" src="https://www.youtube.com/embed/K2To-9WyEVQ?si=dqZmkVAJ2lhr7DXp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </section>
+
+  <!-- 四、總結對照表 -->
+  <section id="section-summary">
+    <h2>四、總結：三者差異對照表</h2>
+    <div class="table-responsive">
+      <table>
+        <thead>
+        <tr>
+          <th>特徵項目</th>
+          <th>東方殭屍 (Jiangshi)</th>
+          <th>西洋吸血鬼 (Vampire)</th>
+          <th>現代喪屍 (Zombie)</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><strong>文化起源</strong></td>
+          <td>中國民間信仰、湘西趕屍傳說</td>
+          <td>歐洲民間傳說、基督教二次創作</td>
+          <td>海地巫毒教演變、現代科幻病毒</td>
+        </tr>
+        <tr>
+          <td><strong>主食來源</strong></td>
+          <td>吸食生者血液、吸取生命精氣</td>
+          <td>吸食人類鮮血</td>
+          <td>吞食活人鮮血與生肉、大腦</td>
+        </tr>
+        <tr>
+          <td><strong>核心弱點</strong></td>
+          <td>陽光、糯米、桃木劍、符咒、雞血</td>
+          <td>陽光、大蒜、十字架、聖水、銀器</td>
+          <td>摧毀大腦中樞（爆頭）</td>
+        </tr>
+        <tr>
+          <td><strong>智慧與心智</strong></td>
+          <td>初階無智慧，隨修煉進化可得心智</td>
+          <td>具備極高智慧、優雅謀略與魔力</td>
+          <td>毫無靈智，僅剩低等進食本能</td>
+        </tr>
+        <tr>
+          <td><strong>經典代表作</strong></td>
+          <td>《殭屍先生》、《殭屍道長》系列</td>
+          <td>《德古拉》、Twilight《暮光之城》系列</td>
+          <td>《惡靈古堡》、《行屍走肉/陰屍路》</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <p>瞭解這三種超自然生物的文化背景，不只能讓我們在欣賞相關影視作品時更有感觸，也能從中看見東西方文化對於「死亡、靈魂與復活」截然不同的集體想像。</p>
+
+  <!-- 社群分享功能 -->
+  <div id="social-share">
+    <h3>📢 喜歡這篇文章嗎？分享給朋友吧！</h3>
+    <a id="fb-share" href="#" target="_blank">分享到 Facebook</a> |
+    <a id="line-share" href="#" target="_blank">分享到 Line</a> |
+    <a id="twitter-share" href="#" target="_blank">分享到 X (Twitter)</a>
+  </div>
+</main>
+
+<footer>
+  <p>作者：<a href="https://www.facebook.com/profile.php?id=100056441813114&locale=zh_TW" target="_blank">周彥廷</a></p>
+  <p>創作日期：西元二零二五年六月四日</p>
+  <p>所有頁面均來自同一 GitHub Pages 專案</p>
+  <img class="footer-avatar" src="480441080_1068843481673702_1005064756165328686_n.jpg" alt="作者自拍" loading="lazy">
+</footer>
+
 <script>
-  // 切換顯示/隱藏文章列表
+  // 導覽選單展開/收合
   function toggleMenu() {
     const menu = document.querySelector('.collapsed-menu');
     const button = document.querySelector('.toggle-btn');
-
     if (menu.style.display === "none" || menu.style.display === "") {
       menu.style.display = "block";
       button.textContent = "點擊隱藏其他文章";
@@ -196,231 +446,14 @@
     }
   }
 
-</script>
-<h1>中西不死生物比較：殭屍 vs 吸血鬼 vs 喪屍</h1>
-<div class="intro-box"><em>本網頁的作者不僅是吸血鬼文化的熱衷愛好者，還是深度探討東西方吸血鬼與殭屍題材的專家。多年来，他接觸過大量的吸血鬼作品和殭屍電影，無論是西方經典如《德古拉》、《夜訪吸血鬼》、《刀鋒戰士》、《暮光之城》、《凡赫辛》、《吸血鬼獵人：林肯總統》、《Hotel Transylvania》，還是東方的代表作如《殭屍先生》、《殭屍叔叔》、《音樂殭屍》、《殭屍家族》、《殭屍道長》、《千年殭屍王》，他都在不斷比較與探索。這使他對吸血鬼這一文化象徵有了獨特的理解，並且能夠深入分析這些超自然生物在不同文化中的呈現方式和隱喻意涵。<br><br>
-
-  作為一名前端開發者，作者運用自己的技術背景，將這些文化分析與比較呈現於網頁中。他並不滿足於單純的文字敘述，而是通過結合互動性強的網頁設計和創意排版，將這些吸血鬼與殭屍的知識以更直觀、趣味十足的方式呈現給讀者。他將這一前端作品部署到GitHub Pages，開設專案，將自己的文化研究和技術技能結合，讓更多人可以輕鬆地接觸到這些深入且富有思考的內容。
-</em></div>
-<p>受到西洋電影的影響，很多人會本能地把「殭屍」直接翻成英文 <strong>zombie</strong>，但這其實並不準確。根據文化脈絡，<strong>殭屍</strong>的英文應該是 <em>Jiangshi</em>（音譯）或 <em>Chinese Vampire</em>（意譯；谷歌翻譯和臉書翻譯會將其翻成"中國的吸血鬼"）。</p>
-<div style="display:block; text-align:center; border-color: purple; background-color:yellow; border-width: 5px;>
-        border-style: solid;">
-<img loading="lazy" height="705" width="1302" src="殭屍維基百科.png" alt=""><br>
-<img loading="lazy" src="聊天紀錄.webp" alt=""><br>
-<img loading="lazy" src="聊天紀錄2.webp" alt=""><br>
-<img loading="lazy" src="聊天紀錄3.webp" alt=""><br>
-<img loading="lazy" src="聊天紀錄4.webp" alt=""><br>
-<img loading="lazy" src="聊天紀錄5.webp" alt=""><br>
-<img loading="lazy" height="446" width="806" src="殭屍與中國殭屍.png" alt=""><br>
-<img loading="lazy" height="501" width="670" src="殭屍與中國殭屍2.png" alt=""><br>
-<img loading="lazy" height="446" width="718" src="殭屍與中國殭屍3.png" alt=""><br>
-<img loading="lazy" height="494" width="660" src="殭屍與中國殭屍4.png" alt=""><br>
-<img loading="lazy" height="383" width="412" src="殭屍與中國殭屍5.png" alt=""><br>
-<img loading="lazy" height="499" width="353" src="殭屍與中國殭屍6.png" alt="">
-</div>
-<h2>殭屍是什麼？</h2>
-<p>殭屍（Jiangshi）起源自中國傳統文化，是死後屍體因怨氣、屍氣或法力復活的產物。它們有時會吸取人類的生命力或血液，並且通常以夜間活動為主。儘管它們的外觀像是腐爛的屍體，但它們不僅能吸血，還能吸取生命精氣來維持存在，這一點與西方的吸血鬼類似。</p>
-
-<p>傳統的殭屍通常是由巫術或不正當的死亡所產生，當其復活後，會無意識地進行食血或吸取生命精華的行為。這些殭屍常見於民間故事中，作為對於死後靈魂的恐懼象徵。</p>
-
-<p>它們的行為特徵包括：</p>
-<ul>
-  <li><strong>吸血與吸取生命精氣：</strong>與吸血鬼相似，殭屍會吸取生者的血液或生命精氣，這是它們維持不死狀態的重要方式之一。</li>
-  <li><strong>害怕陽光：</strong>殭屍在陽光下無法活動，因此它們通常只會在夜間出沒。</li>
-  <li><strong>無法逃脫：</strong>一旦受到了正確的符咒或道具（如桃木劍、符咒等）的鎮壓，殭屍將會停止活動，直到解除封印。</li>
-</ul>
-
-<p>民間信仰中，殭屍會隨著時間修煉，從最低級的跳躍型殭屍進化為能飛行的屍王，甚至進化為更高級的 <strong>魃</strong>（能引發乾旱與瘟疫）與 <strong>犼</strong>（能吐火、吞雲、吃龍）。袁枚的《子不語》中甚至提到犼是殭屍的最終型態並且成為神明的坐騎。</p>
-<div style="display:block; text-align:center; border-color: purple; background-color:yellow; border-width: 5px;>
-        border-style: solid;">
-  <p><strong>下方這十一部插入影片介紹殭屍的等級，各位可以參考一下</strong></p>
-  <video controls width="600" height="400"><source src="殭屍進化.mp4"></video>
-  <video controls width="600" height="400"><source src="玄魁.mp4"></video>
-  <video controls width="600" height="400"><source src="殭屍vs吸血鬼.mp4"></video>
-  <video controls width="600" height="400"><source src="殭屍vs吸血鬼2.mp4"></video>
-  <video controls width="600" height="400"><source src="犼.mp4"></video>
-  <video controls width="600" height="400"><source src="犼2.mp4"></video>
-  <iframe loading="lazy" width="600" height="400" src="https://www.youtube.com/embed/A1YGGnZvL5o?si=h8LoMo9gitHV_PCd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-  <iframe loading="lazy" width="600" height="400" src="https://www.youtube.com/embed/3bx7VW_ZVlY?si=uVaVsKqJLqIqI2Wc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-  <iframe loading="lazy" width="600" height="400" src="//player.bilibili.com/player.html?isOutside=true&aid=717421922&bvid=BV1cQ4y1m7Ao&cid=393843498&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
-  <iframe loading="lazy" width="600" height="400" src="//player.bilibili.com/player.html?isOutside=true&aid=113401363762690&bvid=BV1BzSJYQEet&cid=26548505595&p=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
-  <iframe loading="lazy" width="600" height="400" src="https://www.youtube.com/embed/tRhk9IjbRdU?si=SKbqMDZ6r7DVBPLo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-<p>殭屍常見弱點包括：<strong>糯米、桃木劍、符咒、黑狗血、公雞血、童子尿</strong>等。在港片中，道士會使用這些道具鎮壓殭屍。</p>
-<p>這也是為甚麼<a href="https://zh.wikipedia.org/zh-tw/%E6%AE%AD%E5%B1%8D%E5%85%88%E7%94%9F" target="_blank">《殭屍先生》</a>、<a href="https://youtu.be/eo3_gaMUDJw?si=oRCXk6dGvGphvnjA" target="_blank">《殭屍大時代》</a>、<a href="https://zh.wikipedia.org/zh-tw/%E6%95%91%E6%AE%AD%E6%B8%85%E9%81%93%E5%A4%AB" target="_blank">《救殭清道夫》</a>等電影的英譯是 <em>Mr. Vampire</em> 、<em>The Era of Vampires</em>、<em>Vampire Cleanup Department</em>，而不是 <em>Mr. Zombie</em>、<em>The Era of Zombies</em>、<em>Zombie Cleanup Department</em>（如下截圖所示）。</p>
-<br>
-<div style="display:block; text-align:center; border-color: purple; background-color:yellow; border-width: 5px;>
-        border-style: solid;">
-<img loading="lazy" src="殭屍先生.png" alt="">
-<img loading="lazy" src="千年殭屍王.png" alt="">
-<img loading="lazy" src="救殭清道夫海報.png" alt="">
-</div>
-<h2>吸血鬼的傳說與特色</h2>
-<p>吸血鬼源於基督教文化，關於他們的起源有多個版本：</p>
-<ul>
-  <li><strong>該隱</strong>：因殺兄受上帝懲罰，成為不能見陽光、只能吸血的永生者。</li>
-  <li><strong>德古拉</strong>：因痛失愛妻而與魔鬼簽約，墮落成吸血鬼。</li>
-  <li><strong>猶大</strong>：出賣耶穌後被魔鬼復活，懼怕銀器，這是吸血鬼怕銀的來源。</li>
-</ul>
-<p>吸血鬼其實也是一種復活的屍體，因此港片中道士稱其為「<strong>西洋殭屍</strong>」。但吸血鬼與殭屍、喪屍不同的是：</p>
-<ul>
-  <li>有智慧與外貌魅力</li>
-  <li>具有<strong>變身為蝙蝠</strong>、<strong>催眠他人</strong>的能力</li>
-  <li>某些二次創作中的吸血鬼還能<strong>讀心、隔空取物、暫停時間、隱形、召喚烏雲和閃電、在人類狀態下直接飛行而不是變成蝙蝠</strong></li>
-  <li>擁有階級制度，輩分越高越強</li>
-  <li>會使用魔法與詭計</li>
-  <li>怕<strong>大蒜、聖水、十字架、銀器、聖經、陽光</strong></li>
-</ul>
-<div style="display:block; text-align:center; border-color: purple; background-color:yellow; border-width: 5px;
-        border-style: solid;">
-  <img loading="lazy" src="德古拉的能力1.jpg" alt="">
-    <img loading="lazy" src="德古拉的能力2.jpg" alt="">
-    <img loading="lazy" src="德古拉的能力3.jpg" alt="">
-  <img loading="lazy" src="德古拉的能力4.jpg" alt="">
-  <img loading="lazy" src="德古拉的能力5.jpg" alt="">
-    <img loading="lazy" src="德古拉的能力6.jpg" alt="">
-</div>
-<br>
-<div style="display:block; text-align:center; border-color: purple; background-color:yellow; border-width: 5px;
-        border-style: solid;">
-  <img loading="lazy" src="吸血殭屍.png" alt="">
-  <img loading="lazy" src="吸血殭屍2.png" alt="">
-  <img loading="lazy" src="吸血殭屍3.png" alt="">
-  <img loading="lazy" src="吸血殭屍4.png" alt="">
-  <img loading="lazy" src="吸血殭屍5.png" alt="">
-  <img loading="lazy" src="吸血殭屍6.png" alt="">
-  <img loading="lazy" src="吸血殭屍7.png" alt="">
-  <img loading="lazy" src="吸血殭屍8.png" alt="">
-  <img loading="lazy" src="吸血殭屍9.png" alt="">
-</div>
-<br>
-<div style="display:block; text-align:center; border-color: purple; background-color:yellow; border-width: 5px;
-        border-style: solid;">
-  <strong>下方這十八部從油管嵌入的影片除了介紹吸血鬼的電影和電視劇以外，還展示吸血鬼在不同作品中的能力和弱點，各位可以參考一下</strong>
-  <iframe loading="lazy" width="600" height="400" src="https://www.youtube.com/embed/lVbHWCM5EyQ?si=QDf1odYSteDAFvhy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-  <br><iframe loading="lazy" width="600" height="400" src="https://www.youtube.com/embed/aaOD2HPVV5A?si=ZzeBapMZokayapB2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-  <br><iframe loading="lazy" width="600" height="400" src="https://www.youtube.com/embed/dPiEH97IfjY?si=4a4mxuwOxeRThyfF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-  <br><iframe loading="lazy" width="600" height="400" src="https://www.youtube.com/embed/3kNC0tSMDZU?si=lf5bqMyk5SwonRSU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-  <br><iframe loading="lazy" width="600" height="400" src="https://www.youtube.com/embed/nOhZusDPBW0?si=bZFOeS3LdOEqytwT" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-  <br><iframe loading="lazy" width="600" height="400" src="https://www.youtube.com/embed/-Azpri_jU_U?si=mPZBgHLFrrpVeJor" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-  <br><iframe loading="lazy" width="600" height="400" src="https://www.youtube.com/embed/ImzRUwve3uo?si=t8AXNSVSRSrbu575" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-  <br><iframe loading="lazy" width="600" height="400" src="https://www.youtube.com/embed/ZWIIoPZFsuo?si=qKC-0ww41JC-TQ04" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-  <br><iframe loading="lazy" width="600" height="400" src="https://www.youtube.com/embed/UXMHoWuIgK0?si=wyQwhIMR4yl0Sg7v" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-  <br><iframe loading="lazy" width="600" height="400" src="https://www.youtube.com/embed/Nfq8XmcChq0?si=mLtEEBvdMWpsJSMd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-  <br><iframe loading="lazy" width="600" height="400" src="https://www.youtube.com/embed/7MoTAr41MA0?si=bLk1OqkfQ68INyYE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-  <br><iframe loading="lazy" width="600" height="400" src="https://www.youtube.com/embed/WyMDJB4ty2w?si=OZ3ED0GSTeZioWe3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-  <br> <iframe loading="lazy" width="600" height="400" src="https://www.youtube.com/embed/NLymhcNMVmk?si=7mxBM4nDB9iEnVRG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-  <br> <iframe loading="lazy" width="600" height="400" src="https://www.youtube.com/embed/8U61DzBnUvI?si=OYLyZmAw6UaDHUql" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-  <br><iframe loading="lazy" width="600" height="400" src="https://www.youtube.com/embed/O_vqJ6hT1Qs?si=H6xq0XM07IAVX254" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-  <br><iframe loading="lazy" width="600" height="400" src="https://www.youtube.com/embed/HYgijJHowyc?si=nincbQzyvyCmX4kH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-  <br><iframe loading="lazy" width="600" height="400" src="https://www.youtube.com/embed/DG6WCw0PZLs?si=o45TiU45lEhxoc2y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-  <br><iframe loading="lazy" width="600" height="400" src="https://www.youtube.com/embed/wTjM69UR3NQ?si=2a4GMy6poDeOUYMK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-<p>被吸血鬼「<strong>初擁</strong>」的人，會永遠停留在當時的年齡，但知識與經驗會持續累積。有些看似年輕貌美的吸血鬼，實際上是最有權力的長老。</p>
-<p>吸血鬼文化在西方盛行，例如《暮光之城》、《吸血鬼日記》等，都呈現了吸血鬼既浪漫又神秘的形象。</p>
-<h2>喪屍的真相</h2>
-<p>喪屍（<em>zombie</em>）與殭屍和吸血鬼截然不同：</p>
-<ul>
-  <li>喪屍是生前受到病毒或輻射感染，死後復活的屍體</li>
-  <li>動作緩慢但數量眾多，靠咬人傳染</li>
-  <li>以生肉為食，<strong>不是吸血</strong></li>
-  <li>只要被打爆頭就會死亡</li>
-  <li>不怕陽光，也沒靈智</li>
-</ul>
-<div style="display:block; text-align:center; border-color: purple; background-color:yellow; border-width: 5px;>
-        border-style: solid;">
-  <iframe loading="lazy" width="600" height="400" src="https://www.youtube.com/embed/m_0fF-S2p0k?si=thCtS1cFwUQPnH_H" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-  <br>
-  <iframe loading="lazy" width="600" height="400" src="https://www.youtube.com/embed/dzIfK-S1Vtg?si=qswEtUhjwTwJLI0Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-  <br>
-  <iframe loading="lazy" width="600" height="400" src="https://www.youtube.com/embed/K2To-9WyEVQ?si=dqZmkVAJ2lhr7DXp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-</div>
-<p>喪屍片（如《活人生吃》、《屍速列車》、《行屍走肉》）多半帶有社會隱喻，常探討文明崩潰、人性極限等主題。</p>
-<h2>總結：三者的差異</h2>
-<table border="1" cellpadding="8" cellspacing="0">
-  <thead>
-  <tr>
-    <th>類型</th>
-    <th>殭屍</th>
-    <th>吸血鬼</th>
-    <th>喪屍</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr>
-    <td>起源</td>
-    <td>中國民間信仰</td>
-    <td>基督教神話、西方傳說</td>
-    <td>科幻災難、病毒感染</td>
-  </tr>
-  <tr>
-    <td>食物</td>
-    <td>吸血</td>
-    <td>吸血</td>
-    <td>吃生肉、腦</td>
-  </tr>
-  <tr>
-    <td>弱點</td>
-    <td>陽光、糯米、逃木劍、符咒、黑狗血、公雞血、童子尿</td>
-    <td>陽光、大蒜、十字架、聖水、聖經、銀器</td>
-    <td>爆頭</td>
-  </tr>
-  <tr>
-    <td>智慧</td>
-    <td>隨修煉而升級</td>
-    <td>高智慧</td>
-    <td>無</td>
-  </tr>
-  <tr>
-    <td>代表作品</td>
-    <td>《殭屍道長》（英語：Vampire Expert）、林正英電影</td>
-    <td>《德古拉》、Twilight 系列</td>
-    <td>《行屍走肉》、《惡靈古堡》</td>
-  </tr>
-  </tbody>
-</table>
-<h2>結語</h2>
-<p>總的來說，吸血鬼與殭屍、喪屍是截然不同的三種怪物：吸血鬼是有智慧與魅力的神秘存在；殭屍帶有濃厚的中國民間色彩，講究道法與屍變；喪屍則是現代災難片中的恐怖象徵。</p>
-<p>瞭解它們的文化背景，不只能更深入欣賞相關影視作品，也有助於理解東西方文化對「死亡」與「復活」的不同想像。</p>
-<ul id="messages"></ul>
-<div id="social-share" style="margin-top: 20px;">
-  <a id="fb-share" href="#" target="_blank" style="color: #4267B2; font-weight: bold;">分享到 Facebook</a>
-  <span> | </span>
-  <a id="line-share" href="#" target="_blank" style="color: #00C300; font-weight: bold;">分享到 Line</a>
-  <span> | </span>
-  <a id="twitter-share" href="#" target="_blank" style="color: #1DA1F2; font-weight: bold;">分享到 X</a>
-</div>
-<script>
-  // 自動抓取當前頁面的 URL
-  var currentUrl = window.location.href;
-  // Facebook 分享
-  document.getElementById("fb-share").href =
-          "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(currentUrl);
-  // Line 分享
-  document.getElementById("line-share").href =
-          "https://social-plugins.line.me/lineit/share?url=" + encodeURIComponent(currentUrl);
-  // X (Twitter) 分享
-  document.getElementById("twitter-share").href =
-          "https://twitter.com/intent/tweet?url=" + encodeURIComponent(currentUrl) + "&text=你的文章標題";
-</script>
-<footer style="text-align: center; background-color: purple; color:yellow; font-size: 50px">
-  作者：<a class="the_author_of_the_web" href="https://www.facebook.com/profile.php?id=100056441813114&locale=zh_TW" target="_blank" style="color:white">周彥廷</a>
-  <br>創作日期：西元二零二五年六月四日<br>
-  <img src="480441080_1068843481673702_1005064756165328686_n.jpg" alt="自拍">
-  <br>
-</footer>
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous"
-        src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v17.0" nonce="yourNonce">
+  // 自動配置社群分享連結
+  (function() {
+    var currentUrl = window.location.href;
+    document.getElementById("fb-share").href = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(currentUrl);
+    document.getElementById("line-share").href = "https://social-plugins.line.me/lineit/share?url=" + encodeURIComponent(currentUrl);
+    document.getElementById("twitter-share").href = "https://twitter.com/intent/tweet?url=" + encodeURIComponent(currentUrl) + "&text=" + encodeURIComponent("中西不死生物比較：殭屍 vs 吸血鬼 vs 喪屍");
+  })();
 </script>
 
-<div class="fb-comments"
-     data-href="https://chrischou19990904.github.io/harp_app_introduction"
-     data-width="100%"
-     data-numposts="5">
-</div>
-<footer style="font-size: 0.9em; text-align: center; margin-top: 2em; background-color: purple; color: yellow;">
-  所有頁面均來自同一 GitHub Pages 專案
-</footer>
 </body>
 </html>
