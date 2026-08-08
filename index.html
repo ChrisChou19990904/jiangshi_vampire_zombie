@@ -66,10 +66,20 @@
       border: 1px solid #ddd;
       padding: 15px;
       border-radius: 5px;
+      margin: 20px 0;
     }
     .toc-box ul {
       margin: 5px 0 0 0;
       padding-left: 20px;
+    }
+    .index-tech-note {
+      background-color: #f0f4f8;
+      border-left: 4px solid #2980b9;
+      padding: 10px 12px;
+      margin-top: 10px;
+      font-size: 13.5px;
+      color: #444;
+      line-height: 1.6;
     }
     .collapsed-menu {
       display: none;
@@ -93,7 +103,7 @@
       color: white;
     }
     .toggle-btn:visited{
-        color: #4b0082;
+      color: #4b0082;
       background-color: #fff;
     }
 
@@ -223,22 +233,19 @@
 
 <header>
   <nav class="nav-container">
-    <!-- 本頁錨點導航目錄 -->
-    <div class="toc-box">
-      <strong>📍 本頁內容導航：</strong>
-      <ul>
-        <li><a href="#section-intro">作者簡介與核心觀點</a></li>
-        <li><a href="#section-jiangshi">一、殭屍是什麼？（Jiangshi）</a></li>
-        <li><a href="#section-vampire">二、吸血鬼的傳說與特色</a></li>
-        <li><a href="#section-zombie">三、喪屍的真相（Zombie）</a></li>
-        <li><a href="#section-summary">四、總結：三者差異對照表</a></li>
-      </ul>
-    </div>
-
     <!-- 其他文章摺疊選單 -->
     <div>
-      <strong class="guide">📚 其他系列文章連結：</strong>
+      <strong class="guide">📚 本專案的其他文章連結：</strong>
       <button class="toggle-btn" onclick="toggleMenu()">點擊展開文章列表</button>
+
+      <!-- 首頁定位與 index.html 技術小科普 -->
+      <div class="index-tech-note">
+        <strong>💡 本頁面定位與前端小知識：</strong><br>
+        本頁面為本 GitHub Pages 專案的<strong>入口首頁（主頁）</strong>，主要作為整體專案的基石，深度剖析與區分「東方殭屍（Jiangshi）」、「西洋吸血鬼（Vampire）」與「現代喪屍（Zombie）」的三方文化語境與生理差異。<br><br>
+        <strong>為什麼首頁的檔案名稱固定是 <code>index.html</code>？</strong><br>
+        在早期 Web 開發與 HTTP 伺服器架構（如 Nginx、Apache）中，當使用者僅輸入網域（例如 <code>username.github.io/project/</code>）而未指定具體檔名時，伺服器會自動尋找該目錄下的預設「索引目錄（Index File）」。習慣上各大伺服器系統均預設將 <code>index.html</code> 或 <code>index.htm</code> 作為優先讀取的預設網頁，此一規範延續至今，成為全球網頁開發與 GitHub Pages 靜態託管的標準慣例。
+      </div>
+
       <ol class="collapsed-menu">
         <li><a href="zombie_change.html" target="_blank">喪屍題材的演變：從魔幻到科幻</a></li>
         <li><a href="vampire_change.html" target="_blank">吸血鬼題材演變與東亞再詮釋</a></li>
@@ -274,6 +281,17 @@
     </em>
   </section>
 
+  <!-- 本頁錨點導覽目錄（移至 main 區塊內） -->
+  <div class="toc-box">
+    <strong>📍 本頁內容導航：</strong>
+    <ul>
+      <li><a href="#section-jiangshi">一、殭屍是什麼？（Jiangshi）</a></li>
+      <li><a href="#section-vampire">二、吸血鬼的傳說與特色</a></li>
+      <li><a href="#section-zombie">三、喪屍的真相（Zombie）</a></li>
+      <li><a href="#section-summary">四、總結：三者差異對照表</a></li>
+    </ul>
+  </div>
+
   <p>受到西洋電影的影響，很多人會本能地把「殭屍」直接翻成英文 <strong>zombie</strong>，但這其實並不準確。根據文化脈絡，<strong>殭屍</strong>的英文應該是 <em>Jiangshi</em>（音譯）或 <em>Chinese Vampire</em>（意譯；許多自動翻譯會將其翻成"中國的吸血鬼"）。這也是為什麼《殭屍先生》、《千年殭屍王》、《救殭清道夫》等港片的官方英譯是 <em>Mr. Vampire</em>、<em>The Era of Vampires</em>、<em>Vampire Cleanup Department</em> 而非 <em>Mr. Zombie</em>、<em>The Era of Zombies</em>、<em>Zombie Cleanup Department</em>，如下截圖所示。</p>
   <img loading="lazy" src="殭屍先生海報.png" alt="" style="border:purple 5px solid" width="288" height="756"><br>
   <img loading="lazy" src="千年殭屍王海報.png" alt="" style="border:purple 5px solid" width="267" height="567"><br>
@@ -293,7 +311,7 @@
       <li><strong>害怕陽光：</strong>殭屍在陽光下無法活動，因此通常只會在夜間出沒。</li>
       <li><strong>道法鎮壓：</strong>一旦受到了正確的符咒或道具（如桃木劍、符咒等）鎮壓，殭屍將會停止活動。</li>
     </ul>
-    <p>民間信仰中，殭屍會隨著時間修煉，從最低級的跳躍型殭屍進化為能飛行的屍王，甚至進化為更高級的 <strong>魃</strong>（能引發乾旱與瘟獄）與 <strong>犼</strong>（能吐火、吞雲、吃龍）。袁枚的《子不語》中甚至提到犼是殭屍的最終型態。</p>
+    <p>民間信仰中，殭屍會隨頭時間修煉，從最低級的跳躍型殭屍進化為能飛行的屍王，甚至進化為更高級的 <strong>魃</strong>（能引發乾旱與瘟獄）與 <strong>犼</strong>（能吐火、吞雲、吃龍）。袁枚的《子不語》中甚至提到犼是殭屍的最終型態。</p>
 
     <div class="media-container">
       <p><strong>🎬 殭屍文化與等級演變參考影片（點擊播放）：</strong></p>
