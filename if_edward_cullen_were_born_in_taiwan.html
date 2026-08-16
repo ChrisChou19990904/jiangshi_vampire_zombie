@@ -10,98 +10,117 @@
             max-width: 880px;
             margin: 40px auto;
             padding: 0 20px;
-            background: #fff;
-            color: #222;
+            background: #f8f9fa;
+            color: #2b2d42;
         }
         h1, h2 {
-            color: #800000;
+            color: #6b0f1a;
         }
         blockquote {
-            color: #555;
-            padding-left: 1em;
-            border-left: 4px solid #ccc;
+            color: #4a5568;
+            padding: 10px 16px;
+            border-left: 4px solid #6b0f1a;
+            background-color: #f1f3f5;
             font-style: italic;
+            border-radius: 0 6px 6px 0;
         }
         .section {
             margin-bottom: 40px;
         }
         .highlight {
-            background-color: #fff3cd;
+            background-color: #fde8e8;
+            color: #9b1c1c;
             padding: 0.2em 0.4em;
             border-radius: 4px;
+            font-weight: bold;
         }
         table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
+            background: #fff;
         }
         table, th, td {
-            border: 1px solid #ccc;
+            border: 1px solid #d1d5db;
         }
         th, td {
             padding: 10px;
             text-align: left;
         }
         th {
-            background-color: #f2f2f2;
+            background-color: #2d3748;
+            color: #ffffff;
         }
         header {
-            background-color: pink;
-            padding: 10px 0;
+            background-color: #1e232a;
+            padding: 15px 20px;
+            border-radius: 8px;
+            color: #e5e9f0;
         }
-        a{
-            color: #2980b9;
+        a {
+            color: #8b1e2d;
             text-decoration: none;
+            font-weight: 500;
         }
         a:hover {
             text-decoration: underline;
+            color: #b71c1c;
         }
         a:visited {
-            color: #2980b9;
+            color: #5c0612;
         }
-        video{
+        video, iframe, img {
             max-width: 100%;
+            border-radius: 6px;
         }
         .intro-box {
-            background-color: #eee;
-            padding: 1em;
-            border-left: 5px solid #900;
+            background-color: #242933;
+            color: #e5e9f0;
+            padding: 1.2em;
+            border-left: 5px solid #8b1e2d;
             margin: 1.5em 0;
             font-style: italic;
+            border-radius: 6px;
         }
-        .additional_information{
-            background-color: #dff9fb;
-            border-left: 5px solid #22a6b3;
-            padding: 10px;
+        .additional_information {
+            background-color: #eef2f5;
+            border-left: 5px solid #4a6572;
+            padding: 12px 15px;
             margin: 20px 0;
+            border-radius: 4px;
         }
-        /* 隱藏折疊內容 */
+        /* 隱藏折疊內容 - 完整保留 */
         .collapsed-menu {
             display: none;
             padding-left: 20px;
-            list-style-type: decimal; /* 使用數字編號 */
-            font-size: 14px; /* 設定字體大小 */
-            line-height: 1.6; /* 調整行高 */
+            list-style-type: decimal;
+            font-size: 14px;
+            line-height: 1.6;
         }
 
-        /* 可選的按鈕樣式 */
+        /* 折疊按鈕樣式 - 完整保留並提升質感 */
         .toggle-btn {
             margin: 10px 0;
             padding: 8px 15px;
-            background-color: #f0f0f0;
-            border: 1px solid #ccc;
+            background-color: #2d3748;
+            color: #ffffff;
+            border: 1px solid #4a5568;
+            border-radius: 4px;
             cursor: pointer;
+            transition: background-color 0.2s;
         }
 
         .toggle-btn:hover {
-            background-color: #e0e0e0;
+            background-color: #4a5568;
         }
 
-        /* 強調本頁內容的字體 */
+        /* 強調本頁內容的字體 - 完整保留 */
         .guide {
             font-weight: bold;
-            color: #333;
+            color: #e0e6ed;
         }
+
+        /* 社群分享樣式 - 完整保留 */
         #social-share a {
             text-decoration: none;
             font-weight: bold;
@@ -120,6 +139,21 @@
         }
         #social-share a#twitter-share {
             color: #1DA1F2;
+        }
+
+        /* 頁尾樣式整合 */
+        footer {
+            text-align: center;
+            background-color: #1a1c23;
+            color: #d1d5db;
+            padding: 25px 15px;
+            margin-top: 40px;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+        footer a.the_author_of_the_web {
+            color: #ffb703 !important;
+            font-weight: bold;
         }
     </style>
 </head>
