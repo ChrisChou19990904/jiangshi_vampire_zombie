@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>如果愛德華·庫倫生在台灣：他會被升旗、段考、模擬考、補習、強制性的體能測驗、基本學科能力測驗逼瘋嗎？</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
             font-family: "Noto Sans TC", sans-serif;
-            line-height: 1.8;
+            line-height: 1.85;
             max-width: 880px;
             margin: 40px auto;
             padding: 0 20px;
@@ -15,14 +16,19 @@
         }
         h1, h2 {
             color: #6b0f1a;
+            letter-spacing: 0.5px;
+        }
+        h3 {
+            color: #8b1e2d;
         }
         blockquote {
             color: #4a5568;
-            padding: 10px 16px;
+            padding: 12px 18px;
             border-left: 4px solid #6b0f1a;
             background-color: #f1f3f5;
             font-style: italic;
             border-radius: 0 6px 6px 0;
+            margin: 20px 0;
         }
         .section {
             margin-bottom: 40px;
@@ -39,12 +45,13 @@
             border-collapse: collapse;
             margin-top: 20px;
             background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
         table, th, td {
             border: 1px solid #d1d5db;
         }
         th, td {
-            padding: 10px;
+            padding: 12px 10px;
             text-align: left;
         }
         th {
@@ -56,6 +63,7 @@
             padding: 15px 20px;
             border-radius: 8px;
             color: #e5e9f0;
+            margin-bottom: 25px;
         }
         a {
             color: #8b1e2d;
@@ -72,20 +80,22 @@
         video, iframe, img {
             max-width: 100%;
             border-radius: 6px;
+            box-sizing: border-box;
         }
         .intro-box {
             background-color: #242933;
             color: #e5e9f0;
-            padding: 1.2em;
+            padding: 1.4em;
             border-left: 5px solid #8b1e2d;
             margin: 1.5em 0;
             font-style: italic;
             border-radius: 6px;
+            line-height: 1.9;
         }
         .additional_information {
             background-color: #eef2f5;
             border-left: 5px solid #4a6572;
-            padding: 12px 15px;
+            padding: 15px 20px;
             margin: 20px 0;
             border-radius: 4px;
         }
@@ -146,7 +156,7 @@
             text-align: center;
             background-color: #1a1c23;
             color: #d1d5db;
-            padding: 25px 15px;
+            padding: 30px 15px;
             margin-top: 40px;
             border-radius: 8px;
             font-size: 1rem;
@@ -154,6 +164,12 @@
         footer a.the_author_of_the_web {
             color: #ffb703 !important;
             font-weight: bold;
+        }
+        footer img {
+            margin-top: 15px;
+            max-width: 280px;
+            border-radius: 8px;
+            border: 2px solid rgba(255,255,255,0.2);
         }
     </style>
 </head>
@@ -177,30 +193,30 @@
     <nav>
         <ul>
             <li><strong class="guide">本頁內容：</strong><br>
-                <a>如果愛德華·庫倫生在台灣：他會被升旗、段考、模擬考、補習、強制性的體能測驗、基本學科能力測驗逼瘋嗎？</a></li>
+                <a style="color: #90caf9;">如果愛德華·庫倫生在台灣：他會被升旗、段考、模擬考、補習、強制性的體能測驗、基本學科能力測驗逼瘋嗎？</a></li>
 
             <li><strong class="guide">其他文章連結：</strong>
                 <button class="toggle-btn" onclick="toggleMenu()">點擊展開其他文章</button>
                 <ol class="collapsed-menu">
-                    <li><a href="index.html" target="_blank">中西不死生物比較：殭屍 vs 吸血鬼 vs 喪屍</a></li>
-                    <li><a href="zombie_change.html" target="_blank">喪屍題材的演變：從魔幻到科幻</a></li>
-                    <li><a href="vampire_change.html" target="_blank">吸血鬼題材演變與東亞再詮釋</a></li>
-                    <li><a href="jiangshi_and_western_vampire.html" target="_blank">「殭屍」與「吸血鬼」：語境差異與文化誤會探討</a></li>
-                    <li><a href="what_if_twilight__becomes_real.html" target="_blank">為什麼《暮光之城》的吸血鬼設定在現實中根本行不通</a></li>
-                    <li><a href="bloopers_in_vampire_dramas.html" target="_blank">吸血鬼在影視劇中的穿幫鏡頭觀察</a></li>
-                    <li><a href="key_characters_who_disappear.html" target="_blank">留白的力量：從菩提祖師到德古拉的轉變者，看故事中那些「消失的上層力量」</a></li>
-                    <li><a href="critique_of_church_corruption_in_vampire_stories.html" target="_blank">透過吸血鬼敘事揭示中世紀教會的腐敗與宗教權威的陰暗面</a></li>
-                    <li><a href="aro_height.html" target="_blank">175公分以上的三千歲吸血鬼族長？考古學與暮光之城的身高落差</a></li>
-                    <li><a href="england_and_vampire_culture.html" target="_blank">英國文學對吸血鬼文化的影響</a></li>
-                    <li><a href="europeanized_christianity.html" target="_blank">透過吸血鬼敘事分析歐化基督教與原始聖經觀的差異</a></li>
-                    <li><a href="detailed_analysis_of_europeanized_christianity.html" target="_blank">基督教奇幻與吸血鬼二次創作對比</a></li>
-                    <li><a href="original_christianity_vs_europeanized_christianity.html" target="_blank">基督教世界觀 × 吸血鬼文化：哥德式深度解析（含天使 vs 吸血鬼實力差 + 惡魔城角色）</a></li>
-                    <li><a href="level_of_jiangshi.html" target="_blank">中國殭屍的等級這麼多且最高等級的實力勘比賽亞人，但為何大部分殭屍電影中的殭屍的等級都不高</a></li>
-                    <li><a href="height-converter.html" target="_blank">吸血鬼角色身高的單位轉換輔助閱讀</a></li>
-                    <li><a href="vampire_vs_angel.html" target="_blank">當吸血鬼遇上天使：一場跨神話體系的世界觀問題</a></li>
-                    <li><a href="analysis_of_vampire_change.html" target="_blank">吸血鬼起源與文化演變分析</a></li>
-                    <li><a href="vampires_have_bad_breath.html" target="_blank">永生的代價：從生物學剖析吸血鬼的口臭危機</a></li>
-                    <li><a href="immortal_children_vs_hybrids.html" target="_blank">永生的生理枷鎖與倫理禁忌：從生物學與哲學剖析《暮光之城》的不朽孩童與半吸血鬼</a></li>
+                    <li><a style="color: #90caf9;" href="index.html" target="_blank">中西不死生物比較：殭屍 vs 吸血鬼 vs 喪屍</a></li>
+                    <li><a style="color: #90caf9;" href="zombie_change.html" target="_blank">喪屍題材的演變：從魔幻到科幻</a></li>
+                    <li><a style="color: #90caf9;" href="vampire_change.html" target="_blank">吸血鬼題材演變與東亞再詮釋</a></li>
+                    <li><a style="color: #90caf9;" href="jiangshi_and_western_vampire.html" target="_blank">「殭屍」與「吸血鬼」：語境差異與文化誤會探討</a></li>
+                    <li><a style="color: #90caf9;" href="what_if_twilight__becomes_real.html" target="_blank">為什麼《暮光之城》的吸血鬼設定在現實中根本行不通</a></li>
+                    <li><a style="color: #90caf9;" href="bloopers_in_vampire_dramas.html" target="_blank">吸血鬼在影視劇中的穿幫鏡頭觀察</a></li>
+                    <li><a style="color: #90caf9;" href="key_characters_who_disappear.html" target="_blank">留白的力量：從菩提祖師到德古拉的轉變者，看故事中那些「消失的上層力量」</a></li>
+                    <li><a style="color: #90caf9;" href="critique_of_church_corruption_in_vampire_stories.html" target="_blank">透過吸血鬼敘事揭示中世紀教會的腐敗與宗教權威的陰暗面</a></li>
+                    <li><a style="color: #90caf9;" href="aro_height.html" target="_blank">175公分以上的三千歲吸血鬼族長？考古學與暮光之城的身高落差</a></li>
+                    <li><a style="color: #90caf9;" href="england_and_vampire_culture.html" target="_blank">英國文學對吸血鬼文化的影響</a></li>
+                    <li><a style="color: #90caf9;" href="europeanized_christianity.html" target="_blank">透過吸血鬼敘事分析歐化基督教與原始聖經觀的差異</a></li>
+                    <li><a style="color: #90caf9;" href="detailed_analysis_of_europeanized_christianity.html" target="_blank">基督教奇幻與吸血鬼二次創作對比</a></li>
+                    <li><a style="color: #90caf9;" href="original_christianity_vs_europeanized_christianity.html" target="_blank">基督教世界觀 × 吸血鬼文化：哥德式深度解析（含天使 vs 吸血鬼實力差 + 惡魔城角色）</a></li>
+                    <li><a style="color: #90caf9;" href="level_of_jiangshi.html" target="_blank">中國殭屍的等級這麼多且最高等級的實力勘比賽亞人，但為何大部分殭屍電影中的殭屍的等級都不高</a></li>
+                    <li><a style="color: #90caf9;" href="height-converter.html" target="_blank">吸血鬼角色身高的單位轉換輔助閱讀</a></li>
+                    <li><a style="color: #90caf9;" href="vampire_vs_angel.html" target="_blank">當吸血鬼遇上天使：一場跨神話體系的世界觀問題</a></li>
+                    <li><a style="color: #90caf9;" href="analysis_of_vampire_change.html" target="_blank">吸血鬼起源與文化演變分析</a></li>
+                    <li><a style="color: #90caf9;" href="vampires_have_bad_breath.html" target="_blank">永生的代價：從生物學剖析吸血鬼的口臭危機</a></li>
+                    <li><a style="color: #90caf9;" href="immortal_children_vs_hybrids.html" target="_blank">永生的生理枷鎖與倫理禁忌：從生物學與哲學剖析《暮光之城》的不朽孩童與半吸血鬼</a></li>
                 </ol>
             </li>
         </ul>
@@ -220,12 +236,13 @@
             button.textContent = "點擊展開其他文章";
         }
     }
-
 </script>
+
 <h1>如果愛德華·庫倫生在台灣：他會被升旗、段考、模擬考、補習、強制性的體能測驗、基本學科能力測驗逼瘋嗎？</h1>
 <div class="intro-box"><em>本網頁的作者不僅是吸血鬼文化的熱衷愛好者，還是深度探討東西方吸血鬼與殭屍題材的專家。多年来，他接觸過大量的吸血鬼作品和殭屍電影，無論是西方經典如《德古拉》、《夜訪吸血鬼》、《刀鋒戰士》、《暮光之城》、《凡赫辛》、《吸血鬼獵人：林肯總統》、《Hotel Transylvania》，還是東方的代表作如《殭屍先生》、《殭屍叔叔》、《音樂殭屍》、《殭屍家族》、《殭屍道長》、《千年殭屍王》，他都在不斷比較與探索。這使他對吸血鬼這一文化象徵有了獨特的理解，並且能夠深入分析這些超自然生物在不同文化中的呈現方式和隱喻意涵。<br><br>
 
     作為一名前端開發者，作者運用自己的技術背景，將這些文化分析與比較呈現於網頁中。他並不滿足於單純的文字敘述，而是通過結合互動性強的網頁設計和創意排版，將這些吸血鬼與殭屍的知識以更直觀、趣味十足的方式呈現給讀者。他將這一前端作品部署到GitHub Pages，開設專案，將自己的文化研究和技術技能結合，讓更多人可以輕鬆地接觸到這些深入且富有思考的內容。</em></div>
+
 <div class="section">
     <h2>目錄</h2>
     <p>隨便點選下方一個主題便能快速跳到該主題的說明區</p>
@@ -233,14 +250,18 @@
         <li><a href="#introduction">前言：愛德華·庫倫在台灣的高中生活會是什麼樣子？</a></li>
         <li><a href="#comparison-table">台灣 vs 美國：吸血鬼的校園適應對照表</a></li>
         <li><a href="#education-system">台灣的升學制度：壓力超越吸血鬼壽命</a></li>
+        <li><a href="#mind-reading-hell">考場與讀心術的反噬：全班崩潰心聲的精神污染</a></li>
+        <li><a href="#dress-code-and-sun">髮禁、服儀檢查與校慶曬太陽：吸血鬼的日常穿幫修羅場</a></li>
         <li><a href="#edward_cullen_physical_ability">補充說明：愛德華的物理能力</a></li>
         <li><a href="#physical-fitness-test">體適能測驗與運動會：暴露體能的危機時刻</a></li>
-        <li><a href="#school-monitoring">校園監控與資料系統：你跑不掉的紀錄</a></li>
+        <li><a href="#school-monitoring">校園監控、抽血健檢與戶政系統：你跑不掉的現代紀錄</a></li>
         <li><a href="#edward_cullen_mental_state">心理狀態：他是吸血鬼，不是台灣考生</a></li>
         <li><a href="#conclusion">總結：吸血鬼也會被台灣教育體制打敗</a></li>
     </ul>
+
     <h2 id="introduction">前言：愛德華·庫倫在台灣的高中生活會是什麼樣子？</h2>
-<p>和本網頁的作者一樣孰悉《暮光之城》的朋友們都知道愛德華·庫倫是個生理年齡永遠停留在17歲、氣質超凡且在陽光下會像水晶一樣閃閃發亮的吸血鬼。不過，如果他不是住在華盛頓州濕冷的福克斯小鎮，而是生活在<b>以應試教育為主且上課時數居東亞之冠的台灣</b>呢？他能在那種高壓、密集的高中環境中隱藏身份、正常生活嗎？</p>
+    <p>和本網頁的作者一樣孰悉《暮光之城》的朋友們都知道愛德華·庫倫是個生理年齡永遠停留在17歲、氣質超凡且在陽光下會像水晶一樣閃閃發亮的吸血鬼。不過，如果他不是住在華盛頓州濕冷的福克斯小鎮，而是生活在<b>以應試教育為主且上課時數居東亞之冠的台灣</b>呢？他能在那種高壓、密集的高中環境中隱藏身份、正常生活嗎？</p>
+
     <h2 id="comparison-table">台灣 vs 美國：吸血鬼的校園適應對照表</h2>
     <table>
         <thead>
@@ -254,27 +275,27 @@
         <tr>
             <td>上學時間</td>
             <td>早上8點上課，下午3點放學，有自由活動</td>
-            <td>早上7:30到校，下午5點下課，晚上還要補習</td>
+            <td>早上7:30到校早自習，下午5點下課，晚上還要補習到9:30</td>
         </tr>
         <tr>
-            <td>升旗典禮</td>
-            <td>幾乎沒有，戶外活動不多</td>
-            <td><span class="highlight">每週強制戶外升旗</span>，站在太陽下曝曬，對於愛德華來說，這可不是普通的戶外活動——他會在陽光下閃閃發亮，輕易暴露吸血鬼身份！</td>
+            <td>升旗典禮與朝會</td>
+            <td>幾乎沒有，戶外活動不多，陰雨天即可出門</td>
+            <td><span class="highlight">每週強制全校戶外升旗</span>，頂著烈日曝曬，愛德華會在全校面前如巨型鑽石般閃閃發亮，身分直接曝光！</td>
         </tr>
         <tr>
             <td>學校生活節奏</td>
             <td>相對自由、有社交時間</td>
-            <td><span class="highlight">滿課＋補課＋模擬考不停輪替</span></td>
+            <td><span class="highlight">滿課＋第八節輔導＋週六補課＋模擬考不停輪替</span></td>
         </tr>
         <tr>
-            <td>身分偽裝難度</td>
+            <td>身分偽裝與健康檢查</td>
             <td>小鎮轉學生，名字與外貌不易追查</td>
-            <td>有健保卡、戶籍、學籍系統，<span class="highlight">資料難偽造</span></td>
+            <td>有健保卡、戶籍、學籍系統與<span class="highlight">全員抽血體檢</span>，針頭直接斷裂，資料極難偽造</td>
         </tr>
         <tr>
             <td>體適能測驗</td>
-            <td>可選擇不參加</td>
-            <td><span class="highlight">強制跳遠、仰臥起坐</span>，跳太遠會嚇壞體育老師</td>
+            <td>可選擇不參加或保持低調</td>
+            <td><span class="highlight">強制立定跳遠、仰臥起坐、800/1600米</span>，隨便一跳50公尺會嚇壞體育老師並被送去中研院研究</td>
         </tr>
         </tbody>
     </table>
@@ -284,16 +305,18 @@
     <br>
     <iframe loading="lazy" style="border:solid 10px red" width="560" height="315" src="https://www.youtube.com/embed/MhnyyQR_-bE?si=4_cX4TC6WFdIoh4U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
+
 <div class="section">
     <h2 id="education-system">台灣的升學制度：壓力超越吸血鬼壽命</h2>
-    <p>愛德華永遠17歲，聽起來很棒？但在台灣當高中生，可不是永生就能承受的。</p>
+    <p>愛德華永遠17歲，在美國福克斯小鎮可以開著跑車悠閒過日子；但在台灣當高中生，永生只意味著<strong>「無止盡的重考與無限循環的段考地獄」</strong>。</p>
     <ul>
-        <li>每天超過10節課，晚上還得補習或上自習</li>
-        <li>段考、期中、期末考不間斷</li>
-        <li>高三學生為了學測整年都處於<span class="highlight">高壓焦慮</span>狀態</li>
+        <li>每天超過10節課，早上 7:30 考英文單字與隨堂卷，晚上還得留校晚自習或擠進南陽街補習班。</li>
+        <li>高一高二有段考、期中考、期末考、週考；高三更要面臨排山倒海的全國模擬考與學測複習。</li>
+        <li>在密閉悶熱的晚自習教室裡，幾十位同學的頸動脈劇烈跳動，散發著滾燙的血香，愛德華必須一邊抵抗嗜血本能，一邊面無表情地背誦古文三十篇與微積分。</li>
     </ul>
-    <p>愛德華若生在這種教育環境中，可能會因為精神過度緊繃，開啟吸血鬼本能（咬掉考卷？）</p>
+    <p>愛德華若生在這種教育環境中，可能會因為精神過度緊繃，開啟吸血鬼本能（直接把模擬考卷撕碎吞下去）。</p>
 </div>
+
 <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/bAjCaph8-KI?si=X6LzeL_wB7IR_VLp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 <br>
 <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/jCjzvf_mUCk?si=DlweXEEJyaYSg_Y1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -305,6 +328,30 @@
 <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/_qiZAuBlhXs?si=vXbvYbf83vI1VQg7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 <br>
 <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/EJheftc9txM?si=I0VbMRl-Owa87sD6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+<div class="section">
+    <h2 id="mind-reading-hell">考場與讀心術的反噬：全班崩潰心聲的精神污染</h2>
+    <p>在《暮光之城》中，愛德華的「心靈感應（Mind Reading）」是他最強大的特異功能；但在台灣的大型考場中，這項超能力將徹底淪為一場酷刑：</p>
+    <ul>
+        <li><strong>作弊無效化：</strong>在學測考場上，愛德華就算想讀取同學的心思，聽到的也全都是「慘了這題完全沒背過」、「到底是選 B 還是選 C」、「救命我想去上廁所」等混亂又崩潰的思緒，對解題毫無幫助。</li>
+        <li><strong>超負荷的精神干擾：</strong>當整間考場 40 名考生的焦慮、恐慌、心跳加速與壓力雜音同時灌進愛德華的大腦，其精神污染程度遠比面對佛杜里家族的審判還要致命。</li>
+    </ul>
+</div>
+
+<div class="section">
+    <h2 id="dress-code-and-sun">髮禁、服儀檢查與校慶曬太陽：吸血鬼的日常穿幫修羅場</h2>
+    <p>除了應付升學考試，台灣學校特有的「集體生活管理」更是愛德華完全無法跨越的生理死穴：</p>
+    <ul>
+        <li><strong>校慶運動會的「全日強制曝曬」：</strong>在美國福克斯，只有陰雨天他才出現在校園；但在台灣學校的校慶運動會或園遊會，全校學生必須整天坐在毫無遮蔽物的操場看台與草地上曬太陽。愛德華只要一走進田徑場，皮膚立刻在強光下像千萬顆鑽石般瘋狂折射，全校師生瞬間被亮瞎，想低調都辦不到。</li>
+        <li><strong>大熱天穿冬季外套被記警告：</strong>為了遮擋反光皮膚，愛德華即使在攝氏 35 度的酷暑也必須穿著長袖制服與厚重外套。這在教官眼裡完全是「藐視換季規定」的違規行為，動不動就被教官攔下盤查：「同學，現在是夏天，你外套為什麼不脫掉？立正！拉鍊拉好！」教官伸手抓他衣領時，還會摸到他如花崗岩般堅硬且冰冷徹骨的皮膚。</li>
+        <li><strong>永遠無法改變的「石化髮型」：</strong>面對嚴格的髮禁規範，教官要求他「頭髮不能過眉、兩側要推高」。然而吸血鬼在轉化時身體已徹底石化，理髮剪刀剪上去只會被鈍化甚至崩斷；更慘的是，吸血鬼細胞不再分裂代謝，頭髮一旦剪壞就永遠長不回來了。</li>
+    </ul>
+    <blockquote>
+        「我能躲過沃爾圖里家族三千年的追捕，但我躲不過教官在校門口抓我服儀不整的那張紅單。」
+        ——愛德華·庫倫，朝會被罰站時的心聲
+    </blockquote>
+</div>
+
 <div class="section">
     <h2 id="edward_cullen_physical_ability">補充說明：愛德華的物理能力</h2>
     <p>在《暮光之城》中的一個著名場景，愛德華展示了他超凡的速度和力量。他能在幾乎一瞬間跑到貝拉面前，並單手擋下即將失控撞向她的汽車。這個場景其實能夠根據愛德華的速度來做推算。</p>
@@ -336,10 +383,10 @@
         <video style="border:solid 2px blue;width:486px;height:648px" controls><source src="jump.mp4"></video>
         <br><br>
         下方的四張插入圖片是作者中小學時期一連串的體育獎狀——高二的時候決賽當天腳痛所以才跑十三秒，但前一天的預賽確實是十二秒多。<br>
-                <img style="border:solid 2px red;width:379px;height:484px" loading="lazy" src="獎狀.jpg" alt="獎狀1" class="carousel-item">
-                <img style="border:solid 2px red;width:379px;height:484px" loading="lazy" src="獎狀2.jpg" alt="獎狀2" class="carousel-item">
-                <img style="border:solid 2px red;width:379px;height:484px" loading="lazy" src="獎狀3.jpg" alt="獎狀3" class="carousel-item">
-                <img style="border:solid 2px red;width:379px;height:484px" loading="lazy" src="獎狀4.jpg" alt="獎狀4" class="carousel-item">
+        <img style="border:solid 2px red;width:379px;height:484px" loading="lazy" src="獎狀.jpg" alt="獎狀1" class="carousel-item">
+        <img style="border:solid 2px red;width:379px;height:484px" loading="lazy" src="獎狀2.jpg" alt="獎狀2" class="carousel-item">
+        <img style="border:solid 2px red;width:379px;height:484px" loading="lazy" src="獎狀3.jpg" alt="獎狀3" class="carousel-item">
+        <img style="border:solid 2px red;width:379px;height:484px" loading="lazy" src="獎狀4.jpg" alt="獎狀4" class="carousel-item">
         <br><br>
         然而，無論是奔跑還是跳遠，作者都被愛德華全方位輾壓。
         <br><br>
@@ -360,24 +407,23 @@
     </ul>
     <p>因此，雖然愛德華的體能極其強大，但在台灣的運動會中，他的參賽將會是「作弊」的代名詞，根本不可能繼續下去！</p>
 </div>
+
 <div class="section">
-    <h2 id="school-monitoring">校園監控與資料系統：你跑不掉的紀錄</h2>
-    <p>在電影裡，愛德華只需要換名字、轉學、裝年輕，就能繼續在不同城市「重新開始」。</p>
-    <p>但在台灣？</p>
+    <h2 id="school-monitoring">校園監控、抽血健檢與戶政系統：你跑不掉的現代紀錄</h2>
+    <p>在電影裡，愛德華只需要換名字、轉學、裝年輕，就能繼續在不同城市「重新開始」。但在台灣綿密的行政體系下，他幾乎寸步難行：</p>
     <ul>
-        <li>學籍資料全國統一</li>
-        <li>戶政系統與健保資料息息相關</li>
-        <li>動不動就要填家長資料、身份證字號、出生年月日</li>
+        <li><strong>全員抽血體檢大穿幫：</strong>台灣高中新生入學必須進行全員健康檢查。當護理師拿著針頭往愛德華手臂扎下去時，針頭會當場被如花崗岩般的皮膚折斷；測量耳溫永遠顯示 0°C 或「低溫錯誤」；量脈搏完全測不到任何心跳，直接觸發醫療異常警報。</li>
+        <li><strong>數位學籍與戶政連線：</strong>學籍資料全國連線，健保卡、身分證字號與戶籍資料緊密綁定，要偽造未成年身分比登天還難。</li>
+        <li><strong>人際網絡過於密集：</strong>台灣地狹人稠，同學的阿嬤搞不好就是你八十年前在日治時期讀高校時的同班同學，一翻出泛黃的舊畢業紀念冊就能當場抓包你完全沒變老。</li>
     </ul>
-    <p>更別說同學阿嬤可能是你上輩子的同班同學，一翻出舊畢業紀念冊就認出你來。</p>
 </div>
 
 <div class="section">
     <h2 id="edward_cullen_mental_state">心理狀態：他是吸血鬼，不是台灣考生</h2>
-    <p>《暮光之城》裡的愛德華已經夠陰鬱了。但若放在台灣學測制度底下，他的心理狀態可能會變成這樣：</p>
+    <p>《暮光之城》裡的愛德華已經夠陰鬱了。但若放在台灣學測與分科測驗的制度底下，他的心理狀態可能會變成這樣：</p>
     <blockquote>
-        「我已經活了百年……但從沒經歷過段考前一週那麼痛苦的事。」
-        ——愛德華·庫倫，2025，台中一中學生
+        「我已經活了百年……面對過無數強敵與殺戮，但從沒經歷過段考前一週那麼令人崩潰的事。」
+        ——愛德華·庫倫，2025，台中一中考生
     </blockquote>
 </div>
 
@@ -386,40 +432,43 @@
     <p>愛德華在美國，只需要擔心不要咬到人、不被太陽照到、不讓女友發現你沒體溫。</p>
     <p>但在台灣，他要應付的有：</p>
     <ul>
-        <li>晨光下的升旗典禮（對愛德華來說，站在太陽下會發光，這可是危險的暴露時刻）</li>
-        <li>密集如海浪般的模擬考</li>
-        <li>每學期一次的體適能「驗身」</li>
-        <li>滿天飛的健保卡、戶籍、學籍系統資料</li>
+        <li>晨光下的升旗典禮與校慶（站在太陽下會發光，這可是危險的暴露時刻）</li>
+        <li>密集如海浪般的模擬考與全班焦慮心聲的精神污染</li>
+        <li>每學期一次的體適能「驗身」與抽血體檢</li>
+        <li>滿天飛的健保卡、戶籍、學籍系統資料與教官的服儀糾察</li>
     </ul>
     <p><strong>在這裡，連吸血鬼都得問：我能不能休學重考？</strong></p>
 </div>
+
 <ul id="messages"></ul>
-<div id="social-share" style="margin-top: 20px;">
+
+<!-- 社群分享區塊 -->
+<div id="social-share" style="margin-top: 30px; margin-bottom: 20px; padding: 12px; background: #fff; border-radius: 8px; box-shadow: 0px 0px 5px #ccc;">
+    <strong>📢 分享本文章：</strong>
     <a id="fb-share" href="#" target="_blank" style="color: #4267B2; font-weight: bold;">分享到 Facebook</a>
     <span> | </span>
     <a id="line-share" href="#" target="_blank" style="color: #00C300; font-weight: bold;">分享到 Line</a>
     <span> | </span>
-    <a id="twitter-share" href="#" target="_blank" style="color: #1DA1F2; font-weight: bold;">分享到 X</a>
+    <a id="twitter-share" href="#" target="_blank" style="color: #1DA1F2; font-weight: bold;">分享到 X (Twitter)</a>
 </div>
+
 <script>
-    // 自動抓取當前頁面的 URL
+    // 自動抓取當前頁面的 URL 與標題
     var currentUrl = window.location.href;
+    var currentTitle = document.title;
+
     // Facebook 分享
     document.getElementById("fb-share").href =
         "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(currentUrl);
     // Line 分享
     document.getElementById("line-share").href =
         "https://social-plugins.line.me/lineit/share?url=" + encodeURIComponent(currentUrl);
-    // X (Twitter) 分享
+    // X (Twitter) 分享（自動帶入網頁標題）
     document.getElementById("twitter-share").href =
-        "https://twitter.com/intent/tweet?url=" + encodeURIComponent(currentUrl) + "&text=你的文章標題";
+        "https://twitter.com/intent/tweet?url=" + encodeURIComponent(currentUrl) + "&text=" + encodeURIComponent(currentTitle);
 </script>
-<footer style="text-align: center; background-color: purple; color:yellow; font-size: 50px">
-    作者：<a class="the_author_of_the_web" href="https://www.facebook.com/profile.php?id=100056441813114&locale=zh_TW" target="_blank" style="color:white">周彥廷</a>
-    <br>創作日期：西元二零二五年九月二十六日<br>
-    <img loading="lazy" src="480441080_1068843481673702_1005064756165328686_n.jpg" alt="自拍">
-    <br>
-</footer>
+
+<!-- Facebook 留言外掛區塊 -->
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous"
         src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v17.0" nonce="yourNonce">
@@ -430,8 +479,17 @@
      data-width="100%"
      data-numposts="5">
 </div>
-<footer style="font-size: 0.9em; text-align: center; margin-top: 2em; background-color: purple; color: yellow;">
-    所有頁面均來自同一 GitHub Pages 專案
+
+<!-- 整合優化後的統一頁尾 -->
+<footer>
+    <p style="font-size: 1.25rem; margin: 8px 0;">作者：<a class="the_author_of_the_web" href="https://www.facebook.com/profile.php?id=100056441813114&locale=zh_TW" target="_blank">周彥廷</a></p>
+    <p style="margin: 5px 0;">創作日期：西元二零二五年九月二十六日</p>
+    <div style="margin: 15px 0;">
+        <img loading="lazy" src="480441080_1068843481673702_1005064756165328686_n.jpg" alt="自拍">
+    </div>
+    <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.2); margin: 20px auto; width: 60%;">
+    <p style="font-size: 0.9em; opacity: 0.85; margin: 5px 0;">所有頁面均來自同一 GitHub Pages 專案</p>
 </footer>
+
 </body>
 </html>
