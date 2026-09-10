@@ -6,22 +6,82 @@
     <title>殭屍世界觀百科互動版</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
+        :root {
+            --bg-color: #1e1e1e;
+            --text-color: #f5f5f5;
+            --link-color: #ffb347;
+            --link-hover: #ffd180;
+            --toc-bg: #2b2b2b;
+            --th-bg: #333333;
+            --th-color: #ffb347;
+            --border-color: #555555;
+            --chart-bg: rgba(255, 255, 255, 0.05);
+        }
+
+        body.light {
+            --bg-color: #fdfdfd;
+            --text-color: #222222;
+            --link-color: #0056b3;
+            --link-hover: #002b66;
+            --toc-bg: #e0e0e0;
+            --th-bg: #dcdcdc;
+            --th-color: #900000;
+            --border-color: #bbbbbb;
+            --chart-bg: rgba(0, 0, 0, 0.04);
+        }
+
         body {
             font-family: "Times New Roman", serif;
-            background-color: #1e1e1e;
-            color: #f5f5f5;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             padding: 20px;
             transition: background-color 0.3s, color 0.3s;
+            line-height: 1.8;
         }
-        h1,h2,h3 { font-family: "Gothic A1", serif; }
-        a { color: #ffb347; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        #toc { background: #2b2b2b; padding: 15px; margin-bottom: 20px; border-radius: 8px; }
-        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
-        th, td { border: 1px solid #555; padding: 10px; text-align: left; }
-        th { background-color: #333; }
-        .divider { text-align: center; margin: 30px 0; }
+
+        h1, h2, h3 { font-family: "Gothic A1", serif; }
+
+        /* 雙主題高辨識度超連結樣式 */
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease-in-out;
+        }
+        a:hover {
+            color: var(--link-hover);
+            text-decoration: underline;
+        }
+        a:visited {
+            color: var(--link-color);
+        }
+
+        #toc {
+            background: var(--toc-bg);
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: var(--th-bg);
+            color: var(--th-color);
+        }
+        .divider {
+            text-align: center;
+            margin: 30px 0;
+        }
         svg { height: 40px; }
+
         #themeToggle {
             position: fixed;
             top: 20px;
@@ -32,10 +92,10 @@
             padding: 10px 15px;
             border-radius: 5px;
             cursor: pointer;
+            z-index: 999;
+            font-weight: bold;
         }
-        body.light { background-color: #fdfdfd; color: #222; }
-        body.light table th { background-color: #ccc; }
-        body.light #toc { background: #e0e0e0; }
+
         .intro-box {
             background-color: #eee;
             padding: 1em;
@@ -45,23 +105,11 @@
             color: #1e1e1e;
             line-height: 1.8;
         }
-        a {
-            color: #2980b9;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        a:visited {
-            color: #2980b9;
-        }
         header {
             background-color: pink;
             padding: 10px 0;
+            color: #333;
         }
-        /* 隱藏折疊內容 */
         .collapsed-menu {
             display: none;
             padding-left: 20px;
@@ -69,8 +117,6 @@
             font-size: 14px;
             line-height: 1.6;
         }
-
-        /* 按鈕樣式 */
         .toggle-btn {
             margin: 10px 0;
             padding: 8px 15px;
@@ -78,16 +124,14 @@
             border: 1px solid #ccc;
             cursor: pointer;
         }
-
         .toggle-btn:hover {
             background-color: #e0e0e0;
         }
-
-        /* 強調本頁內容的字體 */
         .guide {
             font-weight: bold;
             color: #333;
         }
+
         #social-share a {
             text-decoration: none;
             font-weight: bold;
@@ -98,26 +142,27 @@
         #social-share span {
             margin: 0 5px;
         }
-        #social-share a#fb-share {
-            color: #4267B2;
+        #social-share a#fb-share { color: #4267B2; }
+        #social-share a#line-share { color: #00C300; }
+        #social-share a#twitter-share { color: #1DA1F2; }
+
+        .chart-container {
+            max-width: 620px;
+            margin: 25px auto;
+            background: var(--chart-bg);
+            padding: 18px;
+            border-radius: 8px;
         }
-        #social-share a#line-share {
-            color: #00C300;
-        }
-        #social-share a#twitter-share {
-            color: #1DA1F2;
-        }
+
         @media screen and (max-width: 767px) {
-            iframe{
-                max-width:100%;
-            }
-            img{
-                max-width: 100%;
-            }
+            iframe { max-width: 100%; }
+            img { max-width: 100%; }
+            table { font-size: 13px; }
         }
     </style>
 </head>
 <body>
+
 <div id="google-translate-box">
     <div id="google_translate_element"></div>
     <script type="text/javascript">
@@ -132,7 +177,9 @@
     <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <p>點擊上方的語言選單以切換語言</p>
 </div>
+
 <button id="themeToggle">切換主題</button>
+
 <header>
     <nav>
         <ul>
@@ -166,11 +213,11 @@
         </ul>
     </nav>
 </header>
+
 <script>
     function toggleMenu() {
         const menu = document.querySelector('.collapsed-menu');
         const button = document.querySelector('.toggle-btn');
-
         if (menu.style.display === "none" || menu.style.display === "") {
             menu.style.display = "block";
             button.textContent = "點擊隱藏其他文章";
@@ -196,6 +243,8 @@
         <li><a href="#movie">電影裡的殭屍等級分析</a></li>
         <li><a href="#why-low">為什麼電影裡的殭屍等級普遍不高</a></li>
         <li><a href="#why-no-hou">為什麼犼不出現在電影</a></li>
+        <li><a href="#guanyin-power">神聖天花板：《西遊記》中的觀音菩薩神威與大聖俯首</a></li>
+        <li><a href="#guanyin-vs-unclenine">維度斷層對比：觀音菩薩 vs 九叔的實力雷達分析</a></li>
         <li><a href="#visual">殭屍能力可視化</a></li>
     </ul>
 </div>
@@ -252,7 +301,7 @@
 這些相剋機制只對低中階殭屍有效；若面對能夠吞龍食佛、神佛難阻的太古神犼，凡間道術與法寶全數失效，觀眾體驗到的解題與智取快感也隨之化為烏有。</p>
 
 <h3>三、 聚焦市井小民的人情冷暖與密閉空間敘事</h3>
-<p>跳殭的行兇動機通常非常純粹——「尋找直系血脈親屬吸血」（如任老太爺追殺親生兒子與孫女婷婷）。這種設定能將危機嚴格限制在鄉紳大宅、義莊、荒郊古廟等特定空間內，進一步放大保安隊長阿威的自私諂媚、徒弟文才與秋生的風流膽小，以及師徒患難見真情的溫暖。若升級為旱魃降世造成一省大旱或百里瘟疫，故事格局勢必被逼成朝廷大軍圍剿或仙人下凡救世的宏大史詩，進而徹底沖淡了香港市民最喜愛的市井人情味。</p>
+<p>跳殭的行兇動機通常非常純粹——「尋找直系血脈親屬吸血」（如任威勇追殺親生兒子任發與孫女任婷婷）。這種設定能將危機嚴格限制在鄉紳大宅、義莊、荒郊古廟等特定空間內，進一步放大保安隊長阿威的自私諂媚、徒弟文才與秋生的風流膽小，以及師徒患難見真情的溫暖。若升級為旱魃降世造成一省大旱或百里瘟疫，故事格局勢必被逼成朝廷大軍圍剿或仙人下凡救世的宏大史詩，進而徹底沖淡了香港市民最喜愛的市井人情味。</p>
 
 <h3>四、 當年特效技術（VFX）與製作成本的客觀邊界</h3>
 <p>在 1980 至 1990 年代 CGI 技術尚未普及的條件下，若要具象化飛殭在空中長期交戰或旱魃的毀滅天災，只能依賴鋼絲吊掛（威亞）與微縮模型。大量空中作業極易穿幫且成本高昂。因此，讓特技演員套上滿清官服、面塗油彩，以靈巧的肢體蹦跳展現非人怪力，輔以乾冰、爆破、火燒與化妝術，是當年性價比最高、視覺真實感最強的工業最優解。</p>
@@ -276,9 +325,83 @@
     </svg>
 </div>
 
+<h2 id="guanyin-power">神聖天花板：《西遊記》中的觀音菩薩神威與大聖俯首</h2>
+<p>在古典文學名著《西遊記》的原著描寫中，觀音菩薩絕非弱不禁風的文相神仙，而是兼具<strong>「移山倒海的物理怪力」與「因果律絕對鎮壓」</strong>的至高神魔天花板：</p>
+<ul>
+    <li><strong>驚世神力：一海之重輕鬆托起</strong>：在第四十二回收服紅孩兒時，觀音菩薩將羊脂玉淨瓶投入南洋大海，借來整整一海之水滿貯瓶中。當大聖上前去拿淨瓶時，使盡九牛二虎之力「如同蜻蜓撼石柱，莫想弄動半毫」；而觀音菩薩走上前，伸出玉手<strong>「輕輕一把托起」</strong>。能單手舉起重逾萬鈞金箍棒、背負須彌泰山的齊天大聖，在菩薩純粹的托海神力面前徹底被力量碾壓。</li>
+    <li><strong>傲視三界的齊天大聖甘心低頭</strong>：大鬧天宮時刀劈斧剁不服、天兵天將難擋的孫悟空，每逢遇到觀音菩薩祥雲降臨，第一反應永遠是<strong>「倒身下拜、慌忙施禮、躬身稱弟子」</strong>。大聖的桀驁不馴在菩薩面前蕩然無存，那是源自絕對位階與神威的天然敬畏。</li>
+    <li><strong>騰雲駕霧與法天象地的肺活量</strong>：菩薩騰祥雲周遊四海，頃刻遍涉十方世界；淨瓶甘露輕輕一灑，能讓被大聖連根拔起、徹底乾枯的三界靈根五莊觀人蔘果樹瞬間回春復活。其氣息流轉、神通廣大，早已超脫三界物質極限。</li>
+</ul>
+
+<h2 id="guanyin-vs-unclenine">維度斷層對比：觀音菩薩 vs 九叔的實力雷達分析</h2>
+<p>將港片中的靈魂代表<strong>九叔</strong>與神話中的<strong>觀音菩薩</strong>放在同一個天秤上，便能直觀理解為何電影永遠無法請出菩薩降臨：</p>
+<ul>
+    <li><strong>九叔（凡人極限）</strong>：依賴血肉軀體搏殺，體力會枯竭、受傷會中屍毒，主要依靠桃木劍法、步罡踏斗與符咒道具在生死邊緣智取。</li>
+    <li><strong>觀音菩薩（神聖降維）</strong>：舉一海之重的神力、降伏食龍神獸金毛犼的絕對權能、超脫生死輪迴。若菩薩現身義莊，淨瓶甘露一灑或佛光普照，方圓百里殭屍的怨氣與煞氣在零點一秒內便被徹底度化，電影在開場三分鐘就得直接打出「全劇終」。</li>
+</ul>
+
+<div class="chart-container">
+    <canvas id="GuanyinVsUncleNineChart" width="400" height="400"></canvas>
+</div>
+
+<script>
+    const ctx2 = document.getElementById('GuanyinVsUncleNineChart').getContext('2d');
+    const chartData2 = {
+        labels: [
+            '絕對神力 (舉一海之水)',
+            '位階威壓 (大聖低頭俯首)',
+            '神行駕霧 (瞬息十方)',
+            '造化神通 (枯木回春/甘露度化)',
+            '近身武打肉搏 (功夫套路)',
+            '凡胎體能限制 (體力枯竭/受創)'
+        ],
+        datasets: [
+            {
+                label: '九叔（茅山宗師 / 凡人極限）',
+                data: [2, 3, 2, 2, 10, 9],
+                borderColor: 'rgba(255, 179, 71, 1)',
+                backgroundColor: 'rgba(255, 179, 71, 0.25)',
+                fill: true
+            },
+            {
+                label: '觀音菩薩（西遊天花板 / 神威救世）',
+                data: [10, 10, 10, 10, 0, 0],
+                borderColor: 'rgba(54, 162, 235, 1)',
+                backgroundColor: 'rgba(54, 162, 235, 0.25)',
+                fill: true
+            }
+        ]
+    };
+
+    new Chart(ctx2, {
+        type: 'radar',
+        data: chartData2,
+        options: {
+            scales: {
+                r: {
+                    suggestedMin: 0,
+                    suggestedMax: 10,
+                    ticks: { stepSize: 2 }
+                }
+            },
+            plugins: {
+                legend: { position: 'top' }
+            }
+        }
+    });
+</script>
+
+<div class="divider">
+    <svg viewBox="0 0 200 20">
+        <text x="0" y="15" fill="#ff4c4c" font-size="16">&#x1F987; &#x271D; &#x1F339;</text>
+    </svg>
+</div>
+
 <h2 id="visual">殭屍能力可視化</h2>
 <p>下圖呈現跳殭、飛殭、魃、犼在力量、速度、飛行能力、元素攻擊、特殊技能的綜合雷達比較：</p>
-<canvas id="Jiangshi_Chart" width="400" height="400"></canvas>
+<div class="chart-container">
+    <canvas id="Jiangshi_Chart" width="400" height="400"></canvas>
+</div>
 <script>
     const ctx = document.getElementById('Jiangshi_Chart').getContext('2d');
     const data = {
@@ -326,12 +449,15 @@
 
     new Chart(ctx, config);
 
-    // 主題切換
+    // 主題切換按鈕事件
     const btn = document.getElementById('themeToggle');
-    btn.addEventListener('click', () => { document.body.classList.toggle('light'); });
+    btn.addEventListener('click', () => {
+        document.body.classList.toggle('light');
+    });
 </script>
 
 <ul id="messages"></ul>
+
 <div id="social-share" style="margin-top: 20px;">
     <a id="fb-share" href="#" target="_blank" style="color: #4267B2; font-weight: bold;">分享到 Facebook</a>
     <span> | </span>
