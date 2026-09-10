@@ -6,58 +6,33 @@
     <title>吸血鬼戰力天秤：避世潛藏神話 vs 德古拉的商業吸金密碼</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        :root {
-            --bg-color: #1e1e1e;
-            --text-color: #f5f5f5;
-            --link-color: #ffb347;
-            --link-hover: #ffd180;
-            --toc-bg: #2b2b2b;
-            --th-bg: #333333;
-            --th-color: #ffb347;
-            --border-color: #555555;
-            --chart-bg: rgba(255, 255, 255, 0.05);
-        }
-
-        body.light {
-            --bg-color: #fdfdfd;
-            --text-color: #222222;
-            --link-color: #0056b3;
-            --link-hover: #002b66;
-            --toc-bg: #e0e0e0;
-            --th-bg: #dcdcdc;
-            --th-color: #900000;
-            --border-color: #bbbbbb;
-            --chart-bg: rgba(0, 0, 0, 0.04);
-        }
-
         body {
             font-family: "Times New Roman", serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
+            background-color: #fdfdfd;
+            color: #222222;
             padding: 20px;
-            transition: background-color 0.3s, color 0.3s;
             line-height: 1.8;
         }
 
         h1, h2, h3 { font-family: "Gothic A1", serif; }
 
-        /* 雙主題高對比超連結 */
+        /* 白底專用高清晰超連結 */
         a {
-            color: var(--link-color);
+            color: #0056b3;
             text-decoration: none;
             font-weight: 500;
             transition: color 0.2s ease-in-out;
         }
         a:hover {
-            color: var(--link-hover);
+            color: #002b66;
             text-decoration: underline;
         }
         a:visited {
-            color: var(--link-color);
+            color: #0056b3;
         }
 
         #toc {
-            background: var(--toc-bg);
+            background: #e0e0e0;
             padding: 15px;
             margin-bottom: 20px;
             border-radius: 8px;
@@ -69,13 +44,13 @@
             margin-top: 15px;
         }
         th, td {
-            border: 1px solid var(--border-color);
+            border: 1px solid #bbbbbb;
             padding: 12px;
             text-align: left;
         }
         th {
-            background-color: var(--th-bg);
-            color: var(--th-color);
+            background-color: #dcdcdc;
+            color: #900000;
         }
         .divider {
             text-align: center;
@@ -83,22 +58,8 @@
         }
         svg { height: 40px; }
 
-        #themeToggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: #ff4c4c;
-            border: none;
-            color: #fff;
-            padding: 10px 15px;
-            border-radius: 5px;
-            cursor: pointer;
-            z-index: 999;
-            font-weight: bold;
-        }
-
         .intro-box {
-            background-color: #eee;
+            background-color: #f0f0f0;
             padding: 1.2em;
             border-left: 5px solid #900;
             margin: 1.5em 0;
@@ -140,9 +101,10 @@
         .chart-container {
             max-width: 650px;
             margin: 20px auto;
-            background: var(--chart-bg);
+            background: rgba(0, 0, 0, 0.04);
             padding: 15px;
             border-radius: 8px;
+            border: 1px solid #e0e0e0;
         }
 
         @media screen and (max-width: 767px) {
@@ -167,8 +129,6 @@
     <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <p>點擊上方的語言選單以切換語言</p>
 </div>
-
-<button id="themeToggle">切換主題</button>
 
 <header>
     <nav>
@@ -197,7 +157,7 @@
                     <li><a href="analysis_of_vampire_change.html" target="_blank">吸血鬼起源與文化演變分析</a></li>
                     <li><a href="vampires_have_bad_breath.html" target="_blank">永生的代價：從生物學剖析吸血鬼的口臭危機</a></li>
                     <li><a href="immortal_children_vs_hybrids.html" target="_blank">永生的生理枷鎖與倫理禁忌：剖析不朽孩童與半吸血鬼</a></li>
-                    <li><a href="level_of_jiangshi.html" target="_blank">中國殭屍的等級這麼多且最高等級的實力堪比賽亞人，但為何大部分殭屍電影中的殭屍等級都不高？</a></li>
+                    <li><a href="jiangshi_and_divine_powers.html" target="_blank">中國殭屍的等級這麼多且最高等級的實力堪比賽亞人，但為何大部分殭屍電影中的殭屍等級都不高？</a></li>
                 </ol>
             </li>
         </ul>
@@ -326,17 +286,18 @@
     </tr>
     <tr>
         <td><strong>吹響末日號角引發板塊大地震</strong></td>
-        <td><strong>《啟示錄》第 11 章 15-19 節</strong><br><em>(Revelation 11:15-19)</em><br>（亦參照《約書亞記》6:20 號角震塌耶利哥巨城）</td>
+        <td><strong>《啟示錄》第 11 章 15-19 節</strong><br><em>(Revelation 11:15-19)</em><br>（亦參照《約書亞記》6:20）</td>
         <td>第七位天使吹號時，「天上有了大聲音...當時神天上的殿開了...隨後有電光、聲音、雷轟、大地震、大雹。」以神聖音律作為共振媒介，令天體震顫、地質板塊撕裂碎解。</td>
         <td>規則級的次聲波與板塊位移。吸血鬼所依賴的地下古堡、地底墓穴或現代鋼筋掩體，在一瞬間全數崩塌活埋化為齏粉。</td>
     </tr>
     <tr>
         <td><strong>執神聖鐵鍊與鑰匙封印深淵巨魔</strong></td>
-        <td><strong>《啟示錄》第 20 章 1-3 節</strong><br><em>(Revelation 20:1-3)</em><br>（亦參照次經《以諾書》第 10 章拉斐爾捆鎖墮天使阿撒瀉勒於黑暗裂隙）</td>
+        <td><strong>《啟示錄》第 20 章 1-3 節</strong><br><em>(Revelation 20:1-3)</em><br>（亦參照《以諾書》第 10 章）</td>
         <td>「我看見一位天使從天降下，手裡拿著無底坑的鑰匙和一條大鍊子。他捉住那龍，就是古蛇，又叫魔鬼，也叫撒但，把他捆綁一千年，扔在無底坑裡，將無底坑關閉，用印封上...」</td>
         <td>維度級的絕對概念囚禁。無論活了數千年的吸血鬼始祖或深淵巨妖擁有何等怪力，在神聖權能的大鍊子與封印面前皆無從反抗，永世永劫失去自由。</td>
     </tr>
 </table>
+
 <h2 id="superhero-catastrophe">紐約之戰的隱喻：當宇宙級天花板被迫下場肉搏</h2>
 <p>如果該隱與大天使真正在現代曼哈頓中心全面開戰，其場面絕非傳統吸血鬼故事中的暗巷追逐，而是完全等同於<strong>《復仇者聯盟》浩克砸爛齊塔瑞大軍、或是《超人：鋼鐵英雄》克拉克與薩德將軍穿梭摩天大樓的毀滅級碰撞</strong>：</p>
 <ul>
@@ -357,6 +318,7 @@
     <tr><td><strong>蜘蛛人（Peter Parker）</strong></td><td><strong>25 噸 ～ 50 噸+</strong></td><td><strong>完全不在同一次元（差距逾 15 倍）</strong></td><td>蜘蛛人看似纖細，但常態能徒手接下失控火車。純拼拳力能在半秒內擊碎德古拉的全身骨骼。</td></tr>
     <tr><td><strong>鋼鐵人（標準裝甲常態）</strong></td><td><strong>25 噸 ～ 100 噸+</strong></td><td><strong>重工業機械的降維打擊</strong></td><td>外骨骼伺服馬達能舉起數十噸裝甲車，肉身吸血鬼的近戰衝擊甚至無法在裝甲表面留下痕跡。</td></tr>
 </table>
+
 <h2 id="action-appeal">拳拳到肉的暴力美學：《刀鋒戰士》與《決戰異世界》為何成功？</h2>
 <p>大眾觀眾之所以熱愛吸血鬼影視作品，從來不是為了看不可名狀的宇宙神魔發功，而是著迷於<strong>「高概念近戰肉搏 × 戰術熱兵器」的真實打擊反饋</strong>。這正是《刀鋒戰士》（Blade）與《決戰異世界》（Underworld）能夠橫掃全球票房的靈魂所在：</p>
 <ul>
@@ -364,6 +326,7 @@
     <li><strong>痛感與受創機制的視覺張力</strong>：觀眾想看到的是「會受傷的肉身」——肌肉會被撕裂、骨骼會斷裂發出脆響、子彈會打光需要盲操換彈匣、被重擊砸在牆上會噴出黑血。這種命懸一線、靠關節技與戰術走位搏殺的痛感，才是動作爽片的核心快感。</li>
     <li><strong>該隱登場對類型片的毀滅性衝擊</strong>：一旦該隱走入大銀幕，整部動作片將立刻崩解——熱兵器與銀器失去意義，格鬥拆招變成隔空施法，該隱動個手指就能用意念把整支特種部隊捏成肉泥，甚至念頭一閃全場吸血鬼瞬間自爆。整部電影會直接從<strong>「暗黑龐克動作片」暴跌為「玄幻修真神魔大戰」</strong>，徹底失去了刀鋒砍入血肉的那份真實與刺激。</li>
 </ul>
+
 <h2 id="commercial-logic">商業吸金密碼：為什麼德古拉的價值遠超毀天滅地的該隱？</h2>
 <p>既然德古拉的力氣連蜘蛛人的零頭都不到，甚至碰上美國特工都會在力量上吃癟，為什麼百年來好萊塢與全球娛樂產業對他趨之若鶩，商業改編價值遠遠碾壓能夠輕易抹平山脈的該隱？</p>
 <ol>
@@ -394,29 +357,29 @@
             {
                 label: '凡赫辛（凡人獵魔人）',
                 data: [1, 8, 9, 2, 9],
-                borderColor: 'rgba(255, 206, 86, 1)',
-                backgroundColor: 'rgba(255, 206, 86, 0.2)',
+                borderColor: 'rgba(255, 170, 0, 1)',
+                backgroundColor: 'rgba(255, 170, 0, 0.2)',
                 fill: true
             },
             {
                 label: '德古拉伯爵（經典原著）',
                 data: [3, 10, 8, 8, 9],
-                borderColor: 'rgba(255, 76, 76, 1)',
-                backgroundColor: 'rgba(255, 76, 76, 0.25)',
+                borderColor: 'rgba(220, 53, 69, 1)',
+                backgroundColor: 'rgba(220, 53, 69, 0.25)',
                 fill: true
             },
             {
                 label: '第三世代蟻祖（VtM世界觀）',
                 data: [8, 4, 1, 9, 3],
-                borderColor: 'rgba(153, 102, 255, 1)',
-                backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                borderColor: 'rgba(111, 66, 193, 1)',
+                backgroundColor: 'rgba(111, 66, 193, 0.2)',
                 fill: true
             },
             {
                 label: '該隱 / 熾天使（天花板神話）',
                 data: [10, 1, 0, 10, 0],
-                borderColor: 'rgba(54, 162, 235, 1)',
-                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgba(13, 110, 253, 1)',
+                backgroundColor: 'rgba(13, 110, 253, 0.2)',
                 fill: true
             }
         ]
@@ -438,9 +401,6 @@
             }
         }
     });
-
-    const btn = document.getElementById('themeToggle');
-    btn.addEventListener('click', () => { document.body.classList.toggle('light'); });
 </script>
 
 <ul id="messages"></ul>
