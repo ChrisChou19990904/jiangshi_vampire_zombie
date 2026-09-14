@@ -106,6 +106,34 @@
             border-radius: 8px;
             border: 1px solid #e0e0e0;
         }
+        /* 純 CSS 知名度能量條樣式 */
+        .bar-container {
+            background-color: #e9ecef;
+            border-radius: 4px;
+            overflow: hidden;
+            height: 22px;
+            width: 100%;
+            margin-top: 6px;
+            border: 1px solid #ced4da;
+        }
+        .bar {
+            height: 100%;
+            text-align: right;
+            padding-right: 8px;
+            color: #ffffff;
+            font-size: 13px;
+            font-weight: bold;
+            line-height: 22px;
+            box-sizing: border-box;
+        }
+        .bar-dracula {
+            background-color: #b22222; /* 經典血紅 */
+            width: 100%;
+        }
+        .bar-caine {
+            background-color: #6c757d; /* 隱士冷灰 */
+            width: 25%;
+        }
 
         @media screen and (max-width: 767px) {
             table { font-size: 13px; }
@@ -197,7 +225,8 @@
         <li><a href="#dracula-power">德古拉的力量極限：跨界漫威英雄力量殘酷量化</a></li>
         <li><a href="#action-appeal">拳拳到肉的暴力美學：《刀鋒戰士》與《決戰異世界》為何成功？</a></li>
         <li><a href="#commercial-logic">商業吸金密碼：為什麼德古拉的價值遠超毀天滅地的該隱？</a></li>
-        <li><a href="#radar-visual">戰力平衡與敘事空間可視化分析</a></li>
+        <li><a href="#radar-visual">戰力平衡與敘事空間可視化分析（Chart.js圖表）</a></li>
+        <li><a href="#popularity_comparison">大眾文化知名度與商業普及率對比（CSS 能量條）</a></li>
         <li><a href="#extension">延伸閱讀（均為其他的Github Pages專案）</a></li>
     </ul>
 </div>
@@ -343,7 +372,7 @@
     </svg>
 </div>
 
-<h2 id="radar-visual">戰力平衡與敘事空間可視化分析</h2>
+<h2 id="radar-visual">戰力平衡與敘事空間可視化分析（Chart.js圖表）</h2>
 <p>下方雷達圖呈現了凡人獵魔人、德古拉、蟻祖與該隱在五個關鍵創作維度上的指標。由此可見：<strong>「破壞力越低、弱點限制越清晰，故事的改編彈性與凡人對抗可能往往越高」</strong>：</p>
 
 <div class="chart-container">
@@ -403,6 +432,55 @@
         }
     });
 </script>
+<div style="margin: 25px 0;">
+    <h2 id="popularity_comparison">大眾文化知名度與商業普及率對比（CSS 能量條）</h2>
+    <table>
+        <thead>
+        <tr>
+            <th style="width: 20%;">對比維度</th>
+            <th style="width: 40%;">德古拉伯爵（百年大眾經典）</th>
+            <th style="width: 40%;">始祖該隱（白狼桌遊神話）</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><strong>全球大眾認知度</strong></td>
+            <td>
+                百年影視文化符號（普及度 100%）
+                <div class="bar-container">
+                    <div class="bar bar-dracula">極高 (100%)</div>
+                </div>
+            </td>
+            <td>
+                跑團與硬核奇幻圈（普及度 25%）
+                <div class="bar-container">
+                    <div class="bar bar-caine">小眾 (25%)</div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td><strong>好萊塢影視改編量</strong></td>
+            <td>
+                逾 200 部獨立影視與動畫（改編率 100%）
+                <div class="bar-container">
+                    <div class="bar bar-dracula">逾 200+ 部</div>
+                </div>
+            </td>
+            <td>
+                極少作為主角登上大銀幕（改編率 15%）
+                <div class="bar-container" style="width: 100%;">
+                    <div class="bar bar-caine" style="width: 15%;">極低</div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td><strong>戰力與商業平衡</strong></td>
+            <td><strong>力量克制（約 2 噸）</strong>：凡人可智鬥、懸疑感極強</td>
+            <td><strong>因果律崩壞（百萬噸＋）</strong>：下場即毀城、無敘事空間</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 <h2 id="extension">延伸閱讀（均為其他的Github Pages專案）</h2>
 <ol>
     <li><a href="https://chrischou19990904.github.io/race_distribution/why_angels_are_always_blondes_with_blue_eyes.html" target="_blank">從西亞沙漠到西北歐雪造的「神話修正」：地理演化、歷史權力與 AI 時代的天使形象演變報告（解構人種的專案）</a></li>
