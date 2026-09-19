@@ -2,22 +2,25 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
-  <title>喪屍題材演變史</title>
+  <title>喪屍題材的演變：從巫毒魔幻、病毒科幻到真菌末日的深度文化解構</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     body {
-      font-family: "Microsoft JhengHei", sans-serif;
+      font-family: "Microsoft JhengHei", "Helvetica", sans-serif;
       background-color: #f9f9f9;
       line-height: 1.8;
       color: #333;
       padding: 2em;
+      max-width: 850px;
+      margin: 0 auto;
     }
-    h1, h2 {
+    h1, h2, h3 {
       color: #2c3e50;
     }
     table {
       width: 100%;
       border-collapse: collapse;
-      margin: 1em 0;
+      margin: 1.5em 0;
       background-color: #fff;
     }
     th, td {
@@ -27,15 +30,16 @@
     }
     th {
       background-color: #eaeaea;
+      color: #2c3e50;
     }
     .highlight {
       color: #e74c3c;
       font-weight: bold;
     }
     #google_translate_element {
-      top: 10px;  /* 距離頁面頂端 10px */
-      left: 10px; /* 距離頁面左側 10px */
-      z-index: 9999; /* 保證它不會被其他元素遮蓋 */
+      top: 10px;
+      left: 10px;
+      z-index: 9999;
     }
     #google-translate-box {
       font-size: 12px;
@@ -64,16 +68,35 @@
     .intro-box em{
       color: black;
     }
-    /* 隱藏折疊內容 */
+    #toc {
+      background-color: #f0f0f0;
+      padding: 15px 20px;
+      border-radius: 8px;
+      margin-bottom: 25px;
+      border-left: 5px solid #2c3e50;
+    }
+    #toc ul {
+      padding-left: 20px;
+      margin: 0;
+    }
+    #toc li {
+      margin-bottom: 6px;
+    }
+    .quote-box {
+      background: #f4f6f7;
+      border-left: 4px solid #2980b9;
+      padding: 12px 18px;
+      margin: 15px 0;
+      border-radius: 4px;
+      font-style: italic;
+    }
     .collapsed-menu {
       display: none;
       padding-left: 20px;
-      list-style-type: decimal; /* 使用數字編號 */
-      font-size: 14px; /* 設定字體大小 */
-      line-height: 1.6; /* 調整行高 */
+      list-style-type: decimal;
+      font-size: 14px;
+      line-height: 1.6;
     }
-
-    /* 可選的按鈕樣式 */
     .toggle-btn {
       margin: 10px 0;
       padding: 8px 15px;
@@ -81,12 +104,9 @@
       border: 1px solid #ccc;
       cursor: pointer;
     }
-
     .toggle-btn:hover {
       background-color: #e0e0e0;
     }
-
-    /* 強調本頁內容的字體 */
     .guide {
       font-weight: bold;
       color: #333;
@@ -101,32 +121,19 @@
     #social-share span {
       margin: 0 5px;
     }
-    #social-share a#fb-share {
-      color: #4267B2;
-    }
-    #social-share a#line-share {
-      color: #00C300;
-    }
-    #social-share a#twitter-share {
-      color: #1DA1F2;
-    }
+    #social-share a#fb-share { color: #4267B2; }
+    #social-share a#line-share { color: #00C300; }
+    #social-share a#twitter-share { color: #1DA1F2; }
+
     @media screen and (max-width: 767px) {
+      body {
+        padding: 1em;
+      }
       img{
         max-width: 100%;
       }
-      header {
-        background-color: pink;
-        padding: 10px 0;
-      }
-      a{
-        color: #2980b9;
-        text-decoration: none;
-      }
-      a:hover {
-        text-decoration: underline;
-      }
-      a:visited {
-        color: #2980b9;
+      table {
+        font-size: 13px;
       }
     }
   </style>
@@ -134,12 +141,11 @@
 <body>
 <div id="google-translate-box">
   <div id="google_translate_element"></div>
-  <!-- Google Translate 的自動翻譯功能 -->
   <script type="text/javascript">
     function googleTranslateElementInit() {
       new google.translate.TranslateElement({
-        pageLanguage: 'zh-TW',  // 頁面原語言
-        includedLanguages: 'en,es,fr,de,it,zh-CN,ja,ko,th,vi,my,id,ms,ar,he,ru,tg,uk,hi,tr,pt,nl,is,fi,sv,no,ro,kk,bo,mn,la,fil,tl,el',  // 支援的翻譯語言（可擴展）
+        pageLanguage: 'zh-TW',
+        includedLanguages: 'en,es,fr,de,it,zh-CN,ja,ko,th,vi,my,id,ms,ar,he,ru,tg,uk,hi,tr,pt,nl,is,fi,sv,no,ro,kk,bo,mn,la,fil,tl,el',
         layout: google.translate.TranslateElement.InlineLayout.SIMPLE
       }, 'google_translate_element');
     }
@@ -151,7 +157,7 @@
   <nav>
     <ul>
       <li><strong class="guide">本頁內容：</strong><br>
-        <a>喪屍題材的演變：從魔幻到科幻</a></li>
+        <a>喪屍題材的演變：從巫毒魔幻、病毒科幻到真菌末日的深度文化解構</a></li>
 
       <li><strong class="guide">其他文章連結：</strong>
         <button class="toggle-btn" onclick="toggleMenu()">點擊展開其他文章</button>
@@ -182,11 +188,9 @@
   </nav>
 </header>
 <script>
-  // 切換顯示/隱藏文章列表
   function toggleMenu() {
     const menu = document.querySelector('.collapsed-menu');
     const button = document.querySelector('.toggle-btn');
-
     if (menu.style.display === "none" || menu.style.display === "") {
       menu.style.display = "block";
       button.textContent = "點擊隱藏其他文章";
@@ -195,68 +199,137 @@
       button.textContent = "點擊展開其他文章";
     }
   }
-
 </script>
+
 <h1>喪屍題材的演變：從魔幻到科幻</h1>
 <div class="intro-box"><em>本網頁的作者不僅是吸血鬼文化的熱衷愛好者，還是深度探討東西方吸血鬼與殭屍題材的專家。多年来，他接觸過大量的吸血鬼作品和殭屍電影，無論是西方經典如《德古拉》、《夜訪吸血鬼》、《刀鋒戰士》、《暮光之城》、《凡赫辛》、《吸血鬼獵人：林肯總統》、《Hotel Transylvania》，還是東方的代表作如《殭屍先生》、《殭屍叔叔》、《音樂殭屍》、《殭屍家族》、《殭屍道長》、《千年殭屍王》，他都在不斷比較與探索。這使他對吸血鬼這一文化象徵有了獨特的理解，並且能夠深入分析這些超自然生物在不同文化中的呈現方式和隱喻意涵。<br><br>
 
   作為一名前端開發者，作者運用自己的技術背景，將這些文化分析與比較呈現於網頁中。他並不滿足於單純的文字敘述，而是通過結合互動性強的網頁設計和創意排版，將這些吸血鬼與殭屍的知識以更直觀、趣味十足的方式呈現給讀者。他將這一前端作品部署到GitHub Pages，開設專案，將自己的文化研究和技術技能結合，讓更多人可以輕鬆地接觸到這些深入且富有思考的內容。</em>
 </div>
-<h2>一、早期魔幻喪屍</h2>
-<p>喪屍最初起源於加勒比與海地的巫毒信仰，屬於<strong class="highlight">魔法或詛咒</strong>控制的復活屍體，並非現代科學可解釋的存在。</p>
+
+<div id="toc">
+  <h2>目錄導航</h2>
+  <ul>
+    <li><a href="#section1">一、 早期魔幻喪屍：海地巫毒、殖民奴役與死靈法術的恐懼源頭</a></li>
+    <li><a href="#section2">二、 現代科幻喪屍的誕生：喬治·羅梅洛的去神聖化與社會隱喻轉向</a></li>
+    <li><a href="#section3">三、 動態與病理機制的二次躍遷：從「笨拙行屍」到「狂暴短跑暴民」</a></li>
+    <li><a href="#section4">四、 歷代喪屍特徵與時代演化深度對照表</a></li>
+    <li><a href="#section5">五、 硬核真菌感染與硬派科幻：《最後生還者》對傳統病毒流派的革新</a></li>
+    <li><a href="#section6">六、 終極哲學轉向：當喪屍淪為背景板，真正致命的是「霍布斯叢林法則」</a></li>
+  </ul>
+</div>
+
+<h2 id="section1">一、 早期魔幻喪屍：海地巫毒、殖民奴役與死靈法術的恐懼源頭</h2>
+<p>
+  在現代流行文化中，提到「喪屍（Zombie）」，人們直覺聯想到的是咬人傳染、成群撲咬的活死人。然而在歷史與人類學的原型中，最早的喪屍完全屬於<strong class="highlight">加勒比海地區的巫毒教（Vodou）信仰與魔幻民俗範疇</strong>，且根本不具備「傳染性」：
+</p>
 <ul>
-  <li>出現時間：約19世紀末至20世紀初</li>
-  <li>核心概念：宗教、巫術、死靈魔法</li>
-  <li>代表作：《White Zombie》（1932）</li>
+  <li><strong>奴隸制的永恆勞動詛咒：</strong>海地黑奴在法國殖民時期的殘酷甘蔗園中日夜勞動。在他們的民間信仰中，死亡原本是靈魂重返故土非洲的唯一解脫；然而最恐怖的威脅，是被巫毒教祭司（Bokor）施法奪走靈魂，將肉體封印在「死而不腐、無思無想」的活屍狀態，<span class="highlight">死後永遠替白人領主在甘蔗田裡當無償苦工</span>。這時期的喪屍不是威脅世界的獵食者，而是純粹的<strong>受害者與勞工階級的悲慘隱喻</strong>。</li>
+  <li><strong>神經毒素的化學實相：</strong>現代民族植物學研究（如 Wade Davis 的調查）揭示，所謂的巫毒喪屍本質上是由河豚毒素（Tetrodotoxin）與曼陀羅製成的毒粉。受害者攝入後進入假死休克狀態，下葬後被掘出，因中樞神經嚴重受損而陷入精神呆滯、失去主體意識，成為任人擺布的人偶。</li>
+  <li><strong>早期好萊塢的哥德式殖民視角：</strong>影史上第一部喪屍長片《White Zombie》（1932 年，貝拉·盧戈西主演），便直接沿襲了這種設定：邪惡巫師利用死靈魔法控制一整座工廠的喪屍進行苦力勞動，全片充斥著神秘學、詛咒魔藥與封閉宮廷的魔幻色彩。</li>
 </ul>
 
-<h2>二、現代科幻喪屍的誕生</h2>
-<p>1968年，George A. Romero 的《活死人之夜》開啟了喪屍「病毒化」、「傳染化」的新潮流。這時的喪屍<strong class="highlight">不是被控制的死人，而是科學異變下的產物</strong>。</p>
+<h2 id="section2">二、 現代科幻喪屍的誕生：喬治·羅梅洛的去神聖化與社會隱喻轉向</h2>
+<p>
+  1968 年，被尊稱為「現代喪屍之父」的喬治·A·羅梅洛（George A. Romero）推出了獨立小成本電影《活死人之夜》（<em>Night of the Living Dead</em>），以不可思議的開拓性完成了一場對喪屍題材的「哥白尼式革命」：
+</p>
 <ul>
-  <li>核心設定：病毒感染、生物實驗、瘟疫爆發</li>
-  <li>代表作：<a href="https://en.wikipedia.org/wiki/28_Days_Later" target="_blank">《28天毀滅倒數》</a>、《惡靈古堡》、《陰屍路》</li>
-  <li>特色：強調社會崩潰與生存倫理</li>
+  <li><strong>徹底剔除巫術與宗教：</strong>羅梅洛完全拋棄了巫毒法術與單一巫師的概念，甚至在全片劇本中從未出現過「Zombie」一詞（而是稱其為 Ghouls）。死人復活的原因被模糊歸咎於金星探測器的太空輻射，將其根源<strong>從形而上的「靈異詛咒」正式拉入「科學事故」的維度</strong>。</li>
+  <li><strong>確立「咬人傳染」與「爆頭必死」的物理法則：</strong>
+    羅梅洛一手確立了現代喪屍的生理基本法：
+    <ol>
+      <li>喪屍受強烈食慾驅使，獵食生人活肉；</li>
+      <li>被咬傷的人類會發高燒死亡並迅速屍變，形成指數級傳染網絡；</li>
+      <li>唯一的致命弱點是<strong>破壞大腦中樞</strong>，摧毀其維持肌肉活動的原始反射區。</li>
+    </ol>
+  </li>
+  <li><strong>消費主義與越戰冷戰的社會鏡像：</strong>
+    在 1978 年的經典續作《活人生吃》（<em>Dawn of the Dead</em>）中，羅梅洛將倖存者與數百隻喪屍困在封閉的現代化購物中心（Shopping Mall）。那些死後依然本能地在手扶梯與名牌櫥窗前盲目徘徊的喪屍，直接成為戰後資本主義大眾「盲目消費奴隸」的絕妙諷刺。至此，喪屍正式從魔幻黑巫術轉變為<strong>檢視現代文明脆弱性的科幻社會顯微鏡</strong>。
+  </li>
 </ul>
 
-<h2>三、演化對照表</h2>
+<h2 id="section3">三、 動態與病理機制的二次躍遷：從「笨拙行屍」到「狂暴短跑暴民」</h2>
+<p>
+  踏入 21 世紀，喪屍的演化經歷了第二次震撼性的典範轉移——從傳統步履蹣跚的「慢速行屍（Shamblers）」，進化為超音速撲殺的「狂暴感染者（Runners）」：
+</p>
+<div class="quote-box">
+  💡 <strong>病理學機制的科學降維：為什麼活死人不可能跑得快，但感染者可以？</strong><br><br>
+  在傳統羅梅洛體系中，喪屍是實打實的「腐爛死屍」，心臟停止跳動、血管無血液流動、肌肉組織處於壞疽與自溶狀態。根據人體運動生理學，沒有三磷酸腺苷（ATP）與有氧糖酵解提供能量，死屍只會關節僵化（屍僵），根本不具備衝刺與跳躍的肌肉爆發力。<br><br>
+  2002 年丹尼·鮑伊（Danny Boyle）執導的《28天毀滅倒數》（<em>28 Days Later</em>）徹底革新了這個邏輯：片中的怪物不再是死人，而是<strong>活生生感染了「狂暴病毒（Rage Virus）」的重症人類</strong>！其前額葉皮質與邊緣系統遭到病毒全面破壞，理智與痛覺被徹底阻斷，體內腎上腺素全天候極限過載分泌，使得心肺與骨骼肌以透支生命為代價達到運動員等級的狂奔與瘋狂撲咬。
+</div>
+<p>
+  這種科幻病理學的升級，隨後在《惡靈古堡》（T-Virus/G-Virus 基因工程軍事生化武器）、《末日之戰》（World War Z 的群體流體力學蜂擁）與韓國的《屍速列車》中被推向極致，使恐怖感從「心理壓迫」全面轉向「極限生存的動態壓迫」。
+</p>
+
+<h2 id="section4">四、 歷代喪屍特徵與時代演化深度對照表</h2>
 <table>
   <thead>
   <tr>
     <th>時期／類型</th>
-    <th>主要特徵</th>
+    <th>致病／復活成因</th>
+    <th>生理動態與弱點</th>
+    <th>核心主題與時代恐懼</th>
     <th>代表作品</th>
   </tr>
   </thead>
   <tbody>
   <tr>
-    <td>魔幻喪屍（19C–1960s）</td>
-    <td>巫術、宗教詛咒、靈魂控制</td>
-    <td><a href="https://en.wikipedia.org/wiki/White_Zombie_(film)" target="_blank">《White Zombie》</a></td>
+    <td><strong>古典魔幻期</strong><br>（19C–1960s）</td>
+    <td>海地巫毒黑魔法、曼陀羅神經毒粉、死靈法師降咒</td>
+    <td>動作僵硬遲緩、目光呆滯無自主意識；打破法術或巫師死亡即可解除</td>
+    <td>對黑奴勞工剝削的終極恐懼、白人殖民主義對神秘原始異教的焦慮</td>
+    <td><a href="https://en.wikipedia.org/wiki/White_Zombie_(film)" target="_blank">《White Zombie》</a> (1932)<br>《I Walked with a Zombie》</td>
   </tr>
   <tr>
-    <td>轉型期（1960s–1980s）</td>
-    <td>不明原因復活、社會批判開始</td>
-    <td><a href="https://en.wikipedia.org/wiki/Night_of_the_Living_Dead" target="_blank">《活死人之夜》</a></td>
+    <td><strong>古典科幻轉型期</strong><br>（1968–1980s）</td>
+    <td>未知宇宙輻射、不明生化毒劑、死者神經受莫名刺激</td>
+    <td>緩慢拖步移動（Walker）、群體包圍；唯一死穴為摧毀腦幹或火化</td>
+    <td>越戰反戰浪潮、冷戰核恐懼、大眾消費主義與種族隔離批判</td>
+    <td><a href="https://en.wikipedia.org/wiki/Night_of_the_Living_Dead" target="_blank">《活死人之夜》</a> (1968)<br><a href="https://en.wikipedia.org/wiki/Dawn_of_the_Dead_(1978_film)" target="_blank">《活人生吃》</a> (1978)</td>
   </tr>
   <tr>
-    <td>科幻喪屍（1990s–至今）</td>
-    <td>病毒感染、基因突變、末日倖存</td>
-    <td><a href="https://zh.wikipedia.org/zh-tw/%E7%94%9F%E5%8C%96%E5%8D%B1%E6%A9%9F%E7%B3%BB%E5%88%97" target="_blank">《惡靈古堡》</a>、<a href="https://en.wikipedia.org/wiki/The_Walking_Dead_(TV_series)" target="_blank">《陰屍路》</a>、<a href="https://ja.wikipedia.org/wiki/%E7%94%B2%E9%89%84%E5%9F%8E%E3%81%AE%E3%82%AB%E3%83%90%E3%83%8D%E3%83%AA" target="_blank">《鐵甲城的卡巴內里》</a>、<a href="https://zh.wikipedia.org/zh-tw/%E5%B0%B8%E5%85%84" target="_blank">《屍兄》</a>、<a href="https://en.wikipedia.org/wiki/Train_to_Busan" target="_blank">《屍速列車》</a></td>
+    <td><strong>現代生化與疾走期</strong><br>（1990s–2010s）</td>
+    <td>軍工企業基因工程、人工合成病毒（T病毒）、狂犬突變病毒</td>
+    <td>具備狂暴衝刺能力（Runner）、組織突變畸形化；極度依賴感官刺激</td>
+    <td>跨國資本與軍火商陰謀、全球化全球瘟疫大流行、生化武器反噬</td>
+    <td><a href="https://zh.wikipedia.org/zh-tw/%E7%94%9F%E5%8C%96%E5%8D%B1%E6%A9%9F%E7%B3%BB%E5%88%97" target="_blank">《生化危機/惡靈古堡》</a><br><a href="https://en.wikipedia.org/wiki/28_Days_Later" target="_blank">《28天毀滅倒數》</a><br>《末日之戰》</td>
+  </tr>
+  <tr>
+    <td><strong>硬核生物與混合期</strong><br>（2013–至今）</td>
+    <td>跨物種真菌寄生（蟲草菌）、外星奈米寄生、賽博機械混種</td>
+    <td>菌絲侵蝕大腦、盲目但聽覺超凡、群體菌網通訊；具備生態適應力</td>
+    <td>氣候變遷引發未知古菌甦醒、人類生存資格審判、社會契約全面瓦解</td>
+    <td><a href="https://en.wikipedia.org/wiki/The_Last_of_Us_(TV_series)" target="_blank">《最後生還者》</a><br><a href="https://ja.wikipedia.org/wiki/%E7%94%B2%E9%89%84%E5%9F%8E%E3%81%AE%E3%82%AB%E3%83%90%E3%83%8D%E3%83%AA" target="_blank">《甲鐵城的卡巴內里》</a><br><a href="https://en.wikipedia.org/wiki/Train_to_Busan" target="_blank">《屍速列車》</a></td>
   </tr>
   </tbody>
 </table>
 
-<h2>四、現代偏好分析</h2>
-<p>現代大眾更傾向於接受<strong class="highlight">科學化解釋</strong>的喪屍敘事，因其能結合疫情恐懼、倫理衝突、社會批判，並更容易延伸為多媒體娛樂作品。</p>
+<h2 id="section5">五、 硬核真菌感染與硬派科幻：《最後生還者》對傳統病毒流派的革新</h2>
+<p>
+  在傳統「病毒說」被濫用至審美疲勞時，頑皮狗（Naughty Dog）開發的頂級巨作《最後生還者》（<em>The Last of Us</em>）為科幻喪屍題材注入了極具學術說服力的全新生命線：
+</p>
 <ul>
-  <li>現實共鳴強（疫情、社會崩潰）</li>
-  <li>劇情彈性高（生存遊戲、末日冒險）</li>
-  <li>結合科技與倫理議題</li>
+  <li><strong>真實自然界的「殭屍真菌」投射：</strong>
+    故事核心不再使用來路不明的實驗室病毒，而是直接取材於現實熱帶雨林中真實存在的<strong>偏側蛇蟲草菌（<em>Ophiocordyceps unilateralis</em>）</strong>。這種真菌在自然界中專門寄生木蟻，透過菌絲侵入其肌肉組織，釋放神經活性化學物質「劫持」螞蟻大腦，操縱其爬到離地 25 公分的葉背死死咬住葉脈，隨後刺穿頭部破殼萌發孢子。
+  </li>
+  <li><strong>氣候暖化的現實科學警鐘：</strong>
+    劇作引入了極其大膽的科學假說：現實中人體體溫（37°C）天然充當了抵抗大部分真菌的免疫防火牆；但隨著全球氣候暖化，某些真菌為了在更高溫環境中生存而發生突變，最終學會適應並跨越物種屏障侵入人體大腦。這種奠基於真實流行病學與真菌學的設定，帶給現代大眾的悚然感遠超虛構的超自然惡魔。
+  </li>
 </ul>
 
-<h2>五、混合型與未來趨勢</h2>
-<p>近年也有作品嘗試將喪屍與魔幻、賽博龐克、AI 等元素融合，呈現出更多元化的混種敘事。</p>
-<p>例如：<a href="https://en.wikipedia.org/wiki/The_Last_of_Us_(TV_series)" target="_blank">《最後生還者》</a>、<a href="https://youtu.be/0O_VLVUxFIY?si=gNTKkU1lSIvRkUao" target="_blank">《全境感染》</a>等。</p>
+<h2 id="section6">六、 終極哲學轉向：當喪屍淪為背景板，真正致命的是「霍布斯叢林法則」</h2>
+<p>
+  縱觀整個喪屍敘事近百年的演進史，最深刻的文學哲學轉變在於：<strong>喪屍本身正在被邊緣化為純粹的「天災背景」，真正撕裂秩序的永遠是倖存的人類本身。</strong>
+</p>
+<p>
+  正如《陰屍路》（<em>The Walking Dead</em>）最核心的名言：<span class="highlight">「We ARE the walking dead!（我們才是活死人！）」</span>
+</p>
+<ul>
+  <li><strong>國家機器的脆弱自毀：</strong>現代法治、電力供應鏈、醫療資源看似固若金湯，但在未知指數級傳染面前，現代都市會在 72 小時內化為無政府的廢墟。</li>
+  <li><strong>重回霍布斯自然狀態：</strong>失去了法律與國家暴力的制衡，倖存者群體迅速退回「所有人對所有人的戰爭（Bellum omnium contra omnes）」。面對末日匱乏的物資，掠奪、奴役、軍閥獨裁與同類相食的殘酷度，遠比只受本能驅使啃咬的喪屍更加令人窒息。</li>
+</ul>
+
+<hr>
 <ul id="messages"></ul>
 <div id="social-share" style="margin-top: 20px;">
   <a id="fb-share" href="#" target="_blank" style="color: #4267B2; font-weight: bold;">分享到 Facebook</a>
@@ -266,17 +339,13 @@
   <a id="twitter-share" href="#" target="_blank" style="color: #1DA1F2; font-weight: bold;">分享到 X</a>
 </div>
 <script>
-  // 自動抓取當前頁面的 URL
   var currentUrl = window.location.href;
-  // Facebook 分享
   document.getElementById("fb-share").href =
           "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(currentUrl);
-  // Line 分享
   document.getElementById("line-share").href =
           "https://social-plugins.line.me/lineit/share?url=" + encodeURIComponent(currentUrl);
-  // X (Twitter) 分享
   document.getElementById("twitter-share").href =
-          "https://twitter.com/intent/tweet?url=" + encodeURIComponent(currentUrl) + "&text=你的文章標題";
+          "https://twitter.com/intent/tweet?url=" + encodeURIComponent(currentUrl) + "&text=" + encodeURIComponent("喪屍題材的演變：從巫毒魔幻、病毒科幻到真菌末日的深度文化解構");
 </script>
 <footer style="text-align: center; background-color: purple; color:yellow; font-size: 50px">
   作者：<a class="the_author_of_the_web" href="https://www.facebook.com/profile.php?id=100056441813114&locale=zh_TW" target="_blank" style="color:white">周彥廷</a>
