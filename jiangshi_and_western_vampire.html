@@ -3,24 +3,27 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>殭屍與吸血鬼：語境差異與文化誤會探討</title>
+    <title>「殭屍」與「吸血鬼」：語境差異、文化誤會與港產影視的符號混種探討</title>
     <style>
         body {
-            font-family: "Microsoft JhengHei", sans-serif;
+            font-family: "Microsoft JhengHei", "Helvetica", sans-serif;
             background-color: #fdfdfd;
             color: #2c3e50;
             line-height: 1.8;
             padding: 2em;
+            max-width: 850px;
+            margin: 0 auto;
         }
-        h1, h2 {
+        h1, h2, h3 {
             color: #5a2a83;
         }
         blockquote {
             border-left: 4px solid #5a2a83;
             margin: 1rem 0;
-            padding-left: 1rem;
+            padding: 10px 15px;
             color: #555;
-            font-style: italic;
+            background-color: #f8f6fa;
+            border-radius: 4px;
         }
         #google-translate-box {
             font-size: 12px;
@@ -48,6 +51,9 @@
             border-color: indigo;
             border-width: 5px;
             border-style: solid;
+            max-width: 100%;
+            height: auto;
+            margin: 10px 0;
         }
         footer {
             font-size: 50px;
@@ -62,13 +68,40 @@
             margin: 1.5em 0;
             font-style: italic;
         }
+        #toc {
+            background-color: #f3eef8;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            border-left: 5px solid #5a2a83;
+        }
+        #toc ul {
+            padding-left: 20px;
+            margin: 0;
+        }
+        #toc li {
+            margin-bottom: 6px;
+        }
+        .highlight-term {
+            background-color: #fff3cd;
+            padding: 0.1em 0.3em;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        .quote-box {
+            background: #f4f6f7;
+            border-left: 4px solid #2980b9;
+            padding: 12px 18px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
         /* 隱藏折疊內容 */
         .collapsed-menu {
             display: none;
             padding-left: 20px;
-            list-style-type: decimal; /* 使用數字編號 */
-            font-size: 14px; /* 設定字體大小 */
-            line-height: 1.6; /* 調整行高 */
+            list-style-type: decimal;
+            font-size: 14px;
+            line-height: 1.6;
         }
 
         /* 可選的按鈕樣式 */
@@ -110,15 +143,17 @@
         }
 
         @media screen and (max-width: 767px) {
+            body {
+                padding: 1em;
+            }
             iframe{
                 max-width:100%
             }
             video{
-                max-width: 80%;
-                border: 5px solid black;
+                max-width: 100%;
             }
             img{
-                max-width: 60%;
+                max-width: 90%;
                 height: auto;
             }
             header {
@@ -141,12 +176,11 @@
 <body>
 <div id="google-translate-box">
     <div id="google_translate_element"></div>
-    <!-- Google Translate 的自動翻譯功能 -->
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
-                pageLanguage: 'zh-TW',  // 頁面原語言
-                includedLanguages: 'en,es,fr,de,it,zh-CN,ja,ko,th,vi,my,id,ms,ar,he,ru,tg,uk,hi,tr,pt,nl,is,fi,sv,no,ro,kk,bo,mn,la,fil,tl,el',  // 支援的翻譯語言（可擴展）
+                pageLanguage: 'zh-TW',
+                includedLanguages: 'en,es,fr,de,it,zh-CN,ja,ko,th,vi,my,id,ms,ar,he,ru,tg,uk,hi,tr,pt,nl,is,fi,sv,no,ro,kk,bo,mn,la,fil,tl,el',
                 layout: google.translate.TranslateElement.InlineLayout.SIMPLE
             }, 'google_translate_element');
         }
@@ -158,7 +192,7 @@
     <nav>
         <ul>
             <li><strong class="guide">本頁內容：</strong><br>
-                <a>「殭屍」與「吸血鬼」：語境差異與文化誤會探討</a></li>
+                <a>「殭屍」與「吸血鬼」：語境差異、文化誤會與港產影視的符號混種探討</a></li>
 
             <li><strong class="guide">其他文章連結：</strong>
                 <button class="toggle-btn" onclick="toggleMenu()">點擊展開其他文章</button>
@@ -182,18 +216,15 @@
                     <li><a href="analysis_of_vampire_change.html" target="_blank">吸血鬼起源與文化演變分析</a></li>
                     <li><a href="vampires_have_bad_breath.html" target="_blank">永生的代價：從生物學剖析吸血鬼的口臭危機</a></li>
                     <li><a href="immortal_children_vs_hybrids.html" target="_blank">永生的生理枷鎖與倫理禁忌：從生物學與哲學剖析《暮光之城》的不朽孩童與半吸血鬼</a></li>
-                    <li><a href="vtm_caine_vs_dracula.html" target="_blank">吸血鬼之避世潛藏的世界觀迷思：為什麼該隱與大天使永遠不能在遊戲中登場？兼論避世潛藏神話 vs 德古拉的商業吸金密碼</a></li>
-                </ol>
+                    <li><a href="vtm_caine_vs_dracula.html" target="_blank">吸血鬼之避世潛藏的世界觀迷思：為什麼該隱與大天使永遠不能在遊戲中登場？兼論避世潛藏神話 vs 德古拉的商業吸金密碼</a></li></ol>
             </li>
         </ul>
     </nav>
 </header>
 <script>
-    // 切換顯示/隱藏文章列表
     function toggleMenu() {
         const menu = document.querySelector('.collapsed-menu');
         const button = document.querySelector('.toggle-btn');
-
         if (menu.style.display === "none" || menu.style.display === "") {
             menu.style.display = "block";
             button.textContent = "點擊隱藏其他文章";
@@ -202,56 +233,145 @@
             button.textContent = "點擊展開其他文章";
         }
     }
-
 </script>
-<h1>「殭屍」與「吸血鬼」：語境差異與文化誤會探討</h1>
+
+<h1>「殭屍」與「吸血鬼」：語境差異、文化誤會與港產影視的符號混種探討</h1>
 
 <div class="intro-box"><em>本網頁的作者不僅是吸血鬼文化的熱衷愛好者，還是深度探討東西方吸血鬼與殭屍題材的專家。多年来，他接觸過大量的吸血鬼作品和殭屍電影，無論是西方經典如《德古拉》、《夜訪吸血鬼》、《刀鋒戰士》、《暮光之城》、《凡赫辛》、《吸血鬼獵人：林肯總統》、《Hotel Transylvania》，還是東方的代表作如《殭屍先生》、《殭屍叔叔》、《音樂殭屍》、《殭屍家族》、《殭屍道長》、《千年殭屍王》，他都在不斷比較與探索。這使他對吸血鬼這一文化象徵有了獨特的理解，並且能夠深入分析這些超自然生物在不同文化中的呈現方式和隱喻意涵。<br><br>
 
     作為一名前端開發者，作者運用自己的技術背景，將這些文化分析與比較呈現於網頁中。他並不滿足於單純的文字敘述，而是通過結合互動性強的網頁設計和創意排版，將這些吸血鬼與殭屍的知識以更直觀、趣味十足的方式呈現給讀者。他將這一前端作品部署到GitHub Pages，開設專案，將自己的文化研究和技術技能結合，讓更多人可以輕鬆地接觸到這些深入且富有思考的內容。</em>
 </div>
-<h2>本頁內容導航</h2>
-<ol>
-    <li><a href="#introduction">前言</a></li>
-    <li><a href="#section1">語境中的誤會：港產電影中的殭屍</a></li>
-    <li><a href="#section2">港產殭屍與吸血鬼的翻譯與文化融合</a></li>
-    <li><a href="#conclusion">總結</a></li>
-</ol>
-<h2 id="introduction">前言</h2>
-<p>「殭屍」一詞在中文語境中，尤其是港產文化裡，與「吸血鬼」的形象有著複雜且微妙的關係。不同作品中，殭屍的定義和表現並不統一，常因文化傳承和翻譯差異，讓觀眾產生誤會。</p>
-<h2>殭屍與吸血鬼的本質與差異</h2>
-<p>傳統中國殭屍是死而復生的屍體，通常會直立行走，動作僵硬，以血為食，害怕符咒、糯米、桃木劍、黑狗血、陽光等；西方吸血鬼是以吸血維生的不死生物，擁有尖銳犬齒，害怕十字架、聖經、聖水、銀製品、陽光與蒜頭。</p>
-<p>從本質上來說，「殭屍」和「吸血鬼」都屬於以血為食的「活死人」（undead），且兩者犬齒尖銳的形象也十分相似，加上兩者都怕陽光並總是晝伏夜出，這可能是為什麼在港產文化中，有時會用「殭屍」一詞來指代類似吸血鬼的存在。</p>
 
-<h2 id="section1">語境中的誤會：港產電影中的殭屍</h2>
-<p>以電視劇《我和殭屍有個約會》為例，片中人物口中的「殭屍」其實就是「吸血鬼」：</p>
+<div id="toc">
+    <h2>目錄導航</h2>
+    <ul>
+        <li><a href="#introduction">一、 前言：詞彙滑移引發的文化認知斷層</a></li>
+        <li><a href="#section1">二、 本質解構：中國殭屍（吸氣死屍）vs 西方吸血鬼（契約血族）</a></li>
+        <li><a href="#section2">三、 粵語語境與殖民背景：為什麼香港人習慣把吸血鬼叫「殭屍」？</a></li>
+        <li><a href="#section3">四、 文本實例考據：《我和殭屍有個約會》與《千機變》中的跨界混淆</a></li>
+        <li><a href="#section4">五、 電影工業外銷的倒灌：從《Mr. Vampire》看商業符號的全球降維包裝</a></li>
+        <li><a href="#section5">六、 跨系統的喜劇衝突：當茅山法器對上西方吸血鬼（神仙各管一區）</a></li>
+        <li><a href="#conclusion">七、 總結：從誤會走向後現代文化融合</a></li>
+    </ul>
+</div>
+
+<h2 id="introduction">一、 前言：詞彙滑移引發的文化認知斷層</h2>
+<p>
+    在中文日常語境——特別是深受香港影視文化影響的華語流行圈中，「殭屍」與「吸血鬼」這兩個詞彙經常處於一種曖昧模糊的互換狀態。許多觀眾在觀看港產影視劇時常會產生強烈疑惑：<strong>為什麼角色明明穿著現代西裝、喝著高腳杯裡的紅酒、懼怕十字架與聖水，口中卻堅定地自稱是「殭屍」？</strong>
+</p>
+<p>
+    這種現象絕非單純的翻譯疏忽，而是植根於香港特殊的殖民地雙語歷史、影視工業進軍海外的行銷包裝，以及世紀之交編劇們大膽進行「東洋西洋神魔大縫合」的後現代創作實驗。
+</p>
+
+<h2 id="section1">二、 本質解構：中國殭屍（吸氣死屍）vs 西方吸血鬼（契約血族）</h2>
+<p>
+    若回溯兩種生物的原生文化脈絡，兩者在存在論（Ontology）與神學層面上存在著本質鴻溝：
+</p>
+<ul>
+    <li>
+        <strong>中國民間傳統殭屍（Jiangshi）：</strong><br>
+        源於清代志怪筆記（袁枚《子不語》、紀曉嵐《閱微草堂筆記》）與湘西趕屍民俗。其本質是<strong>「死而不腐的變異死屍」</strong>，因陰煞入骨、怨氣鎖喉而起。
+        <ul>
+            <li><em>攝食本質：</em>在最原始的民間文獻中，殭屍主要奪取的是活人的<strong>「陽氣（Vital Energy/Qi）」</strong>，而非血液。</li>
+            <li><em>動態與弱點：</em>關節僵直、雙臂平伸彈跳；受天地五行與道家科儀克制（桃木、硃砂、墨斗、糯米、黑狗血、陽光、三清符咒）。</li>
+        </ul>
+    </li>
+    <li>
+        <strong>西方古典吸血鬼（Vampire）：</strong><br>
+        根植於東歐斯拉夫民間傳說與中世紀基督教二元神學，後經由拜倫、波利多里及布蘭·史托克的《德古拉》定型。其本質是<strong>「與魔鬼簽訂契約或遭受神罰的靈魂墮落者」</strong>。
+        <ul>
+            <li><em>攝食本質：</em>以<strong>「實體血液（Blood）」</strong>為絕對生命源泉。《聖經·利未記》記載「活物的生命是在血中」，吸血象徵著剝奪他人的生命與靈魂。</li>
+            <li><em>動態與弱點：</em>擁有優雅的社交外表、貴族談吐與超常心智；受基督教神聖符號克制（十字架、聖水、祝聖聖體、大蒜、純銀、心臟木樁、日光）。</li>
+        </ul>
+    </li>
+</ul>
+
+<h2 id="section2">三、 粵語語境與殖民背景：為什麼香港人習慣把吸血鬼叫「殭屍」？</h2>
+<p>
+    要理解港片中的詞彙混淆，必須深入香港早期的語言社會學：
+</p>
+<ol>
+    <li><strong>「殭屍」一詞的口語泛指化：</strong>在廣東話的歷史語境中，「殭（硬也）屍（死人也）」字面意思就是「僵硬的屍體」。在 20 世紀中葉以前，老一輩香港人習慣用「殭屍」作為所有<strong>「會動的不死生物（Undead / Walking Corpse）」</strong>的總稱，無論是西方德古拉、海地巫毒活人、還是清朝跳屍，在坊間全被統稱為「殭屍」。</li>
+    <li><strong>翻譯名詞的定型延遲：</strong>「吸血鬼」一詞雖然早有書面翻譯，但在市井粵語口語中顯得拗口且過於文縐縐。直到 1990 年代好萊塢《惡靈古堡》、《活死人》等現代喪屍（Zombie）題材大量湧入後，港媒才開始嚴格區分出「喪屍」一詞；而在那之前，西方 Vampire 早已借由「吸血殭屍」這一折衷譯名深深扎根於大眾語感中，久而久之簡稱為「殭屍」。</li>
+</ol>
+
+<h2 id="section3">四、 文本實例考據：《我和殭屍有個約會》與《千機變》中的跨界混淆</h2>
+<p>
+    這種語言習慣在 90 年代末至 2000 年代初的香港流行影視中達到了巔峰，形成了極為獨特的「名為殭屍、實為血族」的奇異奇觀：
+</p>
+
+<h3>1. 亞視神作《我和殭屍有個約會》：盤古神話與白狼避世潛藏的混種</h3>
+<p>
+    在著名編劇陳十三打造的《我和殭屍有個約會》三部曲中，全劇人物張口閉口都是「殭屍」，但其生理特性與文化符號幾乎完全繼承了西方現代吸血鬼的架構：
+</p>
 <blockquote>
-    <ol>
-        <li>堂本真吾在教堂對況天佑說：「電影裡的殭屍真幸福，他們見到『十字架』就會化為烏有」</li>
-        <li>王珍珍問得知況天佑是「殭屍」後，問他是否怕「十字架」，而非「糯米」、「桃木劍」，或「符咒」</li>
-    </ol>
+    <strong>劇中名場面對白考據：</strong><br>
+    1. 堂本真吾在聖保羅教堂對況天佑嘲諷道：「電影裡的殭屍真幸福，他們見到『十字架』就會化為烏有。」<br>
+    2. 王珍珍在得知男主角況天佑的真實身分後，第一反應不是去買「糯米」或求「茅山符咒」，而是小心翼翼地問他：「你……怕不怕十字架？」
 </blockquote>
 <video controls><source src="況天佑與堂本真吾.mp4"></video>
 <video controls><source src="況天佑與王珍珍.mp4"></video>
-<p>這種設定容易讓熟悉傳統殭屍形象的觀眾誤解殭屍與吸血鬼的界限，因為這裡的「殭屍」就是西方吸血鬼的另一個代稱。</p>
-<p>另一個例子是電影《千機變》中，陳冠希對蔡卓妍說他是「殭屍」，但其實那也是吸血鬼，語境上的差異造成了混淆。</p>
-<video controls><source src="陳冠希與蔡卓妍.mp4"></video>
-<h2 id="section2">港產殭屍與吸血鬼的翻譯與文化融合</h2>
-<p>由於殭屍和吸血鬼本質上都是不死的死屍，港產片在英文翻譯時多用「vampire」（吸血鬼）作為「殭屍」的對應詞。例如：</p>
-<ul>
-    <li>《殭屍先生》→ <em>Mr. Vampire</em></li>
-    <li>《救殭清道夫》→ <em>Vampire Cleanup Department</em></li>
-    <li>《殭屍大時代》→ <em>The Era of Vampires</em></li>
-</ul>
-<div style="display: block; text-align: center; border: 5px solid purple; background-color: yellow;">
-<img src="殭屍先生海報.png" alt=""><br>
-<img src="千年殭屍王海報.png" alt=""><br>
-<img src="救殭清道夫海報.png" alt="">
+<div class="quote-box">
+    💡 <strong>深度分析：</strong>陳十三並非不懂中西差異，而是進行了一次驚豔的<strong>世界觀重構</strong>。他將西方白狼桌遊《吸血鬼之避世潛藏》（VtM）的「血統世代階級」（一代紅眼、二代綠眼、三代黃眼、四代灰眼），融合了中國上古神魔「將臣」與「盤古族」，創造出不懼陽光、不跳躍、穿皮衣風衣、以血漿包為生的超現代英雄。這部作品徹底將香港人心目中的「殭屍」從清朝義莊跳屍昇華為了浪漫孤獨的現代夜行者。
 </div>
-<p>這樣的翻譯方便國際觀眾理解，也反映了中西文化在恐怖元素上的互相借鑑和融合。</p>
 
-<h2 id="conclusion">總結</h2>
-<p>殭屍和吸血鬼雖然有不同的文化背景與傳說，但在現代流行文化中，尤其是港產影視裡，兩者的界線往往被模糊，甚至互換使用。這種現象既是文化交流的結果，也帶來了語義上的誤會。理解這些差異，有助於我們更深入欣賞不同文化對「不死生物」形象的獨特詮釋。</p>
+<h3>2. 動作大片《千機變》：披著殭屍外衣的純種西方血族聖戰</h3>
+<p>
+    2003 年林超賢執導、Twins 與鄭伊健主演的賣座電影《千機變》，則是另一個極致案例。片中陳冠希飾演的五皇子 Kazaf、黃秋生飾演的吸血鬼公爵，全生活在哥德風格的古堡地下室中，擁有尖牙、懼怕強烈紫外線、必須定時飲用公爵精血：
+</p>
+<video controls><source src="陳冠希與蔡卓妍.mp4"></video>
+<p>
+    然而在全片對白裡，陳冠希對蔡卓妍告白時說的依然是：<span class="highlight-term">「其實……我係一隻殭屍（其實我是個殭屍）」</span>。甚至鄭伊健所飾演的獵人組織，官方設定也叫「捉殭屍獵人」。這正是典型「粵語習慣性指代西方吸血鬼」的文化殘留。
+</p>
+
+<h2 id="section4">五、 電影工業外銷的倒灌：從《Mr. Vampire》看商業符號的全球降維包裝</h2>
+<p>
+    這種文化誤會的形成，香港電影發行商的「反向文化輸出」策略同樣起到了推波助瀾的作用：
+</p>
+<p>
+    1985 年，劉觀偉執導、林正英主演的《殭屍先生》在香港引爆票房，嘉禾電影隨即將其推向海外市場。然而，如何向歐美受眾解釋一個身穿滿清朝服、雙手平伸蹦跳、靠屏住呼吸避開追擊的東方怪物？
+</p>
+<div class="quote-box">
+    <strong>海外發行商的妥協：</strong>在英語中，「Hopping Corpse（跳躍屍體）」顯得過於笨拙且缺乏威脅感。為了精準對接全球觀眾的認知記憶體，發行方採取了最直接的商業降維手段——<strong>將其全面冠以「Vampire（吸血鬼）」之名</strong>：
+    <ul>
+        <li>《殭屍先生》 ➔ <em>Mr. Vampire</em></li>
+        <li>《殭屍家族》 ➔ <em>Mr. Vampire II</em></li>
+        <li>《千年殭屍王》 ➔ <em>The Era of Vampires</em></li>
+        <li>《救殭清道夫》 ➔ <em>Vampire Cleanup Department</em></li>
+    </ul>
+</div>
+<div style="display: block; text-align: center; border: 5px solid purple; background-color: yellow; padding: 15px; margin: 15px 0;">
+    <img src="殭屍先生海報.png" alt="殭屍先生海報" style="width: 30%; margin: 0 1%;"><br><br>
+    <img src="千年殭屍王海報.png" alt="千年殭屍王海報" style="width: 30%; margin: 0 1%;"><br><br>
+    <img src="救殭清道夫海報.png" alt="救殭清道夫海報" style="width: 30%; margin: 0 1%;">
+</div>
+<p>
+    這種外銷包裝大獲成功，甚至在日韓與歐美催生了一批專門研究「Chinese Vampire」的影迷群體。但這種譯名體系反向「倒灌」回港產電影自身時，更加固化了港產編劇將西方吸血鬼元素信手拈來、直接套用「殭屍」標籤的創作慣性。
+</p>
+
+<h2 id="section5">六、 跨系統的喜劇衝突：當茅山法器對上西方吸血鬼（神仙各管一區）</h2>
+<p>
+    當香港影壇意識到這種中西不死生物的認知錯位後，導演們並未試圖去嚴肅修正，反而將這種「跨文化法器失效」轉化為了極具代表性的<strong>無厘頭民俗喜劇衝突</strong>：
+</p>
+<ul>
+    <li>
+        <strong>林正英《一眉道人》（1989）：</strong><br>
+        九叔在片中首次遭遇因西洋傳教士遺體變異而成的純種西洋吸血鬼。一眉道長熟練地祭出<strong>黃紙符咒貼在吸血鬼腦門上，結果吸血鬼毫無反應，一把撕碎符咒</strong>；改用桃木劍刺胸，卻因對方並非陰木之體而險些折斷。直到九叔靈機一動，結合西洋修女提供的十字架、大蒜，並配合中國泥鰍與火攻陣法，才艱難破敵。
+    </li>
+    <li>
+        <strong>林正英、午馬《驅魔道長》（1993）：</strong><br>
+        片中將這種「系統不相容」推向極致：西洋神父手持十字架對著中國殭屍大喊「以聖父聖子之名退下」，清朝殭屍完全沒有神學概念，一巴掌將十字架拍得粉碎；反之，九叔拿著八卦鏡照射西洋殭屍，對方同樣免疫。最終二人被迫得出極具東亞實用主義色彩的結論：<strong>「中國神仙管中國鬼，外國上帝管外國鬼；各自修行，井水不犯河水！」</strong>
+    </li>
+</ul>
+
+<h2 id="conclusion">七、 總結：從誤會走向後現代文化融合</h2>
+<p>
+    「殭屍」與「吸血鬼」在香港影視中的混淆與重疊，表面看似一場因語言粗放與翻譯妥協造成的「文化誤會」，但從深層文化史來看，它恰恰是<strong>香港這座華洋雜處的國際大都市最具活力的文化混種標本</strong>。
+</p>
+<p>
+    從林正英電影裡對中西法器不相容的幽默自嘲，到陳十三在《我和殭屍有個約會》中打破偏見、將東方盤古與西方血族鎔鑄於一爐的宏大史詩，這種看似荒謬的語境交錯，展示了東亞創作者在面對強勢西方哥德符號時，毫不怯場的解構、吸收與再創造能力。
+</p>
+
 <ul id="messages"></ul>
 <div id="social-share" style="margin-top: 20px;">
     <a id="fb-share" href="#" target="_blank" style="color: #4267B2; font-weight: bold;">分享到 Facebook</a>
@@ -261,17 +381,13 @@
     <a id="twitter-share" href="#" target="_blank" style="color: #1DA1F2; font-weight: bold;">分享到 X</a>
 </div>
 <script>
-    // 自動抓取當前頁面的 URL
     var currentUrl = window.location.href;
-    // Facebook 分享
     document.getElementById("fb-share").href =
         "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(currentUrl);
-    // Line 分享
     document.getElementById("line-share").href =
         "https://social-plugins.line.me/lineit/share?url=" + encodeURIComponent(currentUrl);
-    // X (Twitter) 分享
     document.getElementById("twitter-share").href =
-        "https://twitter.com/intent/tweet?url=" + encodeURIComponent(currentUrl) + "&text=你的文章標題";
+        "https://twitter.com/intent/tweet?url=" + encodeURIComponent(currentUrl) + "&text=" + encodeURIComponent("「殭屍」與「吸血鬼」：語境差異、文化誤會與港產影視的符號混種探討");
 </script>
 <footer>
     作者：<a class="the_author_of_the_web" href="https://www.facebook.com/profile.php?id=100056441813114&locale=zh_TW" target="_blank" style="color:white">周彥廷</a>
