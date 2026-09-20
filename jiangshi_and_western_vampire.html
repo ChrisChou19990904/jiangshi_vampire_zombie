@@ -171,6 +171,22 @@
                 color: #2980b9;
             }
         }
+        /* 桌機版：海報寬度適中，保持美觀 */
+        .poster-img {
+            width: 45%;
+            max-width: 350px;
+            height: auto;
+            margin: 0 auto;
+            display: inline-block;
+        }
+
+        /* 手機版：海報自動放大到 85% 滿版，字體清晰不縮小 */
+        @media screen and (max-width: 767px) {
+            .poster-img {
+                width: 85% !important;
+                max-width: 100% !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -343,10 +359,15 @@
         <li>《救殭清道夫》 ➔ <em>Vampire Cleanup Department</em></li>
     </ul>
 </div>
-<div style="display: block; text-align: center; border: 5px solid purple; background-color: yellow; padding: 15px; margin: 15px 0;">
-    <img src="殭屍先生海報.png" alt="殭屍先生海報" style="width: 30%; margin: 0 1%;"><br><br>
-    <img src="千年殭屍王海報.png" alt="千年殭屍王海報" style="width: 30%; margin: 0 1%;"><br><br>
-    <img src="救殭清道夫海報.png" alt="救殭清道夫海報" style="width: 30%; margin: 0 1%;">
+<div style="display: block; text-align: center; border: 5px solid purple; background-color: yellow; padding: 25px 15px; margin: 20px 0;">
+    <!-- 第一張：維持大張清晰（50%~55%） -->
+    <img src="殭屍先生海報.png" alt="殭屍先生海報" style="width: 52%; max-width: 450px; height: auto; margin: 10px auto; display: inline-block;">
+    <br><br>
+    <!-- 第二張：維持大張清晰（50%~55%） -->
+    <img src="千年殭屍王海報.png" alt="千年殭屍王海報" style="width: 52%; max-width: 450px; height: auto; margin: 10px auto; display: inline-block;">
+    <br><br>
+    <!-- 第三張：單獨加大比例（拉大到 70%~75%），徹底解決原圖偏窄偏小的問題 -->
+    <img src="救殭清道夫海報.png" alt="救殭清道夫海報" style="width: 72%; max-width: 550px; height: auto; margin: 10px auto; display: inline-block;">
 </div>
 <p>
     這種外銷包裝大獲成功，甚至在日韓與歐美催生了一批專門研究「Chinese Vampire」的影迷群體。但這種譯名體系反向「倒灌」回港產電影自身時，更加固化了港產編劇將西方吸血鬼元素信手拈來、直接套用「殭屍」標籤的創作慣性。
