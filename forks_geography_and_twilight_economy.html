@@ -2,7 +2,6 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>微氣候掩蔽與空間反差：從降雨物理、機場級微型尺度到《暮光之城》福克斯小鎮的符號經濟學</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
@@ -300,53 +299,106 @@
     new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['年平均降雨量 (毫米 / mm)', '全年降雨/陰天日數 (天 / Days)', '年均晴天日數 (天 / Sunny Days)', '夏季紫外線峰值指數 (UV Index)'],
+            // X 軸類別純化為城市對比，邏輯最清晰
+            labels: ['華盛頓州·福克斯（微型避難所）', '華盛頓州·西雅圖（都會中心）', '亞利桑那州·鳳凰城（艷陽故鄉）'],
             datasets: [
                 {
-                    label: '華盛頓州·福克斯（微型吸血鬼避難所）',
-                    data: [3200, 212, 65, 3],
-                    backgroundColor: 'rgba(54, 162, 235, 0.7)',
+                    type: 'bar',
+                    label: '年平均降雨量 (mm)',
+                    data: [3200, 950, 200],
+                    backgroundColor: 'rgba(54, 162, 235, 0.75)',
                     borderColor: 'rgba(54, 162, 235, 1)',
-                    borderWidth: 1
+                    borderWidth: 1,
+                    yAxisID: 'yRain'
                 },
                 {
-                    label: '華盛頓州·西雅圖（區域都會中心）',
-                    data: [950, 150, 152, 6],
-                    backgroundColor: 'rgba(75, 192, 192, 0.7)',
+                    type: 'bar',
+                    label: '全年降雨/陰天天數 (天)',
+                    data: [212, 150, 36],
+                    backgroundColor: 'rgba(75, 192, 192, 0.75)',
                     borderColor: 'rgba(75, 192, 192, 1)',
-                    borderWidth: 1
+                    borderWidth: 1,
+                    yAxisID: 'yDays'
                 },
                 {
-                    label: '亞利桑那州·鳳凰城（貝拉逃離的艷陽故鄉）',
-                    data: [200, 36, 300, 11],
-                    backgroundColor: 'rgba(255, 99, 132, 0.7)',
-                    borderColor: 'rgba(255, 99, 132, 1)',
-                    borderWidth: 1
+                    type: 'bar',
+                    label: '年均晴天天數 (天)',
+                    data: [65, 152, 300],
+                    backgroundColor: 'rgba(255, 159, 64, 0.75)',
+                    borderColor: 'rgba(255, 159, 64, 1)',
+                    borderWidth: 1,
+                    yAxisID: 'yDays'
+                },
+                {
+                    type: 'line',
+                    label: '夏季紫外線峰值 (UV Index)',
+                    data: [3, 6, 11],
+                    borderColor: 'rgba(220, 53, 69, 1)',
+                    backgroundColor: 'rgba(220, 53, 69, 1)',
+                    borderWidth: 3,
+                    pointRadius: 6,
+                    pointHoverRadius: 8,
+                    tension: 0.2,
+                    yAxisID: 'yUV'
                 }
             ]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
+            interaction: {
+                mode: 'index',
+                intersect: false
+            },
             scales: {
-                y: {
+                yRain: {
+                    type: 'linear',
+                    position: 'left',
                     beginAtZero: true,
+                    max: 3500,
                     title: {
                         display: true,
-                        text: '氣候物理指標數值',
-                        color: '#444',
+                        text: '年降雨量 (mm)',
+                        color: '#0056b3',
                         font: { size: 12, weight: 'bold' }
+                    },
+                    ticks: {
+                        stepSize: 500
                     }
+                },
+                yDays: {
+                    type: 'linear',
+                    position: 'right',
+                    beginAtZero: true,
+                    max: 365,
+                    title: {
+                        display: true,
+                        text: '日數 (天 / 365天滿額)',
+                        color: '#198754',
+                        font: { size: 12, weight: 'bold' }
+                    },
+                    grid: {
+                        drawOnChartArea: false // 避免背景網格線重疊錯亂
+                    }
+                },
+                yUV: {
+                    type: 'linear',
+                    position: 'right',
+                    display: false, // 隱藏多餘的第三條軸，直接借用 0~15 空間定位折線
+                    beginAtZero: true,
+                    max: 15
                 }
             },
             plugins: {
-                legend: { position: 'top' },
-                tooltip: {
-                    callbacks: {
-                        label: function(context) {
-                            return context.dataset.label + ': ' + context.raw;
-                        }
+                legend: {
+                    position: 'top',
+                    labels: {
+                        boxWidth: 15,
+                        font: { size: 12 }
                     }
+                },
+                tooltip: {
+                    padding: 10
                 }
             }
         }
