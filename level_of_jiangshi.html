@@ -369,19 +369,20 @@
 </div>
 
 <div class="chart-container">
-    <canvas id="GuanyinVsUncleNineChart" width="400" height="400"></canvas>
+    <canvas id="GuanyinVsUncleNineChart"></canvas>
 </div>
 
 <script>
     const ctx2 = document.getElementById('GuanyinVsUncleNineChart').getContext('2d');
     const chartData2 = {
+        // 利用陣列拆分兩行，寬度直接減半，徹底根治文字溢出被切問題
         labels: [
-            '絕對神力 (單手托一海之水)',
-            '位階威壓 (大聖低頭俯首)',
-            '神行駕霧 (瞬息遊歷十方)',
-            '造化與因果律 (甘露回春 / 咒言即死)',
-            '近戰物理破壞力 (近身動能輸出)',
-            '超脫凡胎肉身 (免疫力竭與屍毒)'
+            ['絕對神力', '(單手托一海之水)'],
+            ['位階威壓', '(大聖低頭俯首)'],
+            ['神行駕霧', '(瞬息遊歷十方)'],
+            ['造化與因果律', '(甘露回春 / 咒言即死)'],
+            ['近戰物理破壞力', '(近身動能輸出)'],
+            ['超脫凡胎肉身', '(免疫力竭與屍毒)']
         ],
         datasets: [
             {
@@ -405,15 +406,39 @@
         type: 'radar',
         data: chartData2,
         options: {
+            responsive: true,
+            maintainAspectRatio: true,
+            layout: {
+                padding: {
+                    top: 15,
+                    bottom: 15,
+                    left: 25,
+                    right: 25
+                }
+            },
             scales: {
                 r: {
                     suggestedMin: 0,
                     suggestedMax: 10,
-                    ticks: { stepSize: 2 }
+                    ticks: {
+                        stepSize: 2,
+                        display: false // 隱藏軸線數字，讓整個雷達圖在畫面中更置中且清爽
+                    },
+                    pointLabels: {
+                        font: {
+                            size: 11 // 調整字體大小，避免與頂點重疊
+                        }
+                    }
                 }
             },
             plugins: {
-                legend: { position: 'top' }
+                legend: {
+                    position: 'top',
+                    labels: {
+                        boxWidth: 12,
+                        font: { size: 12 }
+                    }
+                }
             }
         }
     });
