@@ -200,7 +200,57 @@
       margin-top: 15px;
       border: 3px solid #ffffe0;
     }
-
+    /* 頁尾導流與錨點導航卡片 */
+    .bottom-nav-box {
+      background: #fdf7ff;
+      border: 2px dashed #4b0082;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 30px 0;
+      text-align: center;
+    }
+    .back-to-menu-btn {
+      display: inline-block;
+      margin: 10px 0 15px 0;
+      padding: 10px 20px;
+      background-color: #4b0082;
+      color: #ffffe0 !important;
+      font-weight: bold;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: transform 0.2s, background-color 0.2s;
+    }
+    .back-to-menu-btn:hover {
+      background-color: #6a0dad;
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+    .recommended-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 15px;
+      text-align: left;
+    }
+    .recommended-chip {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 8px 12px;
+      font-size: 13.5px;
+      flex: 1 1 calc(50% - 15px);
+      min-width: 260px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      transition: border-color 0.2s;
+    }
+    .recommended-chip:hover {
+      border-color: #4b0082;
+    }
+    .recommended-chip a {
+      font-weight: 500;
+      display: block;
+    }
     @media screen and (max-width: 767px) {
       #google_translate_element {
         position: static;
@@ -303,6 +353,7 @@
       </li>
       <li><a href="#section-zombie">三、喪屍的真相（Zombie）</a></li>
       <li><a href="#section-summary">四、總結：三者差異對照表</a></li>
+      <li><a href="#extension">繼續探索本專案的深度除錯矩陣</a></li>
     </ul>
   </div>
 
@@ -372,9 +423,6 @@
         <li><strong>後卿與贏勾（網文移花接木）：</strong>兩者原型出自《山海經》或志怪筆記中的零星神話人物（如黃帝手下將領），但古籍中從未記載他們「死後變成殭屍」。是 2000 年代初期的網路玄幻作者，為了湊齊「地水火風」或「四大陣營」，將其生搬硬套扣上了殭屍始祖的帽子。</li>
         <li><strong>旱魃（唯一有古籍依據者）：</strong>唯有「魃」在《詩經》與《山海經》中確實存在，原為黃帝之女「女魃」，助黃帝止雨擊敗風伯雨師，後演變為引發旱災之神；明清小說（如《子不語》）才將其正式列為殭屍的高階形態。</li>
       </ul>
-      <p style="margin-top: 8px; margin-bottom: 0;">
-        👉 <strong>深入考據專題：</strong>若想詳細了解古籍原本如何記載、以及這場網路狂歡如何形成，請參閱本站專文：<a href="four_ancestors_of_jiangshi_debunked.html" target="_blank">《網路狂歡下的偽神話：從先秦古籍、《子不語》到香港影視，全面戳破「四大殭屍始祖」的當代謊言》</a>。
-      </p>
     </div>
 
     <div class="media-container">
@@ -573,6 +621,56 @@
   <p>
     看清這些設定背後的因果邏輯、法律產權與二創脈絡，正是我們解構整個超自然流行宇宙的第一步。若您想進一步從<strong>古典力學、神經生物學、地緣經濟學與博弈論</strong>等跨學科角度，深入檢視《暮光之城》的生理漏洞、九叔電影的武打美學、或是《惡魔城》的資本隱喻，歡迎點擊頁首的<strong>「📚 其他文章列表」</strong>，探索本站收錄的完整專題矩陣！
   </p>
+  <!-- 底部專屬導航與文章推薦卡片 -->
+  <!-- 底部專屬導航與文章推薦卡片（高度相關精選版） -->
+  <div class="bottom-nav-box" id="extension">
+    <h3 style="margin-top:0; color:#4b0082;">🧭 延伸閱讀：首頁核心主題深度解碼</h3>
+    <p style="font-size: 14px; margin-bottom: 12px; color: #555;">
+      延續本篇「殭屍、吸血鬼與喪屍」的三方對照，以下專題針對本頁提及的核心爭議進行了更完整的考據與除錯：
+    </p>
+
+    <!-- 方案A：一鍵回頂部展開完整列表 -->
+    <a href="#top" class="back-to-menu-btn" onclick="openTopMenu()">⬆️ 回到頂部展開其他 23 篇文章列表</a>
+
+    <!-- 方案B：與首頁論點高度承接的 6 大核心專文 -->
+    <div class="recommended-grid">
+      <!-- 1. 承接前言英譯與港片跨文化混種 -->
+      <div class="recommended-chip">
+        🔤 <strong>語境誤會與符號混種：</strong><br>
+        <a href="jiangshi_and_western_vampire.html" target="_blank">「殭屍」與「吸血鬼」：語境差異、文化誤會與港產影視的符號混種探討</a>
+      </div>
+
+      <!-- 2. 承接第三章喪屍科普 -->
+      <div class="recommended-chip">
+        ☣️ <strong>喪屍真相與末日演變：</strong><br>
+        <a href="zombie_change.html" target="_blank">喪屍題材的演變：從巫毒魔幻、病毒科幻到真菌末日的深度文化解構</a>
+      </div>
+
+      <!-- 3. 承接第一章殭屍終極階級「犼」 -->
+      <div class="recommended-chip">
+        ⚡ <strong>殭屍終極戰力與雷達互動：</strong><br>
+        <a href="level_of_jiangshi.html" target="_blank">殭屍終極形態「犼」能吞龍滅佛，但為何電影只出現低階跳殭？（附戰力雷達互動）</a>
+      </div>
+
+      <!-- 4. 承接第一章「四大始祖」除錯 -->
+      <div class="recommended-chip">
+        📜 <strong>戳破殭屍始祖當代謊言：</strong><br>
+        <a href="four_ancestors_of_jiangshi_debunked.html" target="_blank">網路狂歡下的偽神話：從先秦古籍、《子不語》到香港影視，戳破「四大殭屍始祖」</a>
+      </div>
+
+      <!-- 5. 承接第二章該隱始祖桌遊版權陷阱 -->
+      <div class="recommended-chip">
+        🩸 <strong>血族該隱始祖與商業密碼：</strong><br>
+        <a href="vtm_caine_vs_dracula.html" target="_blank">吸血鬼避世潛藏世界觀迷思：該隱為何不能登場？兼論德古拉商業吸金密碼</a>
+      </div>
+
+      <!-- 6. 承接第二章東亞跨文化混種（茅山 vs 吸血鬼） -->
+      <div class="recommended-chip">
+        ✝️ <strong>基督教教條與東亞文本重塑：</strong><br>
+        <a href="vampire_origin_and_evolution.html" target="_blank">吸血鬼起源與演變分析：從民間惡靈、聖經二創到東亞文本重塑</a>
+      </div>
+    </div>
+  </div>
   <div id="social-share">
     <h3>📢 喜歡這篇文章嗎？分享給朋友吧！</h3>
     <a id="fb-share" href="#" target="_blank">分享到 Facebook</a> |
@@ -589,6 +687,15 @@
 </footer>
 
 <script>
+  // 底部按鈕點擊：回到頂部並自動展開文章列表
+  function openTopMenu() {
+    const menu = document.querySelector('.collapsed-menu');
+    const button = document.querySelector('.toggle-btn');
+    if (menu) {
+      menu.style.display = "block";
+      if (button) button.textContent = "點擊隱藏其他文章";
+    }
+  }
   function toggleMenu() {
     const menu = document.querySelector('.collapsed-menu');
     const button = document.querySelector('.toggle-btn');
