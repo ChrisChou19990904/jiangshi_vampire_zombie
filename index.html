@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +7,7 @@
   <style>
     /* 全域樣式優化 */
     html {
-      scroll-behavior: smooth; /* 啟用平滑滾動 */
+      scroll-behavior: smooth;
     }
     body {
       font-family: "Noto Sans TC", sans-serif;
@@ -27,6 +27,10 @@
       margin-top: 1.5em;
       padding-bottom: 0.3em;
       border-bottom: 1px solid #ddd;
+    }
+    h3 {
+      color: #2c3e50;
+      margin-top: 1.2em;
     }
     em {
       color: #6a5acd;
@@ -74,11 +78,16 @@
     .index-tech-note {
       background-color: #f0f4f8;
       border-left: 4px solid #2980b9;
-      padding: 10px 12px;
+      padding: 12px 14px;
       margin-top: 10px;
       font-size: 13.5px;
       color: #444;
       line-height: 1.6;
+      border-radius: 0 5px 5px 0;
+    }
+    .index-tech-note ul {
+      margin: 8px 0;
+      padding-left: 20px;
     }
     .collapsed-menu {
       display: none;
@@ -101,10 +110,6 @@
       background-color: #4b0082;
       color: white;
     }
-    .toggle-btn:visited{
-      color: #4b0082;
-      background-color: #fff;
-    }
 
     /* 內文區塊 */
     .main-content {
@@ -123,7 +128,7 @@
       color: #333;
     }
 
-    /* 精簡後的多媒體容器 */
+    /* 多媒體容器 */
     .media-container {
       display: flex;
       flex-direction: column;
@@ -147,7 +152,7 @@
     table {
       width: 100%;
       border-collapse: collapse;
-      min-width: 500px;
+      min-width: 550px;
     }
     th, td {
       border: 1px solid #ddd;
@@ -196,28 +201,21 @@
       border: 3px solid #ffffe0;
     }
 
-    /* 行動裝置優化 */
     @media screen and (max-width: 767px) {
       #google_translate_element {
         position: static;
         margin: 10px auto;
         text-align: center;
       }
-      video{
-        width: 100%;
-      }
-      img{
-        width: 100%;
-      }
-      iframe{
-        width: 100%;
+      video, img, iframe {
+        max-width: 100% !important;
+        height: auto;
       }
     }
   </style>
 </head>
 <body>
 
-<!-- Google Translate 功能 -->
 <div id="google_translate_element"></div>
 <script type="text/javascript">
   function googleTranslateElementInit() {
@@ -229,14 +227,13 @@
   }
 </script>
 <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 <header>
   <nav class="nav-container">
-    <!-- 其他文章摺疊選單 -->
     <div>
       <strong class="guide">📚 本專案的其他文章連結：</strong>
       <button class="toggle-btn" onclick="toggleMenu()">點擊展開文章列表</button>
 
-      <!-- 首頁定位與 index.html 技術小科普 -->
       <div class="index-tech-note">
         <strong>💡 本頁面定位與前端小知識：</strong><br>
         本頁面為本 GitHub Pages 專案的<strong>入口首頁（主頁）</strong>，主要作為整體專案的基石，深度剖析與區分「東方殭屍（Jiangshi）」、「西洋吸血鬼（Vampire）」與「現代喪屍（Zombie）」的三方文化語境與生理差異。<br><br>
@@ -277,50 +274,83 @@
   <h1>中西不死生物比較：殭屍 vs 吸血鬼 vs 喪屍</h1>
 
   <section id="section-intro" class="intro-box">
-    <em>本網頁的作者不僅是吸血鬼文化的熱衷愛好者，還是深度探討東西方吸血鬼與殭屍題材的專家。多年来，他接觸過大量的吸血鬼作品和殭屍電影，無論是西方經典如《德古拉》、《夜訪吸血鬼》、《刀鋒戰士》、《暮光之城》、《凡赫辛》、《吸血鬼獵人：林肯總統》、《Hotel Transylvania》，還是東方的代表作如《殭屍先生》、《殭屍叔叔》、《音樂殭屍》、《殭屍家族》、《殭屍道長》、《千年殭屍王》，他都在不斷比較與探索。這使他對吸血鬼這一文化象徵有了獨特的理解，並且能夠深入分析這些超自然生物在不同文化中的呈現方式和隱喻意涵。
+    <em>本網頁的作者不僅是吸血鬼文化的熱衷愛好者，還是深度探討東西方吸血鬼與殭屍題材的專家。多年來，他接觸過大量的吸血鬼作品和殭屍電影，無論是西方經典如《德古拉》、《夜訪吸血鬼》、《刀鋒戰士》、《暮光之城》、《凡赫辛》、《吸血鬼獵人：林肯總統》、《Hotel Transylvania》，還是東方的代表作如《殭屍先生》、《殭屍叔叔》、《音樂殭屍》、《殭屍家族》、《殭屍道長》、《千年殭屍王》，他都在不斷比較與探索。這使他對吸血鬼這一文化象徵有了獨特的理解，並且能夠深入分析這些超自然生物在不同文化中的呈現方式和隱喻意涵。
       <br><br>
       作為一名前端開發者，作者運用自己的技術背景，將這些文化分析與比較呈現於網頁中。他並不滿足於單純的文字敘述，而是通過結合互動性強的網頁設計和創意排版，將這些吸血鬼與殭屍的知識以更直觀、趣味十足的方式呈現給讀者。他將這一前端作品部署到GitHub Pages，開設專案，將自己的文化研究和技術技能結合，讓更多人可以輕鬆地接觸到這些深入且富有思考的內容。
     </em>
   </section>
 
-  <!-- 本頁錨點導覽目錄（移至 main 區塊內） -->
   <div class="toc-box">
     <strong>📍 本頁內容導航：</strong>
     <ul>
-      <li><a href="#introduction">前言</a></li>
-      <li><a href="#section-jiangshi">一、殭屍是什麼？（Jiangshi）</a></li>
-      <li><a href="#section-vampire">二、吸血鬼的傳說與特色</a></li>
+      <li><a href="#introduction">前言：譯名誤區與官方英譯考據</a></li>
+      <li>
+        <a href="#section-jiangshi">一、殭屍是什麼？（Jiangshi）</a>
+        <ul>
+          <li><a href="#jiangshi-definition">（一） 民俗起源、生理特徵與等級演變（跳殭至太古犼）</a></li>
+          <li><a href="#jiangshi-four-ancestors-debunk">（二） 當代偽神話除錯：網文熱炒的「四大殭屍始祖」真相</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#section-vampire">二、吸血鬼的傳說、特色與文化演變路徑</a>
+        <ul>
+          <li><a href="#vampire-classical-gothic">（一） 古典哥德期：基督教二創與神聖秩序的反面鏡像</a></li>
+          <li><a href="#vampire-modern-secular">（二） 現代流行期：世俗化（去宗教化）、科幻解構與唯物唯美主義</a></li>
+          <li><a href="#vampire-east-asia-hybrid">（三） 東亞跨文化混種：當西洋伯爵撞進茅山道術宇宙</a></li>
+          <li><a href="#vampire-creator-guide">（四） 給創作者的解構除錯：該隱始祖的版權迷思，與「畏懼十字架」的非絕對性</a></li>
+        </ul>
+      </li>
       <li><a href="#section-zombie">三、喪屍的真相（Zombie）</a></li>
       <li><a href="#section-summary">四、總結：三者差異對照表</a></li>
     </ul>
   </div>
+
   <section id="introduction">
-    <h2>前言</h2>
-  <p>受到西洋電影的影響，很多人會本能地把「殭屍」直接翻成英文 <strong>zombie</strong>，但這其實並不準確。根據文化脈絡，<strong>殭屍</strong>的英文應該是 <em>Jiangshi</em>（音譯）或 <em>Chinese Vampire</em>（意譯；許多自動翻譯會將其翻成"中國的吸血鬼"）。這也是為什麼《殭屍先生》、《千年殭屍王》、《救殭清道夫》等港片的官方英譯是 <em>Mr. Vampire</em>、<em>The Era of Vampires</em>、<em>Vampire Cleanup Department</em> 而非 <em>Mr. Zombie</em>、<em>The Era of Zombies</em>、<em>Zombie Cleanup Department</em>，如下截圖所示。</p>
-  <img loading="lazy" src="殭屍先生海報.png" alt="" style="border:purple 5px solid" width="288" height="756"><br>
-  <img loading="lazy" src="千年殭屍王海報.png" alt="" style="border:purple 5px solid" width="267" height="567"><br>
-  <img loading="lazy" src="救殭清道夫海報.png" alt="" style="border:purple 5px solid" width="603" height="453"><br>
-  <img loading="lazy" src="聊天紀錄.webp" alt="" style="border:purple 5px solid" width="360" height="575"><br>
-  <img loading="lazy" src="聊天紀錄2.webp" alt="" style="border:purple 5px solid" width="360" height="498"><br>
-  <img loading="lazy" src="聊天紀錄3.webp" alt="" style="border:purple 5px solid" width="360" height="577"><br>
-  <img loading="lazy" src="聊天紀錄4.webp" alt="" style="border:purple 5px solid" width="360" height="499"><br>
-  <img loading="lazy" src="聊天紀錄5.webp" alt="" style="border:purple 5px solid" width="360" height="348"><br>
+    <h2>前言：譯名誤區與官方英譯考據</h2>
+    <p>受到西洋電影的影響，很多人會本能地把「殭屍」直接翻成英文 <strong>zombie</strong>，但這其實並不準確。根據文化脈絡，<strong>殭屍</strong>的英文應該是 <em>Jiangshi</em>（音譯）或 <em>Chinese Vampire</em>（意譯；許多自動翻譯會將其翻成「中國的吸血鬼」）。這也是為什麼《殭屍先生》、《千年殭屍王》、《救殭清道夫》等港片的官方英譯是 <em>Mr. Vampire</em>、<em>The Era of Vampires</em>、<em>Vampire Cleanup Department</em> 而非 <em>Mr. Zombie</em>、<em>The Era of Zombies</em>、<em>Zombie Cleanup Department</em>，如下截圖所示：</p>
+    <img loading="lazy" src="殭屍先生海報.png" alt="殭屍先生海報" style="border:purple 5px solid" width="288" height="756"><br>
+    <img loading="lazy" src="千年殭屍王海報.png" alt="千年殭屍王海報" style="border:purple 5px solid" width="267" height="567"><br>
+    <img loading="lazy" src="救殭清道夫海報.png" alt="救殭清道夫海報" style="border:purple 5px solid" width="603" height="453"><br>
+    <img loading="lazy" src="聊天紀錄.webp" alt="聊天紀錄" style="border:purple 5px solid" width="360" height="575"><br>
+    <img loading="lazy" src="聊天紀錄2.webp" alt="聊天紀錄2" style="border:purple 5px solid" width="360" height="498"><br>
+    <img loading="lazy" src="聊天紀錄3.webp" alt="聊天紀錄3" style="border:purple 5px solid" width="360" height="577"><br>
+    <img loading="lazy" src="聊天紀錄4.webp" alt="聊天紀錄4" style="border:purple 5px solid" width="360" height="499"><br>
+    <img loading="lazy" src="聊天紀錄5.webp" alt="聊天紀錄5" style="border:purple 5px solid" width="360" height="348"><br>
   </section>
-    <!-- 一、殭屍 -->
+
+  <!-- 一、殭屍 -->
   <section id="section-jiangshi">
     <h2>一、殭屍是什麼？（Jiangshi）</h2>
-    <p>殭屍起源自中國傳統文化，是死後屍體因怨氣、屍氣或法力復活的產物。傳統的殭屍通常是由巫術或不正當的死亡所產生，復活後會無意識地進行食血或吸取生命精華的行為。</p>
-    <p>它們的行為特徵包括：</p>
+
+    <h3 id="jiangshi-definition">（一） 民俗起源、生理特徵與等級演變（跳殭至太古犼）</h3>
+    <p>殭屍起源自中國傳統民間信仰，是死後屍體因怨氣不散、地脈陰煞之氣滋養或道家巫術催化而形成的異常產物。傳統殭屍在最原始的民俗狀態下屬於「屍變」現象，復活後會憑藉嗅聞生人氣息或吸食生血來維持活動。</p>
+    <p>它們的經典行為特徵包括：</p>
     <ul>
-      <li><strong>吸血與吸取生命精氣：</strong>與吸血鬼相似，殭屍會吸取生者的血液或生命精氣來維持存在。</li>
-      <li><strong>害怕陽光：</strong>殭屍在陽光下無法活動，因此通常只會在夜間出沒。</li>
-      <li><strong>道法鎮壓：</strong>一旦受到了正確的符咒或道具（如桃木劍、符咒等）鎮壓，殭屍將會停止活動。</li>
+      <li><strong>吸血與吸取陽氣：</strong>與吸血鬼相似，殭屍會吸取生者的血液或陽氣以維持其屍身不腐。</li>
+      <li><strong>夜行性與關節僵直：</strong>肌肉屍僵未解，雙臂前平伸、靠彈跳前進，對陽光極度敏感，日光照射會灼傷其屍身陰氣。</li>
+      <li><strong>五行機制相剋：</strong>可藉由糯米拔毒、墨斗線封鎖、黑狗血破煞、硃砂符咒貼額或桃木劍刺心等民俗道法加以制伏。</li>
     </ul>
-    <p>民間信仰中，殭屍會隨時間修煉，從最低級的跳躍型殭屍進化為能飛行的屍王，甚至進化為更高級的 <strong>魃</strong>（能引發乾旱與瘟獄）與 <strong>犼</strong>（能吐火、吞雲、吃龍）。袁枚的《子不語》中甚至提到犼是殭屍的最終型態。</p>
+    <p>在明清志怪筆記（如袁枚《子不語》）與後世玄幻演變中，殭屍具備了完整的進化鏈階梯：從最低階的<strong>跳殭</strong>、能御風滑翔的<strong>飛殭</strong>，逐步修煉為能引發赤地千里的大旱之神<strong>魃</strong>，乃至吞龍食佛、口吐真火的終極太古神魔<strong>犼</strong>。</p>
+
+    <h3 id="jiangshi-four-ancestors-debunk">（二） 當代偽神話除錯：網文熱炒的「四大殭屍始祖」真相</h3>
+    <p>
+      在當代網路論壇與修仙玄幻小說中，常盛傳黃帝蚩尤時期有所謂「四大殭屍始祖」——<strong>旱魃、將臣、後卿、贏勾</strong>。許多讀者甚至誤以為這是先秦古籍記載的正統神話，但從文獻學與影視傳播史檢視，這完全是<strong>近二十年由當代影視與修仙網文東拼西湊組裝而成的「偽神話」</strong>：
+    </p>
+
+    <div class="index-tech-note" style="border-left-color: #c0392b; background-color: #fff9f9;">
+      <strong>⚠️ 拆解「四大始祖」的當代縫合黑歷史：</strong><br>
+      <ul>
+        <li><strong>將臣（純港劇原創）：</strong>先秦古籍與清代志怪中根本沒有名為「將臣」的屍王。此角色純粹出自 1998 年香港亞視經典奇幻劇《我和殭屍有個約會》，是編劇陳十三借用「盤古族人」設定創造出的影視產物，後被網文作者擅自吸納進神話體系。</li>
+        <li><strong>後卿與贏勾（網文移花接木）：</strong>兩者原型出自《山海經》或志怪筆記中的零星神話人物（如黃帝手下將領），但古籍中從未記載他們「死後變成殭屍」。是 2000 年代初期的網路玄幻作者，為了湊齊「地水火風」或「四大陣營」，將其生搬硬套扣上了殭屍始祖的帽子。</li>
+        <li><strong>旱魃（唯一有古籍依據者）：</strong>唯有「魃」在《詩經》與《山海經》中確實存在，原為黃帝之女「女魃」，助黃帝止雨擊敗風伯雨師，後演變為引發旱災之神；明清小說（如《子不語》）才將其正式列為殭屍的高階形態。</li>
+      </ul>
+      <p style="margin-top: 8px; margin-bottom: 0;">
+        👉 <strong>深入考據專題：</strong>若想詳細了解古籍原本如何記載、以及這場網路狂歡如何形成，請參閱本站專文：<a href="four_ancestors_of_jiangshi_debunked.html" target="_blank">《網路狂歡下的偽神話：從先秦古籍、《子不語》到香港影視，全面戳破「四大殭屍始祖」的當代謊言》</a>。
+      </p>
+    </div>
 
     <div class="media-container">
-      <p><strong>🎬 殭屍文化與等級演變參考影片（點擊播放）：</strong></p>
-      <!-- 保留最具代表性的原生預告/精華，設定 preload="none" 節省流量 -->
+      <p><strong>🎬 殭屍文化與等級演變參考影片：</strong></p>
       <video controls width="400" height="600"><source src="殭屍進化.mp4" type="video/mp4"></video>
       <br>
       <video controls width="400" height="500"><source src="犼.mp4"></video>
@@ -330,32 +360,79 @@
       <video controls width="300" height="600"><source src="jiangshi_vs_vampire.mp4" type="video/mp4"></video>
     </div>
   </section>
+
   <!-- 二、吸血鬼 -->
   <section id="section-vampire">
-    <h2>二、吸血鬼的傳說與特色</h2>
-    <p>吸血鬼源於西方與基督教文化背景，關於他們的起源在創作中有許多經典版本（如受上帝懲罰的該隱、與魔鬼簽約的德古拉、或出賣耶穌的猶大）。</p>
-    <p>吸血鬼在實質上也是一種復活的屍體，因此早期港片中道士常稱其為「<strong>西洋殭屍</strong>」。但吸血鬼與東方殭屍、現代喪屍不同的是：</p>
+    <h2>二、吸血鬼的傳說、特色與文化演變路徑</h2>
+    <p>
+      早期港片常將吸血鬼通稱為「<strong>西洋殭屍</strong>」，在實質本體論上，他們同樣屬於「死後復活的屍骸」。然而，吸血鬼在西方傳說與當代影視的百年演變中，展現了比東方殭屍更加劇烈的<strong>多階段符號異化</strong>——從中世紀的宗教詛咒，到現代的科幻偽生物學，再到東亞影視的民俗混種：
+    </p>
+
+    <h3 id="vampire-classical-gothic">（一） 古典哥德期：基督教二創與神聖秩序的反面鏡像</h3>
+    <p>
+      在早期巴爾幹民間傳聞與 19 世紀西方經典文學（如《德古拉》）中，吸血鬼與基督教世界觀深度綁定。無論是「被上帝逐出受詛的該隱」、抑或是「出賣耶穌後上吊復活的猶大」，吸血鬼本質上是<strong>對神聖教權的背叛象徵</strong>。因此，這時期的吸血鬼擁有極其明確的宗教克星：
+    </p>
     <ul>
-      <li>具有高度智慧、語言能力與強烈的外貌魅力。</li>
-      <li>擁有特殊的超自然力量，像是浮空、催眠、讀心、操控天氣，或是變成蝙蝠、狼、黑霧等。</li>
-      <li>速度、力氣、復原力、抗打能力都遠超人類。</li>
-      <li>擁有嚴格的階級與氏族制度，輩分（世代）越高實力越強。</li>
-      <li>克星明確：害怕<strong>大蒜、聖水、十字架、銀器、聖經、陽光</strong>。</li>
+      <li><strong>教條弱點：</strong>極度畏懼<strong>十字架、聖水、聖經、大蒜、銀器與陽光</strong>，未經屋主邀請甚至無法進入私人宅邸。</li>
+      <li><strong>階級與初擁：</strong>具備貴族般的優雅身段、語言天賦與心智控制能力；透過血脈「初擁（Embrace）」將詛咒延續，代數越高、實力越強。</li>
     </ul>
-    <p>被吸血鬼進行「<strong>初擁</strong>」的人，身體會永遠停留在當時的年齡，但知識與經驗會持續累積。在現代西方流行文化中（如《暮光之城》系列），吸血鬼往往被賦予了既浪漫又神秘的形象。</p>
+
+    <h3 id="vampire-modern-secular">（二） 現代流行期：世俗化（去宗教化）、科幻解構與唯物唯美主義</h3>
+    <p>
+      進入 20 世紀中後期至 21 世紀，吸血鬼題材發生了翻天覆地的<strong>「去宗教化」世俗轉型</strong>。大量經典作品開始徹底撕下基督教符號，改用存在主義、資本批判甚至偽科幻醫學來重新詮釋：
+    </p>
+    <ul>
+      <li><strong>《夜訪吸血鬼》（安·萊斯宇宙）：</strong>吸血鬼走進存在主義危機。主角路易直接在天主教堂中嘲諷<strong>十字架對吸血鬼毫無物理或精神制約力</strong>；吸血鬼的本質轉化為永生所帶來的終極孤獨、記憶磨損與美學沉溺。</li>
+      <li><strong>《暮光之城》（史蒂芬妮·梅爾宇宙）：</strong>基督教弱點被徹底廢除。吸血鬼不再畏懼大蒜與聖水，照射陽光不再化為灰燼而是<strong>如鑽石般折射光芒（Diamond Skin）</strong>；轉化機制被「偽科幻化」為體內水分被毒液置換、細胞結晶石化，甚至引發大腦失去神經可塑性的重度超憶症。</li>
+      <li><strong>《吸血鬼獵人：林肯總統》：</strong>吸血鬼被賦予了強烈的社會學與政治隱喻，化身為美洲南方蓄奴莊園背後的「資本寄生階級」，弱點被嚴格限制在單純的「銀質材料物理破壞」，與宗教神罰毫無關聯。</li>
+    </ul>
+
+    <h3 id="vampire-east-asia-hybrid">（三） 東亞跨文化混種：當西洋伯爵撞進茅山道術宇宙</h3>
+    <p>
+      當西方吸血鬼符號傳入香港與東亞影視體系時，編劇與導演大膽打破了文化壁壘，開創出獨一無二的「中西法術大亂鬥」：
+    </p>
+    <ul>
+      <li>在《一眉道人》、《驅魔道長》、《殭屍道長》等經典作品中，西方吸血鬼（如告魯斯伯爵）披著傳統黑紅斗篷來到東方，卻發現東方的桃木劍、黃紙硃砂符與八卦鏡對其「水土不服」；</li>
+      <li>茅山道士必須在搏殺過程中，緊急摸索「洋殭屍怕大蒜、怕十字架」的西方規則，甚至將大蒜搗碎塗在桃木劍上進行跨文化物理攻擊。這種文化誤讀與符號縫合，成為東亞娛樂文化極具魅力的獨特風景。</li>
+    </ul>
+
+    <h3 id="vampire-creator-guide">（四） 給創作者的解構除錯：該隱始祖的版權迷思，與「畏懼十字架」的非絕對性</h3>
+    <p>
+      許多現代讀者與新進奇幻創作者常陷入一個巨大的認知盲區：以為「該隱是血族始祖」以及「吸血鬼必怕十字架與聖水」是某種傳承千年的歐洲正統神話或宗教真理。然而，從文化傳播史與智慧財產權法嚴格檢視，這完全是一場<strong>跨世紀的商業二創與符號寄生</strong>：
+    </p>
+
+    <div class="index-tech-note" style="border-left-color: #8e44ad; background-color: #fdf7ff; margin-bottom: 20px;">
+      <strong>⚠️ 始祖該隱的商業專利陷阱 vs 免費公有領域的德古拉：</strong><br>
+      <ul>
+        <li><strong>該隱始祖說絕非古老神話：</strong>《聖經》中的該隱只是個犯下第一宗謀殺罪的「古代近東農民」。將該隱設定為第一代吸血鬼、流亡諾德之地、傳承十三氏族與世代衰減法則，完全是<strong>白狼遊戲（White Wolf）在 1991 年推出桌遊《吸血鬼之避世潛藏》（VtM）時的原創世界觀</strong>。創作者若在商業作品中照搬該隱始祖與氏族體系，極可能面臨白狼法務的版權侵權警告。</li>
+        <li><strong>德古拉才是全人類共享的 IP 提款機：</strong>愛爾蘭作家布蘭·史托克於 1897 年發表的小說《德古拉》，早已過了保護期，徹底進入<strong>公有領域（Public Domain）</strong>。好萊塢、漫威、港片與日本動漫能無限次讓德古拉登場，是因為「完全免費且無法律風險」。</li>
+        <li><strong>形象的符號錯位：</strong>時間設定上該隱（新石器時代）確實比德古拉（15 世紀）古老，但該隱若按歷史還原，只是個滿臉鬍渣、披獸皮拿石鐮的原始農夫；而大眾真正迷戀的，永遠是德古拉所奠定的<strong>「穿著黑紅立領披風、住在懸崖古堡、端著紅酒杯的維多利亞哥德貴族」</strong>。這也是為何該隱在流行文化的人氣永遠打不過德古拉。</li>
+      </ul>
+    </div>
+
+    <div class="index-tech-note" style="border-left-color: #e67e22; background-color: #fffaf0;">
+      <strong>💡 給當代創作者的啟示：不要被教條綁架，弱點只是商業模組！</strong><br>
+      布蘭·史托克當年為了塑造戲劇衝突，把吸血鬼寫成對抗基督教聖物的惡魔，成功將「怕十字架與聖水」植入大眾的反射神經；但他並未交代初始源頭，白狼才得以順水推舟借用該隱補完漏洞。<br><br>
+      這提醒了所有創作者：<strong>吸血鬼「畏懼十字架、大蒜與陽光」從來不是宇宙物理真理，而是可以隨故事主題自由拆卸的「文化補丁」！</strong>
+      <ul>
+        <li>如果你想寫純愛與偽科幻（如《暮光之城》），大可廢除所有宗教弱點，讓陽光變成鑽石折射，把不死解構成細胞結晶；</li>
+        <li>如果你想探討存在主義孤獨（如《夜訪吸血鬼》），吸血鬼完全可以坐在天主教堂裡嘲笑十字架的無能；</li>
+        <li>如果你想進行階級與政治批判（如《吸血鬼獵人：林肯總統》），吸血鬼就是南方蓄奴資本家，唯一的弱點只剩下純粹的銀質材料物理殺傷。</li>
+      </ul>
+      <strong>跳出陳舊的宗教教條，根據你的敘事核心重新定義規則，才是吸血鬼題材歷經兩百年依然生生不息的真正秘密。</strong>
+    </div>
 
     <div class="media-container">
-      <p><strong>🎬 西洋吸血鬼能力與經典敘事的參考截圖、本地影片、第三方插入影片：</strong></p>
-      <img loading="lazy" src="德古拉的能力1.jpg" alt="" width="435" height="941"><br>
-      <img loading="lazy" src="德古拉的能力2.jpg" alt="" width="435" height="941"><br>
-      <img loading="lazy" src="德古拉的能力3.jpg" alt="" width="435" height="941"><br>
-      <img loading="lazy" src="德古拉的能力4.jpg" alt="" width="435" height="941"><br>
-      <img loading="lazy" src="德古拉的能力5.jpg" alt="" width="435" height="941"><br>
-      <img loading="lazy" src="德古拉的能力6.jpg" alt="" width="435" height="941"><br>
+      <p><strong>🎬 西洋吸血鬼能力、古典詛咒與現代變奏的參考多媒體：</strong></p>
+      <img loading="lazy" src="德古拉的能力1.jpg" alt="德古拉的能力1" width="435" height="941"><br>
+      <img loading="lazy" src="德古拉的能力2.jpg" alt="德古拉的能力2" width="435" height="941"><br>
+      <img loading="lazy" src="德古拉的能力3.jpg" alt="德古拉的能力3" width="435" height="941"><br>
+      <img loading="lazy" src="德古拉的能力4.jpg" alt="德古拉的能力4" width="435" height="941"><br>
+      <img loading="lazy" src="德古拉的能力5.jpg" alt="德古拉的能力5" width="435" height="941"><br>
+      <img loading="lazy" src="德古拉的能力6.jpg" alt="德古拉的能力6" width="435" height="941"><br>
       <video controls style="border:solid 2px grey" width="600" height="300"><source src="felix_vs_edward.mp4"></video>
       <br>
       <video style="border:solid 2px grey" controls width="600" height="300"><source src="暮光之城.mp4"></video>
-      <br>
       <br>
       <iframe loading="lazy" width="600" height="400" src="https://www.youtube.com/embed/P1aOy1RAdCw?si=kRv4w_yDmz1Ln50C" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       <br>
@@ -388,12 +465,12 @@
     <h2>三、喪屍的真相（Zombie）</h2>
     <p>現代科幻災難片中的喪屍（Zombie）與傳統的殭屍、吸血鬼截然不同：</p>
     <ul>
-      <li><strong>科學起源：</strong>喪屍多半是生前受到生化病毒、寄生蟲或輻射感染，導致大腦壞死後再度復活的肉體。</li>
+      <li><strong>科學起源：</strong>喪屍多半是生前受到生化病毒、基因突變真菌（如《最後生還者》）、寄生蟲或輻射感染，導致大腦壞死後再度活動的肉體。</li>
       <li><strong>進食本能：</strong>以生肉和活人為食，<strong>不是吸血</strong>，且完全沒有人類理智與智慧。</li>
-      <li><strong>擴散方式：</strong>主要靠撕咬、體液交換進行大規模傳染。</li>
+      <li><strong>擴散方式：</strong>主要靠撕咬、血液與體液交換進行大規模傳染。</li>
       <li><strong>唯一弱點：</strong>破壞其中樞神經（爆頭）即可將其完全消滅，不怕陽光、十字架或符咒。</li>
     </ul>
-    <p>現代經典喪屍作品（如《活人生吃》、《屍速列車》、《陰屍路》）往往不只流於恐怖，更多的是帶有社會隱喻，深刻探討文明崩潰下的人性極限。</p>
+    <p>現代經典喪屍作品（如《活人生吃》、《屍速列車》、《陰屍路》）往往不只流於恐怖，更多的是帶有社會隱喻，深刻探討文明秩序崩潰下的人性極限。</p>
     <iframe loading="lazy" width="600" height="400" src="https://www.youtube.com/embed/m_0fF-S2p0k?si=thCtS1cFwUQPnH_H" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     <br>
     <iframe loading="lazy" width="600" height="400" src="https://www.youtube.com/embed/dzIfK-S1Vtg?si=qswEtUhjwTwJLI0Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -417,42 +494,54 @@
         <tbody>
         <tr>
           <td><strong>文化起源</strong></td>
-          <td>中國民間信仰、湘西趕屍傳說</td>
-          <td>歐洲民間傳說、基督教二次創作</td>
-          <td>海地巫毒教演變、現代科幻病毒</td>
+          <td>中國民間信仰、湘西趕屍傳說、明清志怪筆記</td>
+          <td>歐洲民間傳說、基督教二次創作 ➔ 現代流行世俗化與科幻偽生物學</td>
+          <td>海地巫毒教還魂屍 ➔ 現代科幻病毒、寄生蟲與真菌感染</td>
+        </tr>
+        <tr>
+          <td><strong>肢體運動與生理</strong></td>
+          <td>肌肉屍僵未解，雙臂前平伸，依賴雙足彈跳前進；高階可御風滑翔</td>
+          <td>外貌維持常人或具病態美，具超常速度、力量、浮空或化霧能力</td>
+          <td>中樞神經受損，肉體持續腐敗；多數步履蹣跚，部分變異種狂暴奔跑</td>
         </tr>
         <tr>
           <td><strong>主食來源</strong></td>
-          <td>吸食生者血液、吸取生命精氣</td>
-          <td>吸食人類鮮血</td>
-          <td>吞食活人鮮血與生肉、大腦</td>
+          <td>吸食生者血液、嗅聞汲取生命陽氣</td>
+          <td>吸食人類鮮血（現代創作亦有吸食動物血之素食派）</td>
+          <td>瘋狂撕咬並吞食活人生肉與大腦（非單純吸血）</td>
         </tr>
         <tr>
-          <td><strong>核心弱點</strong></td>
-          <td>陽光、糯米、桃木劍、符咒、雞血</td>
-          <td>陽光、大蒜、十字架、聖水、銀器</td>
-          <td>摧毀大腦中樞（爆頭）</td>
+          <td><strong>核心弱點與機制</strong></td>
+          <td>陽光、糯米、桃木劍、硃砂符咒、黑狗血、屏息閉氣</td>
+          <td>古典期：十字架、聖水、大蒜、銀器、陽光；現代期：多已免疫宗教器物，僅餘純物理破壞、銀器或火焚</td>
+          <td>摧毀大腦中樞神經（爆頭、焚毀大腦）</td>
         </tr>
         <tr>
           <td><strong>智慧與心智</strong></td>
-          <td>初階無智慧，隨修煉進化可得心智</td>
-          <td>具備極高智慧、優雅謀略與魔力</td>
-          <td>毫無靈智，僅剩低等進食本能</td>
+          <td>初階毫無神智，僅依呼吸本能索敵；修煉至魃、犼具備高等神智</td>
+          <td>具備極高智慧、優雅謀略、語言天賦與心靈控制等魔力</td>
+          <td>毫無自主靈智與記憶，完全受低等食慾與神經反射驅使</td>
+        </tr>
+        <tr>
+          <td><strong>常見始祖迷思</strong></td>
+          <td>網文常傳「四大殭屍始祖」（實為當代修仙小說與 1998 港劇陳十三原創之縫合）</td>
+          <td>大眾常誤認「該隱為正統始祖」（實為 1991 年白狼桌遊《避世潛藏》之商業二創專利）</td>
+          <td>各作品獨立設定（多為某跨國醫藥財閥之實驗室外洩零號病患）</td>
         </tr>
         <tr>
           <td><strong>經典代表作</strong></td>
-          <td>《殭屍先生》、《殭屍道長》系列</td>
-          <td>《德古拉》、Twilight《暮光之城》系列</td>
-          <td>《惡靈古堡》、《行屍走肉/陰屍路》</td>
+          <td>《殭屍先生》、《殭屍叔叔》、《殭屍道長》系列</td>
+          <td>《德古拉》、《夜訪吸血鬼》、《暮光之城》系列</td>
+          <td>《惡靈古堡》、《陰屍路》、《屍速列車》、《最後生還者》</td>
         </tr>
         </tbody>
       </table>
     </div>
   </section>
 
-  <p>瞭解這三種超自然生物的文化背景，不只能讓我們在欣賞相關影視作品時更有感觸，也能從中看見東西方文化對於「死亡、靈魂與復活」截然不同的集體想像。</p>
-
-  <!-- 社群分享功能 -->
+  <p>
+    縱觀這三種不死生物的演變軌跡，我們會發現它們從來不是一成不變的古老教條，而是隨著時代不斷抽換內核的<strong>「文化與商業模組」</strong>：東方跳殭寄託了民間對宗族秩序與鄉土歸葬的焦慮；西洋吸血鬼折射了從神權壓迫走向資本寄生與存在主義孤獨的歷程；而現代喪屍則精準擊中了當代人對文明崩潰與生化失控的集體恐慌。看清這些設定背後的因果邏輯與二創脈絡，正是我們解構整個超自然流行宇宙的第一步。
+  </p>
   <div id="social-share">
     <h3>📢 喜歡這篇文章嗎？分享給朋友吧！</h3>
     <a id="fb-share" href="#" target="_blank">分享到 Facebook</a> |
@@ -469,7 +558,6 @@
 </footer>
 
 <script>
-  // 導覽選單展開/收合
   function toggleMenu() {
     const menu = document.querySelector('.collapsed-menu');
     const button = document.querySelector('.toggle-btn');
@@ -482,7 +570,6 @@
     }
   }
 
-  // 自動配置社群分享連結
   (function() {
     var currentUrl = window.location.href;
     document.getElementById("fb-share").href = "https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(currentUrl);
